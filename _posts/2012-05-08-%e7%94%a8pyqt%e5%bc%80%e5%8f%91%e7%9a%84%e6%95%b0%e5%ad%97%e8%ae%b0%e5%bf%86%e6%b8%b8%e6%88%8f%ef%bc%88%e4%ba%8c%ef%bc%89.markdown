@@ -1,0 +1,164 @@
+--- 
+wordpress_url: http://luchanghong.com/rosemary/?p=163
+wordpress_id: 163
+title: !binary |
+  55SocHlRVOW8gOWPkeeahOaVsOWtl+iusOW/hua4uOaIj++8iOS6jO+8iQ==
+
+layout: post
+date: 2012-05-08 10:23:38 +08:00
+---
+想做的话就没什么难的，昨晚把几个难题攻破了，可以玩了，今早又趁热打铁把关卡也设置了。
+
+难题1：
+
+显示数字的时候我用的QLabel，在绑定信号槽的时候，查了一下手册，有mousePressEvent()这个signal，但是用的时候对整个Window窗口都有效，这样没法判断，所以google了一下，发现可以给QLabel重新定义一个signal，也就是可以扩展QLabel为我们所用，方法如下：
+<pre>[python]
+class ExtendedQLabel(QtGui.QLabel):
+    def __init(self, parent):
+        QtGui.QLabel.__init__(self, parent)
+
+    def mouseReleaseEvent(self, ev):
+        self.emit(QtCore.SIGNAL('clicked()'))
+[/python]</pre>
+难题2：
+
+在使用的过程中发现，要知道当前点击的是哪一个QLabel，所以要传递一个参数，最好是当前的QObject对象——QLabel，又去google查。毕竟刚学习，只好遇到什么就解决什么了，还好可以找到答案，原来一直认为参数是回调函数传递的，其实是在signal传递的，于是修改了上面的ExtendedQLabel，如下：
+<pre>[python]
+class ExtendedQLabel(QtGui.QLabel):
+    def __init(self, parent):
+        QtGui.QLabel.__init__(self, parent)
+
+    def mouseReleaseEvent(self, ev):
+        self.emit(QtCore.SIGNAL('clicked(PyQt_PyObject)'), self)
+[/python]</pre>
+难题3：
+
+其实这个不算是什么难题，只不过是游戏进行过程中的逻辑判断，比如第一次点击要是1，然后依次累加，游戏出错就结束，把相关的参数初始化以便重新开始游戏，完成一关后进入下一关卡也要进行相关操作。
+
+目前运行是可以玩的了，全部代码加起来也不过120行，说实话还是第一次做GUI程序，也没有任何经验，还好这个游戏简单，下面就分享一下代码，有冗余或者不对的地方请吐槽。
+<pre>[python]
+# -*-encoding: utf-8 -*-
+__author__ = 'Administrator'
+import sys
+import random
+from PyQt4 import QtGui,QtCore
+
+class ExtendedQLabel(QtGui.QLabel):
+    def __init(self, parent):
+        QtGui.QLabel.__init__(self, parent)
+
+    def mouseReleaseEvent(self, ev):
+        self.emit(QtCore.SIGNAL('clicked(PyQt_PyObject)'), self)
+
+class MemoryWindow(QtGui.QMainWindow):
+    def __init__(self, num = 3, parent = None):
+        QtGui.QMainWindow.__init__(self, parent)
+
+        self.setWindowTitle('Memory Game')
+        self.setFixedSize(400, 400)
+        self.init_num = num
+        self.current_num = 0
+        self.initGame()
+
+    def setLabelText(self):
+        num = 0
+        for i in range(0, 5):
+            for j in range(0, 5):
+                tmp = ExtendedQLabel()
+                tmp.setAlignment(QtCore.Qt.AlignCenter)
+
+                vars(self)['label_%d' % num] = tmp
+                self.layout.addWidget(tmp, i, j)
+                num += 1
+        self.label_num = num
+
+    def setRandomNum(self):
+        label_list = [x for x in range(0, self.label_num)]
+        self.res_label = []
+        for x in range(0, self.init_num):
+            number = random.randint(0, len(label_list)-1)
+            label = vars(self)['label_%d' % label_list[number]]
+            label.setText(str(x+1))
+            label.setStyleSheet(
+                'background-color: rgb(255, 255, 127);'
+                'color: rgb(0, 170, 255);'
+                'font: 75 18pt "Axure Handwriting";'
+            )
+            self.connect(label, QtCore.SIGNAL("clicked(PyQt_PyObject)"), self.startGame)
+            self.res_label.append(label)
+            label_list.remove(label_list[number])
+
+    def initGame(self):
+        self.layout = QtGui.QGridLayout()
+        self.widget = QtGui.QWidget(self)
+        self.widget.setLayout(self.layout)
+        self.setCentralWidget(self.widget)
+        self.setLabelText()
+        self.setRandomNum()
+
+    def startGame(self, label):
+        label_num = int(label.text())
+        label.hide()
+        for x in self.res_label:
+            x.setStyleSheet(
+                'background-color: rgb(255, 255, 127);'
+                'color: rgb(255, 255, 127);'
+                'font: 75 18pt "Axure Handwriting";'
+            )
+        if not self.current_num:
+            if label_num == 1:
+                self.current_num = label_num
+            else:
+                self.gameOver()
+        else:
+            if self.current_num + 1 == label_num:
+                self.current_num += 1
+                if self.current_num == self.init_num:
+                    self.gameVictory()
+            else:
+                self.gameOver()
+
+    def gameVictory(self):
+        self.init_num += 1
+        self.current_num = 0
+        label = QtGui.QLabel('Game Victory!')
+        label.setAlignment(QtCore.Qt.AlignCenter)
+        button = QtGui.QPushButton('Next Step ?')
+        button.setMaximumSize(80, 30)
+        self.connect(button, QtCore.SIGNAL('clicked()'), self.restartGame)
+        self.gameVictoryWidget = QtGui.QWidget()
+        self.gameVictoryWidgetLayout = QtGui.QVBoxLayout()
+        self.gameVictoryWidgetLayout.addWidget(label)
+        self.gameVictoryWidgetLayout.addWidget(button)
+        self.gameVictoryWidget.setLayout(self.gameVictoryWidgetLayout)
+        self.setCentralWidget(self.gameVictoryWidget)
+
+    def gameOver(self):
+        self.current_num = 0
+        label = QtGui.QLabel('Game Over!')
+        label.setAlignment(QtCore.Qt.AlignCenter)
+        button = QtGui.QPushButton('Retry ?')
+        button.setMaximumSize(80, 30)
+        self.connect(button, QtCore.SIGNAL('clicked()'), self.restartGame)
+        self.gameOverWidget = QtGui.QWidget()
+        self.gameOverWidgetLayout = QtGui.QVBoxLayout()
+        self.gameOverWidgetLayout.addWidget(label)
+        self.gameOverWidgetLayout.addWidget(button)
+        self.gameOverWidget.setLayout(self.gameOverWidgetLayout)
+        self.setCentralWidget(self.gameOverWidget)
+
+    def restartGame(self):
+        self.initGame()
+
+    def nextStep(self):
+        self.initGame()
+
+def startGame(num = 3):
+    app = QtGui.QApplication(sys.argv)
+    memoryWindow = MemoryWindow(num = num)
+    memoryWindow.show()
+    sys.exit(app.exec_())
+
+if __name__ == '__main__':
+    startGame()
+[/python]</pre>

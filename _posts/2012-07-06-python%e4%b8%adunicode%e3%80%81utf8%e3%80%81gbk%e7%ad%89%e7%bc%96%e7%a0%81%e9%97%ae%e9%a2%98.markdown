@@ -1,0 +1,85 @@
+--- 
+wordpress_url: http://luchanghong.com/rosemary/?p=368
+wordpress_id: 368
+title: !binary |
+  cHl0aG9u5LitdW5pY29kZeOAgXV0ZjjjgIFnYmvnrYnnvJbnoIHpl67popg=
+
+layout: post
+date: 2012-07-06 18:05:40 +08:00
+---
+前一段时间就想写一篇总结Python字符串的文章，但是时间较紧，而且我当时遇到的问题也不是很难，就暂搁下了，今天又被这编码折磨一番，泪奔啊……
+
+至于unicode、utf8等编码原理以及区别等问题可以去百度百科查看，网上也有介绍，我想说的是直接的转换方法——先知其然，然后再知其所以然吧。
+
+1.普通字符串与unicode转换
+
+无论是什么平台什么编码格式都能转换为unicode格式。
+
+以utf8编码方式把字符串转换为unicode：
+
+[python]'aaa'.decode('utf8')[/python]等同于[python]unicode('aaa', 'utf8')[/python]
+
+把unicode字符串转换为utf8编码格式字符串：
+
+[python]'aaa'.decode('utf8')[/python]
+
+注意：这样写已经表示'aaa'是一个unicode格式的字符串了，等同于[python]u'aaa'.decode('utf8')[/python]
+
+如果全部是英文字符或者数字，则utf8与gbk输出结果一致，而且带不带u都一样
+
+2.有汉字的字符串
+
+这是中国程序员最苦逼的地方，什么乱码之类的几乎都是由汉字引起的，伤不起！
+
+把普通中午字符串转换为unicode：
+
+[python]'也有'.decode('gbk')[/python]
+
+注意：此时字符串前不能加u，而且汉字编码只能写gbk或者gb2312等
+
+把上面的结果再转成gbk
+
+[python]print  u'\u4e5f\u6709'.encode('gbk')[/python]
+
+当然unicode可以转成utf8，但是要看你的终端支持什么编码了，要不然就会乱码，我用的WIN，所以就用gbk测试
+
+如果不用print输出，直接[python]u'\u4e5f\u6709'.encode('gbk')[/python]或者[python]u'\u4e5f\u6709'.encode('utf8')[/python]
+
+你会看到这两个汉字在gbk和utf8编码格式下的字符，这里不多研究了（utf8汉字编码比gbk多一个字符）
+
+下面把运行的结果输出：
+<pre>[python]&gt;&gt;&gt; 'aaa'.decode('utf8')
+u'aaa'
+&gt;&gt;&gt; unicode('aaa', 'utf8')
+u'aaa'
+&gt;&gt;&gt; 'aaa'.decode('utf8')
+u'aaa'
+&gt;&gt;&gt; u'aaa'.decode('utf8')
+u'aaa'
+&gt;&gt;&gt; '也有'.decode('gbk')
+u'\u4e5f\u6709'
+&gt;&gt;&gt; print  u'\u4e5f\u6709'.encode('gbk')
+也有
+&gt;&gt;&gt; u'\u4e5f\u6709'.encode('gbk')
+'\xd2\xb2\xd3\xd0'
+&gt;&gt;&gt; u'\u4e5f\u6709'.encode('utf8')
+'\xe4\xb9\x9f\xe6\x9c\x89'
+[/python]</pre>
+说明：str()函数，有时候我们要借助它来过度转换，比如u'%E9%95%BF%E6%98%A5%E5%B8%82'，这就是我下午遇到的问题，把urlencode转换的编码经过urldecode解码，结果前面多个u，此时是utf8编码，然后decode成unicode，出问题了：
+<pre>[python]&gt;&gt;&gt; s = u'%E9%95%BF%E6%98%A5%E5%B8%82'
+&gt;&gt;&gt; import urllib
+&gt;&gt;&gt; urllib.unquote(s)
+u'\xe9\x95\xbf\xe6\x98\xa5\xe5\xb8\x82'
+&gt;&gt;&gt; urllib.unquote(s).decode('utf8')
+Traceback (most recent call last):
+  File "", line 1, in 
+  File "D:\Python26\lib\encodings\utf_8.py", line 16, in decode
+    return codecs.utf_8_decode(input, errors, True)
+UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-8: ordin
+al not in range(128)[/python]</pre>
+特别注意：utf8编码、gbk编码的原型加上u然后再转unicode是错误写法，肯定转不了，那怎样去掉u呢？str()函数也不能直接转，只好把u'%E9%95%BF%E6%98%A5%E5%B8%82'用str()处理去掉u，然后一切都OK了。
+<pre>[python]&gt;&gt;&gt; urllib.unquote(str(s)).decode('utf8')
+u'\u957f\u6625\u5e02'
+&gt;&gt;&gt; print urllib.unquote(str(s)).decode('utf8')
+长春市
+[/python]</pre>
