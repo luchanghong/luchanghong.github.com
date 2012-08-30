@@ -1,11 +1,11 @@
 --- 
 wordpress_url: http://luchanghong.com/rosemary/?p=526
+date: 2012-08-27 17:35:54 +08:00
+layout: post
 wordpress_id: 526
 title: !binary |
   5Yid6K+VZ2l0aHVi
 
-layout: post
-date: 2012-08-27 17:35:54 +08:00
 ---
 说实话，做这么久程序猿却没有真刀实枪的在github上混过真是有点小难堪，不过还好我早已经注册了账号。
 

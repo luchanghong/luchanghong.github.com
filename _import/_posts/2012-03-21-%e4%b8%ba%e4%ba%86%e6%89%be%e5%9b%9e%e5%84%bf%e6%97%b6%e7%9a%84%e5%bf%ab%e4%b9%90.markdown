@@ -1,0 +1,18 @@
+--- 
+wordpress_url: http://luchanghong.com/rosemary/?p=31
+date: 2012-03-21 23:30:54 +08:00
+layout: post
+wordpress_id: 31
+title: !binary |
+  5Li65LqG5om+5Zue5YS/5pe255qE5b+r5LmQ
+
+---
+想想小时候，放学后回到家，找邻居伙伴下棋。
+
+席地而坐，大地是棋盘，石子是棋子，兵来将挡水来土掩，不亦乐乎。
+
+今天开始android学习，工作之余，忙里偷的依然是忙！
+
+I have a dream that I will find the happiness of my childhood.
+
+儿时这几个小游戏将是我第一个project，不知道什么时候到能实现呢？努力！

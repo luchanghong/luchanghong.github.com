@@ -1,11 +1,11 @@
 --- 
 wordpress_url: http://luchanghong.com/rosemary/?p=513
+date: 2012-08-23 12:59:12 +08:00
+layout: post
 wordpress_id: 513
 title: !binary |
   bWFj5LiLc3No6Ieq5Yqo55m76ZmG
 
-layout: post
-date: 2012-08-23 12:59:12 +08:00
 ---
 每次登陆服务器都要输入密码，很烦人啊，要是一台服务器还凑合，我天天至少登陆4台，来回切换操作甚是麻烦，所以就做个自动登陆的吧……
 

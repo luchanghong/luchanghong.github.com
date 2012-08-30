@@ -1,11 +1,11 @@
 --- 
 wordpress_url: http://luchanghong.com/rosemary/?p=519
+date: 2012-08-24 11:32:45 +08:00
+layout: post
 wordpress_id: 519
 title: !binary |
   bXlzcWwgc2hlbGzluLjnlKjkuIDkupvlkb3ku6Q=
 
-layout: post
-date: 2012-08-24 11:32:45 +08:00
 ---
 总结一下简单常用、实用的mysql shell命令，长时间不用难免会忘记，以备不时只需。
 

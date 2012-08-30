@@ -1,12 +1,12 @@
 --- 
 wordpress_url: http://luchanghong.com/rosemary/?p=487
+date: 2012-08-08 16:57:43 +08:00
+layout: post
 wordpress_id: 487
 title: !binary |
   W+i9rF1hd2vlrp7njrDmsYLlkozjgIHlubPlnYfjgIHmnIDlpKflgLzlkozm
   nIDlsI/lgLznmoTorqHnrpfmk43kvZw=
 
-layout: post
-date: 2012-08-08 16:57:43 +08:00
 ---
 1、求和
 cat data|awk '{sum+=$1} END {print "Sum = ", sum}'
