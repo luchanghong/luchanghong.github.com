@@ -16,23 +16,23 @@ date: 2012-06-20 23:46:34 +08:00
 
 1、在sql语句后加一个COMMIT命令
 
-[python]cursor.execute('insert into user (id, name) values (1, 'luchanghong);COMMIT;')[/python]
+<pre class="prettyprint">cursor.execute('insert into user (id, name) values (1, 'luchanghong);COMMIT;')</pre>
 
 2、给数据库连接conn预定一个commit
 
-[python]
+<pre class="prettyprint">
 conn = MySQLdb.connect(host = 'localhost', user = 'root', passwd = 'root', db = 'test')
 conn.autocommit(1)
-[/python]
+</pre>
 
 3、在释放数据库连接之前commit
 
-[python]
+<pre class="prettyprint">
 conn = MySQLdb.connect()
 cursor.execute('insert into ...')
 cursor.close()
 conn.commit()
 conn.close()
-[/python]
+</pre>
 
 PS：我用的是第三种方法，其他两个还没来得及验证，有兴趣的测试一下吧

@@ -19,12 +19,12 @@ particular Web site. A project can contain multiple apps. An app can be in multi
 
 以下就以官网上的poll投票应用为例。在mysite目录下：
 
-[python]
+<pre class="prettyprint">
 python manage.py startapp polls
-[/python]
+</pre>
 
 这样就创建了polls目录，包含：__init__.py、models.py、tests.py、views.py。接着编辑models.py，创建两个数据模型对象：poll和choice。
-<pre>[python]
+<pre><pre class="prettyprint">
 from django.db import models
 from datetime import timedelta
 from django.utils import timezone
@@ -38,13 +38,13 @@ class Choice(models.Model):
     poll = models.ForeignKey(Poll)
     choice = models.CharField(max_length = 200)
     votes = models.IntegerField()
-[/python]</pre>
+</pre></pre>
 很明显，question、pub_date等属性都是要设置的字段，CharField等表示字段的类型，而ForeignKey指的是关联字段，两个数据模型分别代表两张表。
 
 二、激活app并创建数据表
 
 下面就是要在当前的project中激活polls这个app，还记得Django自带的功能是怎么导入的吧？在配置文件中加入polls：
-<pre>[python]
+<pre><pre class="prettyprint">
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,18 +58,18 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
-[/python]</pre>
+</pre></pre>
 接下来就是把建立的数据模型对象转换成对应的数据表，run command：
 
-[python]python manage.py sql polls[/python]
+<pre class="prettyprint">python manage.py sql polls</pre>
 
 <a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/django-app.jpg"><img class="alignnone size-full wp-image-211" title="django-app" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/django-app.jpg" alt="" width="681" height="339" /></a>
 
 上图的SQL语句应该很熟悉吧，不过还没真正的执行，只是显示出来，所以数据库还是没有变化的。在执行之前检查一下错误，然后在执行：
-<pre>[python]
+<pre><pre class="prettyprint">
 python manage.py validate
 python manage.py syncdb
-[/python]</pre>
+</pre></pre>
 关于上面那个manage.py sql命令，感兴趣的可以看下面几个相关的：
 
 If you’re interested, also run the following commands:
@@ -90,11 +90,11 @@ sqlindexes commands.
 
 接着使用Django提供的API，并且完成一些数据模型对象的操作。run command:
 
-[python]python manage.py shell[/python]
+<pre class="prettyprint">python manage.py shell</pre>
 
 进入一个shell，相当于python的shell，不同的是Django自动把app加入到python path中，也就是说可以直接把app当作一个model来导入使用。
 
-[shell]
+<pre class="prettyprint">
 &gt;&gt;&gt; from polls.models import Poll,Choice
 &gt;&gt;&gt; from django.utils import timezone
 &gt;&gt;&gt; p = Poll(question = "what's up?", pub_date = timezone.now())
@@ -107,13 +107,13 @@ sqlindexes commands.
 [&lt;Poll: Poll object&gt;]
 &gt;&gt;&gt; p.delete()
 &gt;&gt;&gt; Poll.objects.all()
-[]
-[/shell]
+<pre class="prettyprint">
+</pre>
 
 上面先生成一个Poll对象，然后保存到数据库，然后查找出来，再给删除了，相关的方法可以去手册里面看一下。
 
 可是每次数据操作都返回一个Poll对象的话，没有什么可区别的，一般在定义数据模型的时候做些改变，也可以自定义一些方法。
-<pre>[python]
+<pre><pre class="prettyprint">
 from django.db import models
 from datetime import timedelta
 from django.utils import timezone
@@ -136,10 +136,10 @@ class Choice(models.Model):
 
     def __unicode__(self):
         return self.choice
-[/python]</pre>
+</pre></pre>
 修改之后要退出（CTRL+Z）shell，然后再次进入：
 
-[python]
+<pre class="prettyprint">
 
 &gt;&gt;&gt; from polls.models import Poll,Choice
 &gt;&gt;&gt; from django.utils import timezone
@@ -147,6 +147,6 @@ class Choice(models.Model):
 &gt;&gt;&gt; p
 &lt;Poll: what's up?&gt;
 
-[/python]
+</pre>
 
 OK，今天就到这了，多多练习，Django手册在手什么都不怕了，不会的再去google一下，还有什么不能解决的呢？接下来要从后台搞起……

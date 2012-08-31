@@ -18,7 +18,7 @@ OK，暴雨过后仍是阴霾，最后一步就竣工了。
     def get_new_row(sudoko_list):
         new_row = list()
         for j in range(0, 9): 
-            col_select = [x[j] for x in sudoko_list]
+            col_select = [x<pre class="prettyprint"> for x in sudoko_list]
             row_select = list(new_row)
             select_list = col_select + row_select
             remain_list = [x for x in num_list if x not in select_list]

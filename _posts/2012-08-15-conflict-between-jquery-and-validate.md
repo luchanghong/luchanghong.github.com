@@ -16,24 +16,23 @@ date: 2012-08-15 23:06:17 +08:00
 明白这个原因之后，解决方法也就很简单针对了：
 
 在构造validate规则的时候加上submitHandler，如：
-<pre>[javascript]
-
-        $("#finaceAccount").validate({
-            rules:{name :{required :true,minlength:2},
-            },
-            messages: {
-                name: {required: "请输入姓名！",minlength: "请填写全名！"},
-            },
-            submitHandler: function (form){
-                return checkInfo(form);
-            }
-        });
-
-        function checkInfo(f){
-            ……
-            return false
+<pre class="prettyprint">
+    $("#finaceAccount").validate({
+        rules:{name :{required :true,minlength:2},
+        },
+        messages: {
+            name: {required: "请输入姓名！",minlength: "请填写全名！"},
+        },
+        submitHandler: function (form){
+            return checkInfo(form);
         }
-[/javascript]</pre>
+    });
+
+    function checkInfo(f){
+        ……
+        return false
+    }
+</pre>
 这样就OK了，也就可以把onsubmit事件删除了。
 
 <span style="text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;">补充：checkInfo()函数里面有ajax验证，这样写也不行，我直接在submitHandler返回true但表单并未提交，研究半天也没找到什么解决办法，只好换其他验证方法了。至此这个冲突还没有解决……我也不是专业前端开发人员，也没太多时间去网上找答案，就暂时避开此方法了，以后有空再看吧，坑爹啊！</span></span>

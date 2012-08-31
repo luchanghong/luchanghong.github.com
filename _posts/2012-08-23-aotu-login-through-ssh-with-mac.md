@@ -11,11 +11,11 @@ date: 2012-08-23 12:59:12 +08:00
 
 一、创建一对公钥、密钥
 
-[shell]ssh-keygen -t rsa[/shell]或者[shell]ssh-keygen -t dsa[/shell]
+<pre class="prettyprint">ssh-keygen -t rsa</pre>或者<pre class="prettyprint">ssh-keygen -t dsa</pre>
 
 然后会提示生成路径以及让你输入密码：
 
-[shell]
+<pre class="prettyprint">
 
 lchmatoMacBook-Pro:.ssh lch$ ssh-keygen -t dsa
 Generating public/private dsa key pair.
@@ -23,7 +23,7 @@ Enter file in which to save the key (/Users/lch/.ssh/id_dsa):
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 
-[/shell]
+</pre>
 
 提示：这里输入的密码是保存在本地的密码，不是你要登陆服务器的密码，目前的操作和服务器无关，<span style="color: #ff0000;">推荐不输入密码</span>
 

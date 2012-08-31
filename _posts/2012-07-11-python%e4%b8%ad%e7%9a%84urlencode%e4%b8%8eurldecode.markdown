@@ -10,7 +10,7 @@ date: 2012-07-11 15:06:58 +08:00
 一、urlencode
 
 urllib库里面有个urlencode函数，可以把key-value这样的键值对转换成我们想要的格式，返回的是a=1&amp;b=2这样的字符串，比如：
-<pre>[python]
+<pre><pre class="prettyprint">
 &gt;&gt;&gt; from urllib import urlencode
 &gt;&gt;&gt; data = {
 ...     'a': 'test',
@@ -18,25 +18,25 @@ urllib库里面有个urlencode函数，可以把key-value这样的键值对转�
 ... }
 &gt;&gt;&gt; print urlencode(data)
 a=test&amp;name=%C4%A7%CA%DE
-[/python]</pre>
+</pre></pre>
 如果只想对一个字符串进行urlencode转换，怎么办？urllib提供另外一个函数：quote()
-[python]
+<pre class="prettyprint">
 &gt;&gt;&gt; from urllib import quote
 &gt;&gt;&gt; quote('魔兽')
 '%C4%A7%CA%DE'
-[/python]
+</pre>
 
 二、urldecode
 
 当urlencode之后的字符串传递过来之后，接受完毕就要解码了——urldecode。urllib提供了unquote()这个函数，可没有urldecode()！
 
-[python]
+<pre class="prettyprint">
 &gt;&gt;&gt; from urllib import unquote
 &gt;&gt;&gt; unquote('%C4%A7%CA%DE')
 '\xc4\xa7\xca\xde'
 &gt;&gt;&gt; print unquote('%C4%A7%CA%DE')
 魔兽
-[/python]
+</pre>
 
 三、讨论
 

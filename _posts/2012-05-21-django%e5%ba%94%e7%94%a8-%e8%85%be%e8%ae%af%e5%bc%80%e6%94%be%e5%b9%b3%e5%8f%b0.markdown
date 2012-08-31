@@ -17,7 +17,7 @@ date: 2012-05-21 15:23:16 +08:00
 
 到我们的project下，run command:
 
-[python]python manage.py startapp qq_open[/python]
+<pre class="prettyprint">python manage.py startapp qq_open</pre>
 
 便创建了qq_open目录，把下载的Python SDK解压出来，重命名为qqapi，然后copy到这个目录下面。
 
@@ -26,7 +26,7 @@ date: 2012-05-21 15:23:16 +08:00
 接着配置URLconf，具体做法上篇文章说过，<a title="Django开发学习（五）" href="http://luchanghong.com/rosemary/?p=244" target="_blank">猛击这里</a>，直接看下面步骤：
 <ol>
 	<li>在qq_open目录下创建urls.py
-<pre>[python]
+<pre><pre class="prettyprint">
 #-*- coding: utf-8 -*-
 __author__ = 'luchanghong'
 
@@ -35,22 +35,22 @@ from django.conf.urls import url,patterns
 urlpatterns = patterns('qq_open.views',
     url(r'^$', 'index'),
 )
-[/python]</pre>
+</pre></pre>
 </li>
 	<li>在mysite/urls.py增加一行：
-[python]url(r'^qq_open/', include('qq_open.urls'))[/python]</li>
+<pre class="prettyprint">url(r'^qq_open/', include('qq_open.urls'))</pre></li>
 	<li>写VIEW，打开qq_open/views.py：
-<pre>[python]
+<pre><pre class="prettyprint">
 # Create your views here.
 from django.shortcuts import render_to_response
 
 def index(request):
     ret = {'hello': 'I am qq_open test.'}
     return render_to_response('qq_open/index.html', ret)
-[/python]</pre>
+</pre></pre>
 </li>
 	<li>创建目录以及文件：templates/qq_open/index.html
-<pre>[html]
+<pre><pre class="prettyprint">
 &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd"&gt;
 &lt;html&gt;
@@ -61,12 +61,12 @@ def index(request):
   {{ hello }}&lt;br&gt;
 &lt;/body&gt;
 &lt;/html&gt;
-[/html]</pre>
+</pre></pre>
 </li>
 </ol>
 OK，run command:
 
-[python]python manage.py runserver[/python]
+<pre class="prettyprint">python manage.py runserver</pre>
 
 然后，可以访问<a href="http://localhost:8000/qq_open/">http://localhost:8000/qq_open/</a>测试一下qq_open有没有运行成功。
 
@@ -79,7 +79,7 @@ OK，run command:
 <a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/qzone-config.jpg"><img class="alignnone size-full wp-image-252" title="qzone-config" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/qzone-config.jpg" alt="" width="518" height="385" /></a>
 
 然后，把VIEW修改一下：
-<pre>[python]
+<pre><pre class="prettyprint">
 # Create your views here.
 from django.shortcuts import render_to_response
 from qqapi.openapi_v3 import OpenAPIV3
@@ -106,9 +106,9 @@ def index(request):
     })
     ret.update({'data': jdata})
     return render_to_response('qq_open/index.html', ret)
-[/python]</pre>
+</pre></pre>
 在HTML里面把用户头像显示出来：
-<pre>[html]
+<pre><pre class="prettyprint">
 
 &lt;body&gt;
   {{ hello }}&lt;br&gt;
@@ -116,7 +116,7 @@ def index(request):
   &lt;img src="{{ data.figureurl }}" alt=""&gt;
 &lt;/body&gt;
 
-[/html]</pre>
+</pre></pre>
 完成这些，上图中有个“预览应用”，点击预览跳转到QQ空间：
 
 <a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/qzone.jpg"><img class="alignnone size-full wp-image-255" title="qzone" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/qzone.jpg" alt="" width="774" height="425" /></a>

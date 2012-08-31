@@ -19,7 +19,7 @@ date: 2012-04-06 16:11:51 +08:00
 
 上面两条处理时间间隔36s、18s、18s……我要处理一年多的数据，总共440天，这样需要时间：440 * 20 = 8800 s，也就是2.4小时，这个速度实在是慢。
 
-我尝试做一下索引：[shell]db.report_detail.ensureIndex({'date':-1})[/shell]，按照时间逆序的索引。然后在执行数据处理，结果如下：
+我尝试做一下索引：<pre class="prettyprint">db.report_detail.ensureIndex({'date':-1})</pre>，按照时间逆序的索引。然后在执行数据处理，结果如下：
 
 <a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/IBPW3M8G_WNTG99OKU.jpg"><img class="alignnone size-full wp-image-87" title="`I(BPW]3M8G_WNTG99OK)`U" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/IBPW3M8G_WNTG99OKU.jpg" alt="" width="641" height="254" /></a>
 
@@ -29,7 +29,7 @@ date: 2012-04-06 16:11:51 +08:00
 
 <a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/CENESB2KKKV_6ES08WR5PG.jpg"><img class="alignnone size-full wp-image-88" title="CENESB(2KKKV_6ES08WR5PG" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/CENESB2KKKV_6ES08WR5PG.jpg" alt="" width="681" height="440" /></a>
 
-处理时间间隔是7s左右，做appKey索引：[shell]db.report_detail.ensureIndex({'appKey': 1})[/shell]，再测试：
+处理时间间隔是7s左右，做appKey索引：<pre class="prettyprint">db.report_detail.ensureIndex({'appKey': 1})</pre>，再测试：
 <div><a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/RW8VWC4WCAA_7SRB7KJJ.jpg"><img class="alignnone size-full wp-image-89" title="RW8(VWC{`4WCAA_7SRB7KJJ" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/RW8VWC4WCAA_7SRB7KJJ.jpg" alt="" width="681" height="440" /></a></div>
 此时，处理时间间隔十几到几十毫秒，相差很大。最后的总记录是7831条。
 

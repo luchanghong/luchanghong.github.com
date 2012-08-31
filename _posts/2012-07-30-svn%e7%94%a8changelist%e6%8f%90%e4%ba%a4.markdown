@@ -15,9 +15,9 @@ date: 2012-07-30 14:06:07 +08:00
 
 一、创建一个changelist
 
-可以通过命令[shell]svn changelist help[/shell]来看一下用法，创建一个changelist并命名为res_update
+可以通过命令<pre class="prettyprint">svn changelist help</pre>来看一下用法，创建一个changelist并命名为res_update
 
-[shell]svn changelist res_update test.txt[/shell]
+<pre class="prettyprint">svn changelist res_update test.txt</pre>
 
 第一次创建就要添加一个文件才能成功，另外，changelist可简写cl
 
@@ -25,19 +25,19 @@ date: 2012-07-30 14:06:07 +08:00
 
 这个命令其实和创建的一样的
 
-[shell]svn changelist res_update test2.txt[/shell]
+<pre class="prettyprint">svn changelist res_update test2.txt</pre>
 
 三、删除changelist的文件
 
 只是从changelist里面删除，并不是真正删除，确切说是移除吧
 
-[shell]svn changelist --remove test.txt[/shell]
+<pre class="prettyprint">svn changelist --remove test.txt</pre>
 
 四、提交changelist
 
 把待更新的文件都添加到changelist之后，用commit提交
 
-[shell]svn commit --changelist res_update[/shell]
+<pre class="prettyprint">svn commit --changelist res_update</pre>
 
 这样，就只提交changelist里面的文件了
 

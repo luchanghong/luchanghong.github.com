@@ -7,77 +7,61 @@
    <link href="http://feeds.feedburner.com/tom-preston-werner" rel="alternate" title="Tom Preston-Werner" type="application/atom+xml" />
    <meta name="readability-verification" content="QCzSs992GxmRYRKVpPeZ6LE2tS8aYKxsSSQKV8YM"/>
 
-   <!-- syntax highlighting CSS -->
-   <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
-
    <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection" />
+   <link rel="stylesheet" href="/css/style-default.css" type="text/css" media="screen, projection" />
+    
+   <script src="/js/prettify/prettify.js" type="text/javascript"></script>
+   <link rel="stylesheet" href="/js/prettify/prettify.css" type="text/css" media="screen, projection" />
 
-   <!-- Typekit -->
-   <script type="text/javascript" src="http://use.typekit.com/jpd0pfm.js"></script>
-   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
-<body>
+<body class="home blog" onload="prettyPrint()">
 
-<!-- ClickTale Top part -->
-<script type="text/javascript">
-var WRInitTime=(new Date()).getTime();
-</script>
-<!-- ClickTale end of Top part -->
+<div id="header">
+    <h1 class="siteName">
+        <a href="/" title="WEB&amp;软件开发">Python&amp;PHP - er</a>
+    </h1>
+    <p class="description">——生活因编程而充实，时光因开发而快乐，做一个有追求的程序员！</p>
+                
+</div>
+<div class="clear"></div>
 
-<div class="site">
-  <div class="title">
-    <a href="/">Tom Preston-Werner</a>
-    <a class="extra" href="/">home</a>
-  </div>
-  
-  {{ content }}
-  
+<div class="site" id="content">
+    <div id="outbox">
+      <div class="title">
+          <div id="globalNavi">
+              <ul id="menu-a" class="menu">
+                  <li id="menu-item-419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419"><a href="/">Home</a></li>
+                  <li id="menu-item-419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419"><a href="/archives.html">Archives</a></li>
+                  <li id="menu-item-420" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-420"><a href="#">Skills</a>
+                  <ul class="sub-menu">
+                      <li id="menu-item-421" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421"><a href="/python_skill.html">python小技巧集锦</a></li>
+                      <li id="menu-item-422" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-422"><a href="/vim_skill.html">vim使用技巧集锦</a></li>
+                      <li id="menu-item-431" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-431"><a href="/macbook_skill.html">MacBook Pro使用</a></li>
+                  </ul>
+                  </li>
+                  <li id="menu-item-424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-424"><a href="/about.html">AboutMe</a></li>
+              </ul>
+              <form role="search" method="get" id="searchform" action="">
+                  <div><label class="screen-reader-text" for="s">搜索：</label>
+                      <input type="text" value="" name="s" id="s">
+                      <input type="submit" id="searchsubmit" value="搜索">
+                  </div>
+              </form>
+          </div>
+      </div>
+      <div class="clear"></div>
+
+          {{ content }}
+
+    </div> 
   <div class="footer">
-    <div class="contact">
-      <p>
-        Tom Preston-Werner<br />
-        Cofounder of <a href="http://github.com/">GitHub</a><br />
-        tom@mojombo.com
-      </p>
-    </div>
-    <div class="contact">
-      <p>
-        <a href="http://github.com/mojombo/">github.com/mojombo</a><br />
-        <a href="http://twitter.com/mojombo/">twitter.com/mojombo</a><br />
-        <a href="http://flickr.com/photos/mojombo/">flickr.com/photos/mojombo</a>
-      </p>
-    </div>
-    <div class="rss">
-      <a href="http://feeds.feedburner.com/tom-preston-werner">
-        <img src="/images/rss.png" alt="Subscribe to RSS Feed" />
-      </a>
-    </div>
+
   </div>
 </div>
 
-<a href="http://github.com/luchanghong"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
-
-<!-- ClickTale Bottom part -->
-<div id="ClickTaleDiv" style="display: none;"></div>
-<script type="text/javascript">
-if(document.location.protocol!='https:')
-  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-if(typeof ClickTale=='function') ClickTale(206,0.3,"www03");
-</script>
-<!-- ClickTale end of Bottom part -->
-
 <!-- Google Analytics -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-var pageTracker = _gat._getTracker("UA-6016902-1");
-pageTracker._trackPageview();
-</script>
+
 <!-- Google Analytics end -->
 
 </body>

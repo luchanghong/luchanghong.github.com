@@ -12,7 +12,7 @@ Python对excel的操作，有篇文章提到过，<a title="python对EXCEL表格
 第一步，当然是把数据组成一个excel，方法就在上面说的那篇文章里，不同的是最后保存的时候，不是直接保存一个.xls文件，而是借助 StringIO 这个模块，他可以把文件放在内存里操作，不用直接保存到磁盘上。
 
 第二步，就是数据处理后我们返回一个Response，指定他的content_type。
-<pre>[python]
+<pre><pre class="prettyprint">
 from pyramid.config import Configurator
 from pyramid.view import view_config
 from pyramid.response import Response
@@ -31,4 +31,4 @@ def export_excel():
     ws.save(out_put)
 
     return Response(body = out_put.getvalue(), content_type = 'application/x-xls;', content_disposition = 'attachment; filename = test.xls;')
-[/python]</pre>
+</pre></pre>

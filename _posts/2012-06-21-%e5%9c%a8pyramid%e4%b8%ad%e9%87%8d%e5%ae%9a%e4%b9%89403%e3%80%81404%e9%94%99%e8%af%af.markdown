@@ -12,24 +12,24 @@ pyramid默认有403、404等出错处理机制，在pyramid.httpexceptions中可
 在初始化myproject/__init__.py中：
 
 方法一、
-<pre>[python]
+<pre><pre class="prettyprint">
 from pyramid.config import Configurator
 config = Configurator()
 config.add_forbidden_view(forbidden, renderer = '/templates/403.html')
 def forbidden(request):
     return {}
-[/python]</pre>
+</pre></pre>
 <pre>当然还有一个add_notfound_view。</pre>
 方法二、
 
-[python]
+<pre class="prettyprint">
 <pre>from pyramid.config import Configurator
 from pyramid.httpexceptions import HTTPForbidden
 config = Configurator()
 config.add_view(forbidden, context = HTTPForbidden, renderer = '/templates/403.html')
 def forbidden(request):
     return {}
-[/python]</pre>
+</pre></pre>
 这里定义一个普通的VIEW，设置context参数为HTTPForbidden，同理也有HTTPNotFound
 
 如果不定义renderer，那么要返回一个Response对象才行。

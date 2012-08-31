@@ -3,11 +3,33 @@ layout: default
 title: Tom Preston-Werner
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+<div id="main">
+    {% for post in site.posts limit:5 %}
+        <div class="post">
+            <h2 class="entry-title">
+                <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+            </h2>
+            <p class="info">
+                <span class="dateinfo">{{ post.date | date_to_string }}</span>
+                <span class="catinfo">分类:</span>
+                <span class="cmtinfo"><a href="{{ post.url }}#disqus_thread" title="《{{ post.title }}》上的评论">0</a></span>
+            </p>
+            <div class="clear"></div>
+            <div class="indexentry">{{ post.content }}</div>
+            <div class="clear"></div>
+        </div>
     {% endfor %}
-  </ul>
 </div>
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'pythonandphp'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>

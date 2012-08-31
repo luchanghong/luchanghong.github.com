@@ -17,15 +17,19 @@ date: 2012-08-27 17:35:54 +08:00
 
 看<a href="https://help.github.com/articles/generating-ssh-keys" target="_blank">官方的帮助文档</a>，命令
 
-    ssh-keygen -t rsa -C xxxxx
+<pre class="prettyprint">
+ssh-keygen -t rsa -C xxxxx
+</pre>
 刚开始以为-C参数必须使用github对应的账号，所以导致我登陆其他服务器的id_rsa不能和github的id_rsa同时使用，很郁闷，不过随后经过证实这个是自定义的，那么我就仍然用同一对key。
 
 <a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/08/B5FBBC28-77A8-4EE3-B2BD-66CE36E18305.jpg"><img class="alignnone size-full wp-image-527" title="B5FBBC28-77A8-4EE3-B2BD-66CE36E18305" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/08/B5FBBC28-77A8-4EE3-B2BD-66CE36E18305.jpg" alt="" width="650" height="123" /></a>
 
 前一个title是手动指定-C参数生成的，后一个是不写-C参数自动生成的。完了之后测试
 
-    lchmatoMacBook-Pro:.ssh lch$ ssh -T git@github.com
-    Hi luchanghong! You've successfully authenticated, but GitHub does not provide shell access.
+<pre class="prettyprint">
+lchmatoMacBook-Pro:.ssh lch$ ssh -T git@github.com
+Hi luchanghong! You've successfully authenticated, but GitHub does not provide shell access.
+</pre>
 
 <strong>安装git</strong>
 

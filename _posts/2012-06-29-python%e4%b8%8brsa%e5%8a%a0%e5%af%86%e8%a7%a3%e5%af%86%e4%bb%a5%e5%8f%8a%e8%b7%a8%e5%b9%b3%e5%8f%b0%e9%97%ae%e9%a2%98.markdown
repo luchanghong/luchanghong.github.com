@@ -21,10 +21,10 @@ RSA格式：PEM
 
 1、使用rsa库
 
-安装[shell]pip install rsa[/shell]
+安装<pre class="prettyprint">pip install rsa</pre>
 
 可以生成RSA公钥和密钥，也可以load一个.pem文件进来。
-<pre>[python]
+<pre><pre class="prettyprint">
 # -*- coding: utf-8 -*-
 __author__ = 'luchanghong'
 import rsa
@@ -61,11 +61,11 @@ print message
 signature = rsa.sign(message, privkey, 'SHA-1')
 rsa.verify('hello', signature, pubkey)
 
-[/python]</pre>
+</pre></pre>
 2、使用M2Crypto
 
 python关于RSA的库还是蛮多的，当然也可以直接用openSSL。M2Crypto安装的时候比较麻烦，虽然官网有exe的安装文件，但是2.6的有bug，建议使用0.19.1版本，最新的0.21.1有问题。
-<pre>[python]
+<pre><pre class="prettyprint">
 # -*- coding: utf-8 -*-
 __author__ = 'luchanghong'
 from M2Crypto import RSA,BIO
@@ -86,7 +86,7 @@ encrypted = pub_key.public_encrypt(message, RSA.pkcs1_padding)
 decrypted = priv_key.private_decrypt(encrypted, RSA.pkcs1_padding)
 
 print decrypted
-[/python]</pre>
+</pre></pre>
 用法差不多一致。load密钥的方式也有好几种。
 
 二、跨平台密钥不统一

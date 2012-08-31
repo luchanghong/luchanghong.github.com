@@ -12,13 +12,13 @@ date: 2012-07-26 16:19:45 +08:00
 二、再构造7行数字
 
 第一步已经实现了两行数字——两个数组，那么根据第二行的构造方法再来实现剩下的7行吧。为了看清楚上一篇文章说的那个特殊情况，就把那个数字用“X”代替，这个过程很简单，就是一个for循环。
-<pre>[python]
+<pre><pre class="prettyprint">
 # _*_ coding:utf8 _*_
 import random
 
 def get_rand_item(l):
     random.shuffle(l)
-    return l[0]
+    return l<pre class="prettyprint">
 
 # init number list
 num_list = range(1, 10)
@@ -34,7 +34,7 @@ for j in range(0, 9):
     # 已经出现过的数字
     select_list = list(new_row)
     # 第一行同一个位置的数字
-    select_list.append(row_1[j])
+    select_list.append(row_1<pre class="prettyprint">)
     #print select_list
 
     # 和初始数组的差集
@@ -46,7 +46,7 @@ for j in range(0, 9):
         #print remain_list
         #print new_row
     else:
-        new_row.append(row_1[j])
+        new_row.append(row_1<pre class="prettyprint">)
 
 print new_row
 
@@ -58,7 +58,7 @@ sudoko_list.append(row_1)
 for i in range(1,9):
     new_row = list()
     for j in range(0, 9):
-        col_select = [x[j] for x in sudoko_list]
+        col_select = [x<pre class="prettyprint"> for x in sudoko_list]
         row_select = list(new_row)
         select_list = col_select + row_select
 
@@ -73,9 +73,9 @@ for i in range(1,9):
 
 for l in sudoko_list:
     print l
-[/python]</pre>
+</pre></pre>
 方便对比，我把第一步代码也写在上面了，最终得到一个二维数组
-<pre>[shell][4, 1, 5, 9, 8, 6, 2, 7, 3]
+<pre><pre class="prettyprint">[4, 1, 5, 9, 8, 6, 2, 7, 3]
 [1, 5, 6, 4, 3, 9, 8, 2, 7]
 ------------------------------
 [4, 1, 5, 9, 8, 6, 2, 7, 3]
@@ -86,5 +86,5 @@ for l in sudoko_list:
 [8, 3, 2, 4, 6, 5, 1, 9, 'X']
 [1, 9, 8, 3, 7, 'X', 5, 6, 4]
 [2, 4, 6, 8, 3, 7, 'X', 1, 9]
-[7, 8, 4, 2, 'X', 9, 3, 5, 6][/shell]</pre>
+[7, 8, 4, 2, 'X', 9, 3, 5, 6]</pre></pre>
 这种特殊情况出现概率还蛮大的，那么接下来就要屏蔽掉这些特殊行。

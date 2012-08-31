@@ -15,24 +15,24 @@ date: 2012-06-12 18:00:51 +08:00
 
 在项目目录下执行：
 
-[shell]pcreate -s starter myproject[/shell]
+<pre class="prettyprint">pcreate -s starter myproject</pre>
 
 这个命令应该很熟悉了吧，pcreate是装了pyramid之后在python/Scripts/目录生成的一个可执行文件，通常把python/Scripts/加入到系统环境变量以方便使用。
 
 然后，以develop的方式来run我们的项目，production.ini则是生产环境（线上）的配置文件：
 
-[shell]python setup.py develop[/shell]
+<pre class="prettyprint">python setup.py develop</pre>
 
 如果项目多人参与开发，那么每个人都可以拷贝一份development.ini根据当前开发环境来配置，然后以此来run项目：
 
-[shell]pserve my_development.ini --reload[/shell]
+<pre class="prettyprint">pserve my_development.ini --reload</pre>
 
 reload参数说明：当修改项目下的.py文件或者配置文件后pserve自动重启，方便开发调试。
 
 二、配置development.ini
 
 你可以在这里设置一些配置，比如mysql的主机、用户名、密码，debug是否开启，如：
-[shell]
+<pre class="prettyprint">
 ; For mysql
 mysql.host = localhost
 mysql.port = 3306
@@ -40,12 +40,12 @@ mysql.user = root
 mysql.passwd = root
 mysql.db = myproject
 mysql.charset = utf8
-[/shell]
+</pre>
 
-引用的时候可以这样写：[python]settings['mysql.host'][/python]
+引用的时候可以这样写：<pre class="prettyprint">settings['mysql.host']</pre>
 
 数据库的连接状态我们肯定想一直保持，要不然每次都要connect一下很麻烦，所以可以在myproject/__init__.py里面把db_connect放在request里面，方便调用：
-<pre>[python]
+<pre><pre class="prettyprint">
 import pymysql
 from pyramid.config import Configurator
 from pyramid.events import NewRequest
@@ -63,7 +63,7 @@ def main(global_config, **settings):
             passwd = db_pass, db = db_name, charset = db_charset)
         event.request.db = conn.cursor()
     config.add_subscriber(add_mysql_db, NewRequest)
-[/python]</pre>
+</pre></pre>
 三、route &amp; view
 
 在上面那个__init__.py里面有一个home的route，可以看到写法。route和view是成对出现的，项目里面的route很多，如果都写在这不方便管理，所以我们新建一个文件专门存放route，view不必非要紧挨着route，仔细看配置文件会发现config.scan()，他会帮我们快速配对route和view，通常config.scan(‘myproject’)，应该很容易理解吧（myproject相当于一个package）。
@@ -74,30 +74,30 @@ route的写法可以查看pyramid文档，就不在此啰嗦了，后面我把�
 
 pyramid默认使用mako模板引擎，mako默认支持.pt后缀的模板文件，我们常用.html，所以要配置一下，很简单，在上面那个__init__.py的main()函数里加上：
 
-[python]config.add_renderer('.html', 'pyramid.mako_templating.renderer_factory')[/python]
+<pre class="prettyprint">config.add_renderer('.html', 'pyramid.mako_templating.renderer_factory')</pre>
 
 在development.ini文件里制定mako模板路径：
-[shell]
+<pre class="prettyprint">
 ; For Mako Template
 mako.directories = myproject:templates
 mako.strict_undefined = true
-[/shell]
+</pre>
 
 五、session factory
 
 关于session，一般设定方式如下：
 
-[python]
+<pre class="prettyprint">
 import pyramid_beaker
 # set session factory
 session_factory = pyramid_beaker.session_factory_from_settings (settings)
 config.set_session_factory (session_factory)
 pyramid_beaker.set_cache_regions_from_settings (settings)
-[/python]
+</pre>
 
 也要在development.ini设置一下：
 
-[shell]
+<pre class="prettyprint">
 ; For pyramid_beaker
 session.type = file
 session.data_dir = %(here)s/data/sessions/data
@@ -111,7 +111,7 @@ session.cookie_on_exception = true
 ;cache.short_term.expire = 60
 ;cache.default_term.expire = 300
 ;cache.long_term.expire = 3600
-[/shell]
+</pre>
 
 分号是注释作用。
 
@@ -122,7 +122,7 @@ session.cookie_on_exception = true
 这个有点小复杂，可以看手册里面security和resources。资源--权限--角色--用户这个思路，理解起来就是赋予用户某些角色，然后是对资源授权，注意：权限是角色固有的，而非和用户绑定在一起，以后有时间好好分享一下。
 
 以上六步算是比较完整的了。development.ini配置较简单，下面是myproject/__init__.py的配置：
-<pre>[python]
+<pre><pre class="prettyprint">
 import pymysql,pymongo
 import pyramid_beaker
 from pyramid.config import Configurator
@@ -170,19 +170,19 @@ def main(global_config, **settings):
     add_web_route(config)
     config.scan('myproject')
     return config.make_wsgi_app()
-[/python]</pre>
+</pre></pre>
 下面是myproject/urls.py:
-<pre>[python]
+<pre><pre class="prettyprint">
 # -*- coding: utf-8 -*-
 __author__ = 'luchanghong'
 
 def add_web_route(config):
     # web common
     config.add_route (name = 'web.index', pattern = '/')
-[/python]</pre>
+</pre></pre>
 下面是development.ini:
 
-[shell]
+<pre class="prettyprint">
 
 [app:main]
 use = egg:myproject
@@ -231,35 +231,35 @@ port = 6543
 
 # Begin logging configuration
 
-[loggers]
+<pre class="prettyprint">
 keys = root, myproject
 
-[handlers]
+<pre class="prettyprint">
 keys = console
 
-[formatters]
+<pre class="prettyprint">
 keys = generic
 
-[logger_root]
+<pre class="prettyprint">
 level = INFO
 handlers = console
 
-[logger_myproject]
+<pre class="prettyprint">
 level = DEBUG
 handlers =
 qualname = myproject
 
-[handler_console]
+<pre class="prettyprint">
 class = StreamHandler
 args = (sys.stderr,)
 level = NOTSET
 formatter = generic
 
-[formatter_generic]
+<pre class="prettyprint">
 format = %(asctime)s %(levelname)-5.5s [%(name)s][%(threadName)s] %(message)s
 
 # End logging configuration
 
-[/shell]
+</pre>
 
 注意我的项目名称是：myproject

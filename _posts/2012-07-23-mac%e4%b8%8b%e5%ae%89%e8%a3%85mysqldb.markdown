@@ -23,14 +23,14 @@ date: 2012-07-23 13:52:29 +08:00
 
 解压下载的tar包，修改site.cfg配置文件：
 
-[code]#mysql_config = /usr/local/bin/mysql_config[/code]
+<pre class="prettyprint">#mysql_config = /usr/local/bin/mysql_config</pre>
 
 把注释符号#去掉，后面的路径就是mysql_config的路径，在我的mac上是/usr/local/mysql/bin/mysql_config
 
 3.build and install
 
-[shell]python setup.py build
+<pre class="prettyprint">python setup.py build
 
-python setup.py install[/shell]
+python setup.py install</pre>
 
 &nbsp;

@@ -15,7 +15,7 @@ date: 2012-07-24 16:23:14 +08:00
 
 1、修改httpd.conf
 
-把下面一行的注释解开[shell]#Include /private/etc/apache2/extra/httpd-vhosts.conf[/shell]
+把下面一行的注释解开<pre class="prettyprint">#Include /private/etc/apache2/extra/httpd-vhosts.conf</pre>
 
 vi搜索Virtual hosts就可快速定位到这一行的上一行。
 
@@ -23,20 +23,20 @@ vi搜索Virtual hosts就可快速定位到这一行的上一行。
 
 添加一个虚拟域名配置
 
-[code]
+<pre class="prettyprint">
 
 &lt;VirtualHost *:80&gt;
 DocumentRoot "/Users/lch/Sites/phpmyadmin"
 ServerName phpmyadmin.com
 &lt;/VirtualHost&gt;
 
-[/code]
+</pre>
 
 3、修改extra/httpd-usrdir.conf
 
 添加对应的文件权限
 
-[code]
+<pre class="prettyprint">
 
 &lt;Directory "/Users/lch/Sites/phpmyadmin"&gt;
 Options Indexes FollowSymLinks
@@ -45,21 +45,21 @@ Order allow,deny
 Allow from all
 &lt;/Directory&gt;
 
-[code]
+<pre class="prettyprint">
 
 4、修改系统hosts文件 /etc/hosts
 
-添加一行[code]127.0.0.1        phpmyadmin.com[/code]
+添加一行<pre class="prettyprint">127.0.0.1        phpmyadmin.com</pre>
 
 5、重启apache
 
 如果没有启动就直接start，要不然就restart
 
-[shell]sudo apachectl restart[/shell]
+<pre class="prettyprint">sudo apachectl restart</pre>
 
 然后检查apche是否启动成功
 
-[shell]ps -ef | grep httpd[/shell]
+<pre class="prettyprint">ps -ef | grep httpd</pre>
 
 <span style="color: #ff0000;">注意：以上操作都是在web共享关闭情况下进行的</span>
 

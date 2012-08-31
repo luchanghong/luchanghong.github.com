@@ -12,9 +12,9 @@ mongo很慢，突然！果断分析一下。
 一、mongo自带工具
 <ul>
 	<li>mongotop
-用法：[shell]mongotop --host 192.168.1.111[/shell] 主要是查看每秒读写排名靠前的几个数据集。</li>
+用法：<pre class="prettyprint">mongotop --host 192.168.1.111</pre> 主要是查看每秒读写排名靠前的几个数据集。</li>
 	<li>mongostat
-用法：[shell]mongostat --host 192.168.1.111[/shell]查看整个mongo的状态，主要看faults和miss：faults表示每秒错误数（linux下才有此统计项），如果大于100就要看一下服务器内存是否够用了；miss最好控制50%以下。另外看一下整体的I/O流量对比，还有查询的方法（query/insert/update/delete）的比例等等。</li>
+用法：<pre class="prettyprint">mongostat --host 192.168.1.111</pre>查看整个mongo的状态，主要看faults和miss：faults表示每秒错误数（linux下才有此统计项），如果大于100就要看一下服务器内存是否够用了；miss最好控制50%以下。另外看一下整体的I/O流量对比，还有查询的方法（query/insert/update/delete）的比例等等。</li>
 </ul>
 二、进入mongo的shell里面
 <ul>
