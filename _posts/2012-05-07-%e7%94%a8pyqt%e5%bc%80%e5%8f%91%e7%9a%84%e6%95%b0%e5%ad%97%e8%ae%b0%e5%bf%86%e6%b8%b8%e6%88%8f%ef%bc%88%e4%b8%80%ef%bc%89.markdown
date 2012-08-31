@@ -11,10 +11,10 @@ title: !binary |
 
 目前我把界面做出来了，随机出现的数字也有了，截图：
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/memory.jpg"><img class="alignnone size-full wp-image-160" title="memory" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/memory.jpg" alt="" width="420" height="436" /></a>
+<a href="/upload/2012/05/memory.jpg"><img class="alignnone size-full wp-image-160" title="memory" src="/upload/2012/05/memory.jpg" alt="" width="420" height="436" /></a>
 
 这样在数字被隐藏之后，由于每一个单元格都是一样的样式，所以这个难度太大，果断把没有数字的单元格背景去掉，如下图：
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/memory2.jpg"><img class="alignnone size-full wp-image-161" title="memory2" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/memory2.jpg" alt="" width="420" height="436" /></a>
+<a href="/upload/2012/05/memory2.jpg"><img class="alignnone size-full wp-image-161" title="memory2" src="/upload/2012/05/memory2.jpg" alt="" width="420" height="436" /></a>
 
 第一次点击的时候游戏正式开始，当然会有个类似计数器的东西，第一次点击把所有数字隐藏，而且判断是不是1，依次累加即可做出相应的判断。当完成一次的时候，可以进入下一关，也就是多一个数字，挺有意思的益智小游戏吧。

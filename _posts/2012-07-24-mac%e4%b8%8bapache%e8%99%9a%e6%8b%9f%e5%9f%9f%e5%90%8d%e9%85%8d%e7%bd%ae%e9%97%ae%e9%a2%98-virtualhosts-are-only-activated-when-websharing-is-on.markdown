@@ -65,11 +65,11 @@ Allow from all
 
 到此，在浏览器输入配置的域名却提示404 NOT FOUND
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/07/QQ20120724-1.png"><img class="alignnone size-full wp-image-451" title="QQ20120724-1" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/07/QQ20120724-1.png" alt="" width="735" height="229" /></a>
+<a href="/upload/2012/07/QQ20120724-1.png"><img class="alignnone size-full wp-image-451" title="QQ20120724-1" src="/upload/2012/07/QQ20120724-1.png" alt="" width="735" height="229" /></a>
 
 配置肯定是没有问题了，网上的教程也是这么说的，但是我把web共享打开就可以了，那么到底问题出在哪里？一直困扰我两天，终于忍不住了通读httpd.conf配置文件。结果发现了坑爹的地方，有图为证：
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/07/QQ20120724-3.png"><img class="alignnone size-full wp-image-452" title="QQ20120724-3" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/07/QQ20120724-3.png" alt="" width="570" height="478" /></a>
+<a href="/upload/2012/07/QQ20120724-3.png"><img class="alignnone size-full wp-image-452" title="QQ20120724-3" src="/upload/2012/07/QQ20120724-3.png" alt="" width="570" height="478" /></a>
 
 只有WEBSHARING_ON才行，直接注释掉这两行，重启apache，终于OK了。
 

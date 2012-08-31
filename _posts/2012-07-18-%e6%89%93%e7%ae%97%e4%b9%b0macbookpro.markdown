@@ -11,7 +11,7 @@ title: !binary |
 
 估计好多人都想有自己的Mac吧，没有money之前先跑个虚拟机玩玩也不错，分享一下一个很详细的教程：<a href="http://www.2cto.com/os/201201/116746.html">http://www.2cto.com/os/201201/116746.html</a>
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/07/20120718171748.jpg"><img class="alignnone size-full wp-image-401" title="20120718171748" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/07/20120718171748.jpg" alt="" width="1028" height="588" /></a>
+<a href="/upload/2012/07/20120718171748.jpg"><img class="alignnone size-full wp-image-401" title="20120718171748" src="/upload/2012/07/20120718171748.jpg" alt="" width="1028" height="588" /></a>
 
 &nbsp;
 

@@ -84,7 +84,7 @@ urlpatterns = patterns('polls.views',
 
 那么，先不解开注释，直接访问，前提是把DEBUG关了，<a href="http://localhost:8000/">http://localhost:8000/</a>：
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/404-1.jpg"><img class="alignnone size-full wp-image-247" title="404-1" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/404-1.jpg" alt="" width="459" height="172" /></a>
+<a href="/upload/2012/05/404-1.jpg"><img class="alignnone size-full wp-image-247" title="404-1" src="/upload/2012/05/404-1.jpg" alt="" width="459" height="172" /></a>
 
 接着，在mysite/templates/下建立404.html，随便写点东西，解开注释，在mysite/views.py里面写VIEW：
 <pre class="prettyprint">
@@ -97,10 +97,10 @@ from django.shortcuts import render_to_response
 def home(request):
     raise Http404
 </pre>
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/404page.jpg"><img class="alignnone size-full wp-image-248" title="404page" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/404page.jpg" alt="" width="459" height="172" /></a>
+<a href="/upload/2012/05/404page.jpg"><img class="alignnone size-full wp-image-248" title="404page" src="/upload/2012/05/404page.jpg" alt="" width="459" height="172" /></a>
 
 怎样出个500 server error呢？还是先建立一个500页面，然后把400.html删掉，当raise一个404但是却找不到404.html的时候就会抛出500.html了。
 
 类似的，app也有他自己的404/500页面，当然建立在他自己的模板目录下。
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/files.jpg"><img class="alignnone size-full wp-image-249" title="files" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/files.jpg" alt="" width="191" height="485" /></a>
+<a href="/upload/2012/05/files.jpg"><img class="alignnone size-full wp-image-249" title="files" src="/upload/2012/05/files.jpg" alt="" width="191" height="485" /></a>

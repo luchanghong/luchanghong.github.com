@@ -9,7 +9,7 @@ title: !binary |
 ---
 昨天在地铁看见有人拿着pad玩数独游戏，说“数独”估计好多人都蒙了，看下游戏截图就明白了，记得上初中的时候在电子词典上玩过。
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/07/sudoko.jpg"><img class="alignnone size-full wp-image-457" title="sudoko" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/07/sudoko.jpg" alt="" width="410" height="410" /></a>
+<a href="/upload/2012/07/sudoko.jpg"><img class="alignnone size-full wp-image-457" title="sudoko" src="/upload/2012/07/sudoko.jpg" alt="" width="410" height="410" /></a>
 
 &nbsp;
 

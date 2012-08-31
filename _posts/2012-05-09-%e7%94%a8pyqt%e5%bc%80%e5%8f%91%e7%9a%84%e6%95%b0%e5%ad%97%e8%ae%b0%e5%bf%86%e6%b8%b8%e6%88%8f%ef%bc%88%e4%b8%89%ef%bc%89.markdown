@@ -11,6 +11,6 @@ title: !binary |
 
 如果不能玩，就下载个vs2008装上~~~
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/memory1.jpg"><img class="alignnone size-full wp-image-180" title="memory" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/memory1.jpg" alt="" width="420" height="436" /></a>
+<a href="/upload/2012/05/memory1.jpg"><img class="alignnone size-full wp-image-180" title="memory" src="/upload/2012/05/memory1.jpg" alt="" width="420" height="436" /></a>
 
 代码很简单，暂不分享了，有想要的可以留下邮箱，我会发email

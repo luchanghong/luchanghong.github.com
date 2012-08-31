@@ -9,7 +9,7 @@ title: python GUI develop--pyQT
 
 昨天尝试了一下wxPython，配套开发软件选用的是wxGlade，感觉界面很古老的样子，像是80/90年代的计算机软件界面。
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/wxglade.jpg"><img class="alignnone size-full wp-image-135" title="wxglade" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/wxglade.jpg" alt="" width="734" height="363" /></a>
+<a href="/upload/2012/04/wxglade.jpg"><img class="alignnone size-full wp-image-135" title="wxglade" src="/upload/2012/04/wxglade.jpg" alt="" width="734" height="363" /></a>
 
 虽然是个GUI工具，主要的就是布局了，但是它可不支持拖动，操作手感不是很好。另外发现，虽然可以支持中文，但是保存之后再次打开编辑，有中文的组件会全部丢失，这点最悲剧了。
 
@@ -27,6 +27,6 @@ title: python GUI develop--pyQT
 
 装好了QT之后，看一下Examples and Demos，马上就被吸引了。
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/qt.jpg"><img class="alignnone size-full wp-image-136" title="qt" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/qt.jpg" alt="" width="804" height="598" /></a>
+<a href="/upload/2012/04/qt.jpg"><img class="alignnone size-full wp-image-136" title="qt" src="/upload/2012/04/qt.jpg" alt="" width="804" height="598" /></a>
 
 QT大部分都是用C++开发的，但是QT跨平台和移植性都很强悍，用Python开发的应用都可以移植到其他平台上用。在移动互联网，QT程序可以移植到symbian手机上，现在Nokia又和Microsoft合作推出winphone系统，将来也有可能让QT支持winphone哦，Android和iOS也都说不定哦，前途还是很不错的嘛。

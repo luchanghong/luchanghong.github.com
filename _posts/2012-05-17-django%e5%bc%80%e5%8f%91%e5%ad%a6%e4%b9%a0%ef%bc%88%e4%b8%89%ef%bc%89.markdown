@@ -54,11 +54,11 @@ urlpatterns = patterns('',
 
 此时，进入后台<a href="http://localhost:8000/admin/">http://localhost:8000/admin/</a>
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/admin-logo.jpg"><img class="alignnone size-full wp-image-223" title="admin-logo" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/admin-logo.jpg" alt="" width="592" height="385" /></a>
+<a href="/upload/2012/05/admin-logo.jpg"><img class="alignnone size-full wp-image-223" title="admin-logo" src="/upload/2012/05/admin-logo.jpg" alt="" width="592" height="385" /></a>
 
 这里的后台用户名和密码，在第一次跑数据库（run上面的命令）的时候会有提示是否添加后台管理员帐户，如果没有添加，在数据库的auth_user数据表添加一条数据，is_active、is_superuser字段设为1即可，然后登录进去。
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/admin-manage.jpg"><img class="alignnone size-full wp-image-224" title="admin-manage" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/admin-manage.jpg" alt="" width="526" height="199" /></a>
+<a href="/upload/2012/05/admin-manage.jpg"><img class="alignnone size-full wp-image-224" title="admin-manage" src="/upload/2012/05/admin-manage.jpg" alt="" width="526" height="199" /></a>
 
 二、在后台添加polls应用管理
 
@@ -80,7 +80,7 @@ admin.site.register(Choice)
 
 刷新一下页面，就会看到polls的两个数据模型对象被添加进来了：
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/admin-polls.jpg"><img class="alignnone size-full wp-image-225" title="admin-polls" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/admin-polls.jpg" alt="" width="526" height="273" /></a>
+<a href="/upload/2012/05/admin-polls.jpg"><img class="alignnone size-full wp-image-225" title="admin-polls" src="/upload/2012/05/admin-polls.jpg" alt="" width="526" height="273" /></a>
 
 接下来就去点点看具体的功能吧，其实无非就是数据操作：增删改查。
 

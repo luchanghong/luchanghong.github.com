@@ -63,7 +63,7 @@ INSTALLED_APPS = (
 
 <pre class="prettyprint">python manage.py sql polls</pre>
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/django-app.jpg"><img class="alignnone size-full wp-image-211" title="django-app" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/django-app.jpg" alt="" width="681" height="339" /></a>
+<a href="/upload/2012/05/django-app.jpg"><img class="alignnone size-full wp-image-211" title="django-app" src="/upload/2012/05/django-app.jpg" alt="" width="681" height="339" /></a>
 
 上图的SQL语句应该很熟悉吧，不过还没真正的执行，只是显示出来，所以数据库还是没有变化的。在执行之前检查一下错误，然后在执行：
 <pre class="prettyprint">
@@ -84,7 +84,7 @@ sqlindexes commands.
 
 执行成功之后，去数据库看一下创建了polls_poll和polls_choice这两个表。
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/Django-table.jpg"><img class="alignnone size-full wp-image-212" title="Django-table" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/Django-table.jpg" alt="" width="573" height="379" /></a>
+<a href="/upload/2012/05/Django-table.jpg"><img class="alignnone size-full wp-image-212" title="Django-table" src="/upload/2012/05/Django-table.jpg" alt="" width="573" height="379" /></a>
 
 三、使用API
 

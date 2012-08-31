@@ -29,7 +29,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 
 </pre>
-<pre><a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/mainwindow1.jpg"><img class="alignnone size-full wp-image-154" title="mainwindow1" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/mainwindow1.jpg" alt="" width="220" height="136" /></a></pre>
+<pre><a href="/upload/2012/05/mainwindow1.jpg"><img class="alignnone size-full wp-image-154" title="mainwindow1" src="/upload/2012/05/mainwindow1.jpg" alt="" width="220" height="136" /></a></pre>
 <pre>我们还可以给这个mainWindow设置一些属性，如宽高、标题等。</pre>
 <pre>二、设置menuBar</pre>
 <ol>
@@ -68,7 +68,7 @@ if __name__ == '__main__':
     sys.exit(app.exec_())
 
 </pre>
-<pre><a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/mainwindow2.jpg"><img class="alignnone size-full wp-image-156" title="mainwindow2" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/mainwindow2.jpg" alt="" width="420" height="336" /></a></pre>
+<pre><a href="/upload/2012/05/mainwindow2.jpg"><img class="alignnone size-full wp-image-156" title="mainwindow2" src="/upload/2012/05/mainwindow2.jpg" alt="" width="420" height="336" /></a></pre>
 三、添加多个菜单
 类似上面的做发，继续添加menu，在menu上绑定action，就可以添加多个菜单了。
 <pre class="prettyprint">
@@ -108,5 +108,5 @@ if __name__ == '__main__':
     myWindow.show()
     sys.exit(app.exec_())
 </pre>
-<pre><a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/mainwindow3.jpg"><img class="alignnone size-full wp-image-155" title="mainwindow3" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/mainwindow3.jpg" alt="" width="420" height="336" /></a></pre>
+<pre><a href="/upload/2012/05/mainwindow3.jpg"><img class="alignnone size-full wp-image-155" title="mainwindow3" src="/upload/2012/05/mainwindow3.jpg" alt="" width="420" height="336" /></a></pre>
 比较简单的菜单栏就出来了，做的复杂点可以添加上快捷键、分割线、选中样式等等。菜单做好了也就等于应用程序的功能规划基本完成，下面就是每个子菜单action触发事件了，下篇文章再分享吧。

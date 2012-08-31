@@ -13,7 +13,7 @@ title: !binary |
 
 环境：WIN 7  32bit  + python2.7.2
 
-装paramiko之前要先安装pyCrypto，可以在网上搜索下载到，但是建议不要下载源码包，那样自己编译会很麻烦，我是在CSDN下载WIN下的编译好的可执行文件进行安装，我下载的是这个<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/pycrypto-2.3.win32-py2.7.rar">pycrypto-2.3.win32-py2.7</a>
+装paramiko之前要先安装pyCrypto，可以在网上搜索下载到，但是建议不要下载源码包，那样自己编译会很麻烦，我是在CSDN下载WIN下的编译好的可执行文件进行安装，我下载的是这个<a href="/upload/2012/05/pycrypto-2.3.win32-py2.7.rar">pycrypto-2.3.win32-py2.7</a>
 
 pyCrypto安装好之后，再安装paramiko，这个可以用pip或者easy_install安装：
 

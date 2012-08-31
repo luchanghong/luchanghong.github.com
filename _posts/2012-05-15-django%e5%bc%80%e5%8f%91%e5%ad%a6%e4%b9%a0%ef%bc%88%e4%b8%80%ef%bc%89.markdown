@@ -30,9 +30,9 @@ Django：1.4   <a href="https://www.djangoproject.com/download/1.4/tarball/">h
 <pre>想到一部电影《chicken,run》，下面来run Django，进入mysite目录，命令：</pre>
 <pre>python manage.py runserver</pre>
 <pre>默认启用的是8000端口，当然你可以认为改变，只要不冲突，如下：</pre>
-<pre><a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/django.jpg"><img class="alignnone size-full wp-image-197" title="django" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/django.jpg" alt="" width="681" height="136" /></a></pre>
+<pre><a href="/upload/2012/05/django.jpg"><img class="alignnone size-full wp-image-197" title="django" src="/upload/2012/05/django.jpg" alt="" width="681" height="136" /></a></pre>
 <pre>OK，浏览器打开<a href="http://localhost:8080/">http://localhost:8080/</a>，It worked!</pre>
-<pre><a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/django2.jpg"><img class="alignnone size-full wp-image-198" title="django2" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/django2.jpg" alt="" width="670" height="586" /></a></pre>
+<pre><a href="/upload/2012/05/django2.jpg"><img class="alignnone size-full wp-image-198" title="django2" src="/upload/2012/05/django2.jpg" alt="" width="670" height="586" /></a></pre>
 <pre>停止服务的话，可不是一般的CTRL+C，看他说明：Quit the server with CTRL-BREAK. break键在哪，找找吧！</pre>
 <pre>四、连接数据库</pre>
 <pre>连接数据库就要找到配置文件了，在mysite\mysite\settings.py里面，我配置的是mysql。</pre>
@@ -70,5 +70,5 @@ INSTALLED_APPS = (
 )
 </pre>
 <pre>然后，敲一下命令：python manage.py syncdb，就会在数据库建立一些相关的数据表：</pre>
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/django3.jpg"><img class="alignnone size-full wp-image-199" title="django3" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/django3.jpg" alt="" width="595" height="333" /></a>
+<a href="/upload/2012/05/django3.jpg"><img class="alignnone size-full wp-image-199" title="django3" src="/upload/2012/05/django3.jpg" alt="" width="595" height="333" /></a>
 今天就学到这了，其实都是看官网documentation跟着做的，顺便吐槽一下：学编程不要对英文排斥、反感。

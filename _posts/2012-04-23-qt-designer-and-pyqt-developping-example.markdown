@@ -15,7 +15,7 @@ QT designer怎样把设计好的窗口程序转成Python代码呢？这是上周
 
 QT designer操作很简单，拖一下左边的组件，多练习就知道每个组件到底是什么、怎么用了。
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/QTdesigner.jpg"><img class="alignnone size-full wp-image-141" title="QTdesigner" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/QTdesigner.jpg" alt="" width="398" height="280" /></a>
+<a href="/upload/2012/04/QTdesigner.jpg"><img class="alignnone size-full wp-image-141" title="QTdesigner" src="/upload/2012/04/QTdesigner.jpg" alt="" width="398" height="280" /></a>
 
 完成之后保存为message.ui，路径：E:\python\pyQT
 
@@ -49,4 +49,4 @@ if __name__ == '__main__':
     app.exec_()
 </pre>
 <pre>然后，我们执行message_form.py这个文件就OK了：python message_form.py</pre>
-<pre><a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/message_form.jpg"><img class="alignnone size-full wp-image-142" title="message_form" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/message_form.jpg" alt="" width="402" height="281" /></a></pre>
+<pre><a href="/upload/2012/04/message_form.jpg"><img class="alignnone size-full wp-image-142" title="message_form" src="/upload/2012/04/message_form.jpg" alt="" width="402" height="281" /></a></pre>

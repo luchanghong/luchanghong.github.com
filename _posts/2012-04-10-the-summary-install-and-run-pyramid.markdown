@@ -11,7 +11,7 @@ title: "the summary \xE2\x80\x94 install and run pyramid"
 
 在安装相关的package的时候，由于是在线安装的，所以网速不给力的话会比较慢，说不定还会卡死，我中午就遇到这样的问题（见下面截图）。等不及就先去官网下载，不过还是pip或者easy_install比较好，装的package比较全，我们自己去官网找可能有点困难。
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/timeout.jpg"><img class="alignnone size-full wp-image-127" title="timeout" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/timeout.jpg" alt="" width="681" height="440" /></a>
+<a href="/upload/2012/04/timeout.jpg"><img class="alignnone size-full wp-image-127" title="timeout" src="/upload/2012/04/timeout.jpg" alt="" width="681" height="440" /></a>
 
 如果觉得虚拟环境比较别扭，那就直接装pyramid，然后创建一个project，接下来以develop的方式来跑一下setup.py，然后通过pserve启动项目。
 <ul>
@@ -23,4 +23,4 @@ title: "the summary \xE2\x80\x94 install and run pyramid"
 </ul>
 总结：多看文档，多操作，并且耐心。
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/pyramid.jpg"><img class="alignnone size-full wp-image-128" title="pyramid" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/pyramid.jpg" alt="" width="670" height="586" /></a>
+<a href="/upload/2012/04/pyramid.jpg"><img class="alignnone size-full wp-image-128" title="pyramid" src="/upload/2012/04/pyramid.jpg" alt="" width="670" height="586" /></a>

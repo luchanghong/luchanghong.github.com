@@ -76,7 +76,7 @@ OK，run command:
 
 首先，去腾讯开放平台，打开应用管理-》应用资料，设置QQ空间平台资料，设置应用开发地址：
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/qzone-config.jpg"><img class="alignnone size-full wp-image-252" title="qzone-config" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/qzone-config.jpg" alt="" width="518" height="385" /></a>
+<a href="/upload/2012/05/qzone-config.jpg"><img class="alignnone size-full wp-image-252" title="qzone-config" src="/upload/2012/05/qzone-config.jpg" alt="" width="518" height="385" /></a>
 
 然后，把VIEW修改一下：
 <pre class="prettyprint">
@@ -119,10 +119,10 @@ def index(request):
 </pre>
 完成这些，上图中有个“预览应用”，点击预览跳转到QQ空间：
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/qzone.jpg"><img class="alignnone size-full wp-image-255" title="qzone" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/qzone.jpg" alt="" width="774" height="425" /></a>
+<a href="/upload/2012/05/qzone.jpg"><img class="alignnone size-full wp-image-255" title="qzone" src="/upload/2012/05/qzone.jpg" alt="" width="774" height="425" /></a>
 
 这个流程就是这样的了，注意此时在本地访问<a href="http://localhost:8000/qq_open/">http://localhost:8000/qq_open/</a>肯定得不到结果的，因为少了好几个参数，这些参数是腾讯那边生成的，主要是做验证用的，关于腾讯开放平台的使用，感兴趣的可以去官网网站看看API接口规则等文档。
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/qq_open_files.jpg"><img class="alignnone size-full wp-image-258" title="qq_open_files" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/qq_open_files.jpg" alt="" width="213" height="484" /></a>
+<a href="/upload/2012/05/qq_open_files.jpg"><img class="alignnone size-full wp-image-258" title="qq_open_files" src="/upload/2012/05/qq_open_files.jpg" alt="" width="213" height="484" /></a>
 
 吐槽一下：这个研究老半天，因为openid和openkey不知道是怎么得到的，最后才明白去调试才能生成，另外，为了测试，我把PHP的那个SDK也跑了一下~！

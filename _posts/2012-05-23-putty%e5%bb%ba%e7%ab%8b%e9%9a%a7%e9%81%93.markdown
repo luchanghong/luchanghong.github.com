@@ -24,10 +24,10 @@ title: !binary |
 二、配置Putty
 <ol>
 	<li>配置信鸽：session -&gt; HostName
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/putty1.jpg"><img class="alignnone size-full wp-image-262" title="putty1" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/putty1.jpg" alt="" width="460" height="436" /></a>
+<a href="/upload/2012/05/putty1.jpg"><img class="alignnone size-full wp-image-262" title="putty1" src="/upload/2012/05/putty1.jpg" alt="" width="460" height="436" /></a>
 写上Saved Session（起个名字），然后Save</li>
 	<li>Connection -&gt; SSH -&gt; Tunnels
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/putty21.jpg"><img class="alignnone size-full wp-image-264" title="putty2" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/putty21.jpg" alt="" width="460" height="436" />
+<a href="/upload/2012/05/putty21.jpg"><img class="alignnone size-full wp-image-264" title="putty2" src="/upload/2012/05/putty21.jpg" alt="" width="460" height="436" />
 </a>然后点击“Add”</li>
 	<li>保存配置
 这里要注意，回到Session选项，然后save。可以再去 Connection -&gt; SSH -&gt; Tunnels看看有没有保存成功，如果OK，就Open即可。这样访问本地127.0.0.1:9000获取到的就是222.222.222.222:8000的信息了。</li>

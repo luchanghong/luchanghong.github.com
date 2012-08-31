@@ -41,4 +41,4 @@ if __name__ == '__main__':
 </pre>
 也许，会怀疑这样的效率，比如不同查找按大小顺序匹配，可能0用1次就查找到了，但是99就要100次才能查找，到所以我就把所有的数字查找次数放在一块比较了一下，发现最多查找也只有7次，最少的一次是49，注意我这里取的数组是0~99，综合一下还是二分法查找效率高~~~
 
-<a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/binary.jpg"><img class="alignnone size-full wp-image-191" title="binary" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/05/binary.jpg" alt="" width="681" height="258" /></a>
+<a href="/upload/2012/05/binary.jpg"><img class="alignnone size-full wp-image-191" title="binary" src="/upload/2012/05/binary.jpg" alt="" width="681" height="258" /></a>

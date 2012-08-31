@@ -15,7 +15,7 @@ title: !binary |
 
 1.安装python
 <p style="padding-left: 30px;">在<a href="http://www.python.org">http://www.python.org</a>下载WIN 32bit 下的python2.7，然后安装。然后配置一下环境变量，如下图：</p>
-<p style="padding-left: 30px;"><a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/setenv.jpg"><img class="alignnone  wp-image-97" title="setenv" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/04/setenv.jpg" alt="" width="698" height="491" /></a></p>
+<p style="padding-left: 30px;"><a href="/upload/2012/04/setenv.jpg"><img class="alignnone  wp-image-97" title="setenv" src="/upload/2012/04/setenv.jpg" alt="" width="698" height="491" /></a></p>
 <p style="padding-left: 30px;">编辑的时候添加python的安装目录并以分号结尾，如：<span style="text-decoration: underline;">d:\python27;</span></p>
 2.安装setuptools/pip
 <p style="padding-left: 30px;">setuptools和pip是一个很好用的python包，用来安装或更新python其他的package。</p>
