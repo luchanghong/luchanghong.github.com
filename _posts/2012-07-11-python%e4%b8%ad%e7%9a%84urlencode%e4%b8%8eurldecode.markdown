@@ -1,16 +1,16 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=375
 wordpress_id: 375
-title: "python\xE4\xB8\xAD\xE7\x9A\x84urlencode\xE4\xB8\x8Eurldecode"
-layout: post
+wordpress_url: http://luchanghong.com/rosemary/?p=375
 date: 2012-07-11 15:06:58 +08:00
+layout: post
+title: "python\xE4\xB8\xAD\xE7\x9A\x84urlencode\xE4\xB8\x8Eurldecode"
 ---
 当url地址含有中文，或者参数有中文的时候，这个算是很正常了，但是把这样的url作为参数传递的时候（最常见的callback），需要把一些中文甚至'/'做一下编码转换。
 
 一、urlencode
 
 urllib库里面有个urlencode函数，可以把key-value这样的键值对转换成我们想要的格式，返回的是a=1&amp;b=2这样的字符串，比如：
-<pre><pre class="prettyprint">
+<pre class="prettyprint">
 &gt;&gt;&gt; from urllib import urlencode
 &gt;&gt;&gt; data = {
 ...     'a': 'test',
@@ -18,7 +18,7 @@ urllib库里面有个urlencode函数，可以把key-value这样的键值对转�
 ... }
 &gt;&gt;&gt; print urlencode(data)
 a=test&amp;name=%C4%A7%CA%DE
-</pre></pre>
+</pre>
 如果只想对一个字符串进行urlencode转换，怎么办？urllib提供另外一个函数：quote()
 <pre class="prettyprint">
 &gt;&gt;&gt; from urllib import quote

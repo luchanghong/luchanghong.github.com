@@ -1,11 +1,11 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=82
 wordpress_id: 82
+wordpress_url: http://luchanghong.com/rosemary/?p=82
+date: 2012-04-06 16:11:51 +08:00
+layout: post
 title: !binary |
   bW9uZ29kYuaAp+iDveS8mOWMluKAlOKAlOW7uueri+e0ouW8lQ==
 
-layout: post
-date: 2012-04-06 16:11:51 +08:00
 ---
 目前公司网站升级，数据库不再是mysql了，WEB端用到了mongodb。首先把数据从mysql导入到mongodb，总共1680多万记录，花了大概两个小时。
 

@@ -1,11 +1,11 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=284
 wordpress_id: 284
+wordpress_url: http://luchanghong.com/rosemary/?p=284
+date: 2012-06-12 18:00:51 +08:00
+layout: post
 title: !binary |
   55SocHlyYW1pZOWIm+W7uuS4gOS4quWujOaVtOeahFdFQiBQcm9qZWN0
 
-layout: post
-date: 2012-06-12 18:00:51 +08:00
 ---
 之前公司用pyramid做开发，那时候刚开始学习，有很多不懂，都是别人定义好的，我只是拿来用，所以一些原理不是太清楚。最近公司开展新项目，依然用的是pyramid，只是数据库从mongoDB改为mySQL，这个project差不多是我自己来完成的，总结了一下步骤。
 
@@ -45,7 +45,7 @@ mysql.charset = utf8
 引用的时候可以这样写：<pre class="prettyprint">settings['mysql.host']</pre>
 
 数据库的连接状态我们肯定想一直保持，要不然每次都要connect一下很麻烦，所以可以在myproject/__init__.py里面把db_connect放在request里面，方便调用：
-<pre><pre class="prettyprint">
+<pre class="prettyprint">
 import pymysql
 from pyramid.config import Configurator
 from pyramid.events import NewRequest
@@ -63,7 +63,7 @@ def main(global_config, **settings):
             passwd = db_pass, db = db_name, charset = db_charset)
         event.request.db = conn.cursor()
     config.add_subscriber(add_mysql_db, NewRequest)
-</pre></pre>
+</pre>
 三、route &amp; view
 
 在上面那个__init__.py里面有一个home的route，可以看到写法。route和view是成对出现的，项目里面的route很多，如果都写在这不方便管理，所以我们新建一个文件专门存放route，view不必非要紧挨着route，仔细看配置文件会发现config.scan()，他会帮我们快速配对route和view，通常config.scan(‘myproject’)，应该很容易理解吧（myproject相当于一个package）。
@@ -122,7 +122,7 @@ session.cookie_on_exception = true
 这个有点小复杂，可以看手册里面security和resources。资源--权限--角色--用户这个思路，理解起来就是赋予用户某些角色，然后是对资源授权，注意：权限是角色固有的，而非和用户绑定在一起，以后有时间好好分享一下。
 
 以上六步算是比较完整的了。development.ini配置较简单，下面是myproject/__init__.py的配置：
-<pre><pre class="prettyprint">
+<pre class="prettyprint">
 import pymysql,pymongo
 import pyramid_beaker
 from pyramid.config import Configurator
@@ -170,16 +170,16 @@ def main(global_config, **settings):
     add_web_route(config)
     config.scan('myproject')
     return config.make_wsgi_app()
-</pre></pre>
+</pre>
 下面是myproject/urls.py:
-<pre><pre class="prettyprint">
+<pre class="prettyprint">
 # -*- coding: utf-8 -*-
 __author__ = 'luchanghong'
 
 def add_web_route(config):
     # web common
     config.add_route (name = 'web.index', pattern = '/')
-</pre></pre>
+</pre>
 下面是development.ini:
 
 <pre class="prettyprint">
@@ -231,31 +231,31 @@ port = 6543
 
 # Begin logging configuration
 
-<pre class="prettyprint">
+[loggers]
 keys = root, myproject
 
-<pre class="prettyprint">
+[handlers]
 keys = console
 
-<pre class="prettyprint">
+[formatters]
 keys = generic
 
-<pre class="prettyprint">
+[logger_root]
 level = INFO
 handlers = console
 
-<pre class="prettyprint">
+[logger_myproject]
 level = DEBUG
 handlers =
 qualname = myproject
 
-<pre class="prettyprint">
+[handler_console]
 class = StreamHandler
 args = (sys.stderr,)
 level = NOTSET
 formatter = generic
 
-<pre class="prettyprint">
+[formatter_generic]
 format = %(asctime)s %(levelname)-5.5s [%(name)s][%(threadName)s] %(message)s
 
 # End logging configuration

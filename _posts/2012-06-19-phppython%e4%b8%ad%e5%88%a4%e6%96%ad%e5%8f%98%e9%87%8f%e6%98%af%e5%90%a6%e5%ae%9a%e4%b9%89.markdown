@@ -1,11 +1,11 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=316
 wordpress_id: 316
+wordpress_url: http://luchanghong.com/rosemary/?p=316
+date: 2012-06-19 12:37:09 +08:00
+layout: post
 title: !binary |
   UEhQL1B5dGhvbuS4reWIpOaWreWPmOmHj+aYr+WQpuWumuS5iQ==
 
-layout: post
-date: 2012-06-19 12:37:09 +08:00
 ---
 在PHP中判断变量是否定义（存在）很简单:
 
@@ -14,7 +14,7 @@ date: 2012-06-19 12:37:09 +08:00
 在Python中怎样判断呢？
 
 一、肯定会想到print语句，直接输出（如果真的不存在就会报错），那么，这样：
-<pre><pre class="prettyprint">
+<pre class="prettyprint">
 &gt;&gt;&gt; try:
 ...     print b
 ... except Exception:
@@ -22,11 +22,11 @@ date: 2012-06-19 12:37:09 +08:00
 ...
 b is not defined
 &gt;&gt;&gt;
-</pre></pre>
+</pre>
 二、用dir()
 
 dir()函数常用查看一个类的方法，他比help()的输出更加简洁。如果直接输出你就会发现他的妙处：
-<pre><pre class="prettyprint">
+<pre class="prettyprint">
 &gt;&gt;&gt; dir()
 ['__builtins__', '__doc__', '__name__', '__package__']
 &gt;&gt;&gt; a = 1
@@ -38,17 +38,17 @@ dir()函数常用查看一个类的方法，他比help()的输出更加简洁。
 &gt;&gt;&gt; dir()
 ['__builtins__', '__doc__', '__name__', '__package__', 'a', 'f1']
 &gt;&gt;&gt;
-</pre></pre>
+</pre>
 怎样判断就很明显了吧，再接着看
 
 三、用locals().keys()
-<pre><pre class="prettyprint">
+<pre class="prettyprint">
 &gt;&gt;&gt; locals()
 {'a': 1, 'f1': , '__builtins__': , '__package__': None, '__name__': '__main__', '__doc__': None}
 &gt;&gt;&gt; locals().keys()
 ['a', 'f1', '__builtins__', '__package__', '__name__', '__doc__']
 &gt;&gt;&gt;
-</pre></pre>
+</pre>
 判断方法：
 
 <pre class="prettyprint">if 'a' in dir():</pre>或者<pre class="prettyprint">if 'a' in locals().keys():</pre>

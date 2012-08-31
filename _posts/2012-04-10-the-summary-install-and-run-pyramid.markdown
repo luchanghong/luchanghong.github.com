@@ -1,9 +1,9 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=125
 wordpress_id: 125
-title: "the summary \xE2\x80\x94 install and run pyramid"
-layout: post
+wordpress_url: http://luchanghong.com/rosemary/?p=125
 date: 2012-04-10 16:37:27 +08:00
+layout: post
+title: "the summary \xE2\x80\x94 install and run pyramid"
 ---
 由于当初半路出家，本来是做PHP的，也没有接触过python，至于pyramid更是第一次用，所以这次总结也让我更加的了解和认识了pyramid。因此也出现了一些错误，昨晚那个paster就说错了，下次还是得搞的一清二楚再说，实在抱歉。
 

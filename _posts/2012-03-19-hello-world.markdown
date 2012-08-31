@@ -1,9 +1,9 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=1
 wordpress_id: 1
-title: Hello world!
-layout: post
+wordpress_url: http://luchanghong.com/rosemary/?p=1
 date: 2012-03-19 08:15:39 +08:00
+layout: post
+title: Hello world!
 ---
 对于我们这些摸爬滚打在这喧嚣的闹市里的程序来说，最亲切也是最恶心的见面礼“Hello world!”。
 

@@ -1,13 +1,13 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=450
 wordpress_id: 450
+wordpress_url: http://luchanghong.com/rosemary/?p=450
+date: 2012-07-24 16:23:14 +08:00
+layout: post
 title: !binary |
   bWFj5LiLYXBhY2hl6Jma5ouf5Z+f5ZCN6YWN572u6Zeu6aKY4oCU4oCUdmly
   dHVhbGhvc3RzIGFyZSBvbmx5IGFjdGl2YXRlZCB3aGVuIFdFQlNIQVJJTkcg
   aXMgb24=
 
-layout: post
-date: 2012-07-24 16:23:14 +08:00
 ---
 在我的mac本上配置apache虚拟域名的时候，出现了如题目所说的问题。
 
@@ -23,20 +23,20 @@ vi搜索Virtual hosts就可快速定位到这一行的上一行。
 
 添加一个虚拟域名配置
 
-<pre class="prettyprint">
+[code]
 
 &lt;VirtualHost *:80&gt;
 DocumentRoot "/Users/lch/Sites/phpmyadmin"
 ServerName phpmyadmin.com
 &lt;/VirtualHost&gt;
 
-</pre>
+[/code]
 
 3、修改extra/httpd-usrdir.conf
 
 添加对应的文件权限
 
-<pre class="prettyprint">
+[code]
 
 &lt;Directory "/Users/lch/Sites/phpmyadmin"&gt;
 Options Indexes FollowSymLinks
@@ -45,11 +45,11 @@ Order allow,deny
 Allow from all
 &lt;/Directory&gt;
 
-<pre class="prettyprint">
+[code]
 
 4、修改系统hosts文件 /etc/hosts
 
-添加一行<pre class="prettyprint">127.0.0.1        phpmyadmin.com</pre>
+添加一行[code]127.0.0.1        phpmyadmin.com[/code]
 
 5、重启apache
 

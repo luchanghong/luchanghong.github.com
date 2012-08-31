@@ -1,11 +1,11 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=526
 wordpress_id: 526
+wordpress_url: http://luchanghong.com/rosemary/?p=526
+date: 2012-08-27 17:35:54 +08:00
+layout: post
 title: !binary |
   5Yid6K+VZ2l0aHVi
 
-layout: post
-date: 2012-08-27 17:35:54 +08:00
 ---
 说实话，做这么久程序猿却没有真刀实枪的在github上混过真是有点小难堪，不过还好我早已经注册了账号。
 
@@ -17,10 +17,7 @@ date: 2012-08-27 17:35:54 +08:00
 
 看<a href="https://help.github.com/articles/generating-ssh-keys" target="_blank">官方的帮助文档</a>，命令
 
-<pre class="prettyprint">
-ssh-keygen -t rsa -C xxxxx
-</pre>
-刚开始以为-C参数必须使用github对应的账号，所以导致我登陆其他服务器的id_rsa不能和github的id_rsa同时使用，很郁闷，不过随后经过证实这个是自定义的，那么我就仍然用同一对key。
+<pre class="prettyprint">ssh-keygen -t rsa -C xxxxx</pre>刚开始以为-C参数必须使用github对应的账号，所以导致我登陆其他服务器的id_rsa不能和github的id_rsa同时使用，很郁闷，不过随后经过证实这个是自定义的，那么我就仍然用同一对key。
 
 <a href="http://luchanghong.com/rosemary/wp-content/uploads/2012/08/B5FBBC28-77A8-4EE3-B2BD-66CE36E18305.jpg"><img class="alignnone size-full wp-image-527" title="B5FBBC28-77A8-4EE3-B2BD-66CE36E18305" src="http://luchanghong.com/rosemary/wp-content/uploads/2012/08/B5FBBC28-77A8-4EE3-B2BD-66CE36E18305.jpg" alt="" width="650" height="123" /></a>
 
@@ -28,8 +25,7 @@ ssh-keygen -t rsa -C xxxxx
 
 <pre class="prettyprint">
 lchmatoMacBook-Pro:.ssh lch$ ssh -T git@github.com
-Hi luchanghong! You've successfully authenticated, but GitHub does not provide shell access.
-</pre>
+Hi luchanghong! You've successfully authenticated, but GitHub does not provide shell access.</pre>
 
 <strong>安装git</strong>
 

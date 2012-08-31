@@ -1,38 +1,40 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=473
 wordpress_id: 473
+wordpress_url: http://luchanghong.com/rosemary/?p=473
+date: 2012-07-27 13:33:46 +08:00
+layout: post
 title: !binary |
   5o6i56m25pWw54us566X5rOV77yI5LiJ77yJ
 
-layout: post
-date: 2012-07-27 13:33:46 +08:00
 ---
 OK，暴雨过后仍是阴霾，最后一步就竣工了。
 
 前面已经得到了一个二维数组，只不过里面的小数组有些会存在特殊情况，下面就来过滤掉这种情况。两层for循环使我不得不在最里面的那一层（含j）把新的一行数给处理好，那么我只有在这个for里面做判断，可是已经执行就回不去，只好把第二层for循环（得到一行新数字）写成一个函数，然后再根据函数返回结果判断是否是特殊情况，如果是就返回再次执行，一直到正常情况为止。
 
 但是在写的过程中，发现不是太好做，即使实现了也使得代码变得很臃肿，可读性较差，于是想到另外一种方法：不再被最外面一层for循环约束，用作while循环，如果出现特殊行直接忽视掉，不迭代如suduko_list即可，while截止条件就是len(suduko_list)&lt;9
-    sudoko_list = list()
-    sudoko_list.append(row_1)
+<pre class="prettyprint">
+sudoko_list = list()
+sudoko_list.append(row_1)
 
-    def get_new_row(sudoko_list):
-        new_row = list()
-        for j in range(0, 9): 
-            col_select = [x<pre class="prettyprint"> for x in sudoko_list]
-            row_select = list(new_row)
-            select_list = col_select + row_select
-            remain_list = [x for x in num_list if x not in select_list]
-            if not remain_list:
-                remain_list = ['X']
-            new_num = get_rand_item(remain_list)
-            new_row.append(new_num)
-        return new_row
+def get_new_row(sudoko_list):
+    new_row = list()
+    for j in range(0, 9): 
+        col_select = [x[j] for x in sudoko_list]
+        row_select = list(new_row)
+        select_list = col_select + row_select
+        remain_list = [x for x in num_list if x not in select_list]
+        if not remain_list:
+            remain_list = ['X']
+        new_num = get_rand_item(remain_list)
+        new_row.append(new_num)
+    return new_row
 
-    while len(sudoko_list) &lt; 9:
-        new_row = get_new_row(sudoko_list)
-        if 'X' not in new_row:
-            sudoko_list.append(new_row)
+while len(sudoko_list) &lt; 9:
+    new_row = get_new_row(sudoko_list)
+    if 'X' not in new_row:
+        sudoko_list.append(new_row)
 
-    for row in sudoko_list:
-        print row
+for row in sudoko_list:
+    print row
+</pre>
 &nbsp;

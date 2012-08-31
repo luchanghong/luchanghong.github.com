@@ -1,12 +1,12 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=150
 wordpress_id: 150
+wordpress_url: http://luchanghong.com/rosemary/?p=150
+date: 2012-04-28 15:38:46 +08:00
+layout: post
 title: !binary |
   cHl0aG9u5Lit5Li657G76K6+572u5LiA5Liq5Y+v5Y+Y5Y+Y6YeP55qE5bGe
   5oCn
 
-layout: post
-date: 2012-04-28 15:38:46 +08:00
 ---
 学过PHP的都知道PHP可变变量有时候会被用到。所谓可变变量，简单理解就是变量名是也是个变量，例如：
 
@@ -39,7 +39,7 @@ echo $$a;
 
 &gt;&gt;&gt; import sys
 &gt;&gt;&gt; name = 'argv'
-&gt;&gt;&gt; vars(sys)<pre class="prettyprint">
+&gt;&gt;&gt; vars(sys)[name]
 ['']
 
 </pre>

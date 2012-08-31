@@ -1,11 +1,11 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=63
 wordpress_id: 63
+wordpress_url: http://luchanghong.com/rosemary/?p=63
+date: 2012-03-31 14:16:58 +08:00
+layout: post
 title: !binary |
   cHl0aG9u5a+5bGlzdOeahOaOkuW6j+aWueazlQ==
 
-layout: post
-date: 2012-03-31 14:16:58 +08:00
 ---
 python中对一个list排序，一般有两种方法：list.sort()和sorted(list)，区别很明显，前者改变list本身，后者生成一个新的list。
 
@@ -26,9 +26,9 @@ python中对一个list排序，一般有两种方法：list.sort()和sorted(list
 <pre class="prettyprint">
 &gt;&gt;&gt; a
 [(3, 'c'), (2, 'b'), (1, 'a'), (0, 'x')]
-&gt;&gt;&gt; print sorted(a, key = lambda l:l<pre class="prettyprint">)
+&gt;&gt;&gt; print sorted(a, key = lambda l:l[0])
 [(0, 'x'), (1, 'a'), (2, 'b'), (3, 'c')]
-&gt;&gt;&gt; print sorted(a, cmp = lambda x,y:cmp(x<pre class="prettyprint">, y<pre class="prettyprint">))
+&gt;&gt;&gt; print sorted(a, cmp = lambda x,y:cmp(x[0], y[0]))
 [(0, 'x'), (1, 'a'), (2, 'b'), (3, 'c')]
 </pre></li>
 	<li>说明
@@ -37,8 +37,8 @@ sort和sorted用法几乎一样，cmp和key这两个参数用法有所不同，k
 <pre class="prettyprint">
 &gt;&gt;&gt; a
 [(3, 'c'), (2, 'b'), (1, 'a'), (0, 'x'), (4, 'x')]
-&gt;&gt;&gt; print sorted(a, key = lambda l:(l<pre class="prettyprint">,l[0]), reverse = True)
+&gt;&gt;&gt; print sorted(a, key = lambda l:(l[1],l[0]), reverse = True)
 [(4, 'x'), (0, 'x'), (3, 'c'), (2, 'b'), (1, 'a')]
-&gt;&gt;&gt; print sorted(a, key = lambda l:(l<pre class="prettyprint">,l[1]), reverse = True)
+&gt;&gt;&gt; print sorted(a, key = lambda l:(l[0],l[1]), reverse = True)
 [(4, 'x'), (3, 'c'), (2, 'b'), (1, 'a'), (0, 'x')]</pre></li>
 </ol>

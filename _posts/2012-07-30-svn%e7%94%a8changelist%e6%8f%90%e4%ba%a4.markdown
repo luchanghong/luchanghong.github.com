@@ -1,11 +1,11 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=481
 wordpress_id: 481
+wordpress_url: http://luchanghong.com/rosemary/?p=481
+date: 2012-07-30 14:06:07 +08:00
+layout: post
 title: !binary |
   c3Zu55SoY2hhbmdlbGlzdOaPkOS6pA==
 
-layout: post
-date: 2012-07-30 14:06:07 +08:00
 ---
 以前用习惯了windows下面的SVN，换到mac下要用命令了，虽然也有类似的GUI软件，但是总不能一直都要看图操作吧，更何况命令也不难，而且学会了以后有一种优越感，你懂的。
 

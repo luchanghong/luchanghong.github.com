@@ -1,11 +1,11 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=52
 wordpress_id: 52
+wordpress_url: http://luchanghong.com/rosemary/?p=52
+date: 2012-03-27 14:23:22 +08:00
+layout: post
 title: !binary |
   bW9uZ29kYuWvvOWFpeWvvOWHuuaVsOaNrg==
 
-layout: post
-date: 2012-03-27 14:23:22 +08:00
 ---
 使用mongodb，要把数据导出备份，用到mongodb自带的导入和导出工具。WIN7上操作如下：
 <ol>

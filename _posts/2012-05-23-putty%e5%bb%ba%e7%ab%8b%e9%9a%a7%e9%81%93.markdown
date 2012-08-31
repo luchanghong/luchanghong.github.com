@@ -1,11 +1,11 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=261
 wordpress_id: 261
+wordpress_url: http://luchanghong.com/rosemary/?p=261
+date: 2012-05-23 17:04:20 +08:00
+layout: post
 title: !binary |
   cHV0dHnlu7rnq4vpmqfpgZM=
 
-layout: post
-date: 2012-05-23 17:04:20 +08:00
 ---
 由于服务器搬迁，所以不能再用内网去访问数据库了，因此用到了Putty。其实说“隧道”可能一下子不大明白，更通俗的讲应该说是通信的媒介，比如飞鸽传书中的鸽子~~Putty把放鸽子的人、鸽子、收鸽子的人联系起来也就是我们说的“隧道”了。
 

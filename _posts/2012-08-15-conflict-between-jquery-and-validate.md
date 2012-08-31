@@ -1,11 +1,11 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=497
 wordpress_id: 497
+wordpress_url: http://luchanghong.com/rosemary/?p=497
+date: 2012-08-15 23:06:17 +08:00
+layout: post
 title: !binary |
   anF1ZXJ5IHZhbGlkYXRlIOS4jiBvbnN1Ym1pdOeahOWGsueqgeWwj+iusA==
 
-layout: post
-date: 2012-08-15 23:06:17 +08:00
 ---
 最近写了点前端代码，验证form表单的时候用到了jquery validate。这个东西很好用，具体的使用方法就不必啰嗦了。
 
@@ -17,21 +17,22 @@ date: 2012-08-15 23:06:17 +08:00
 
 在构造validate规则的时候加上submitHandler，如：
 <pre class="prettyprint">
-    $("#finaceAccount").validate({
-        rules:{name :{required :true,minlength:2},
-        },
-        messages: {
-            name: {required: "请输入姓名！",minlength: "请填写全名！"},
-        },
-        submitHandler: function (form){
-            return checkInfo(form);
-        }
-    });
 
-    function checkInfo(f){
-        ……
-        return false
-    }
+        $("#finaceAccount").validate({
+            rules:{name :{required :true,minlength:2},
+            },
+            messages: {
+                name: {required: "请输入姓名！",minlength: "请填写全名！"},
+            },
+            submitHandler: function (form){
+                return checkInfo(form);
+            }
+        });
+
+        function checkInfo(f){
+            ……
+            return false
+        }
 </pre>
 这样就OK了，也就可以把onsubmit事件删除了。
 

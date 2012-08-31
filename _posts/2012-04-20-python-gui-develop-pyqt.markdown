@@ -1,9 +1,9 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=134
 wordpress_id: 134
-title: python GUI develop--pyQT
-layout: post
+wordpress_url: http://luchanghong.com/rosemary/?p=134
 date: 2012-04-20 12:14:51 +08:00
+layout: post
+title: python GUI develop--pyQT
 ---
 最近想学Python的GUI开发，在网上找找，在wxPython和pyQT之间徘徊。
 

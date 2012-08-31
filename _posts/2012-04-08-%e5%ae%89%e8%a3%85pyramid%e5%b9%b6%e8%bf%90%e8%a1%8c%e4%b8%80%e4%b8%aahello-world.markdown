@@ -1,11 +1,11 @@
 --- 
-wordpress_url: http://luchanghong.com/rosemary/?p=93
 wordpress_id: 93
+wordpress_url: http://luchanghong.com/rosemary/?p=93
+date: 2012-04-08 13:47:02 +08:00
+layout: post
 title: !binary |
   5a6J6KOFcHlyYW1pZOW5tui/kOihjOS4gOS4qmhlbGxvIHdvcmxk
 
-layout: post
-date: 2012-04-08 13:47:02 +08:00
 ---
 公司的项目正式上线了，关于python的学习和pyramid框架的学习和应用也相对熟悉一些了，那么就趁热打铁把这段开发经历总结一下，以飨pyramid学习的朋友。
 
@@ -25,10 +25,10 @@ date: 2012-04-08 13:47:02 +08:00
 <p style="padding-left: 60px;">这个文件可以在上面那网址找到下载，把ez_setup.py拷贝到python目录下。打开CMD，在python安装目录下执行：python ez_setup.py setuptools</p>
 
 <div style="padding-left: 60px;">
-<pre><pre class="prettyprint">
+<pre class="prettyprint">
 D:\&gt;cd Python27
 D:\Python27&gt;python ez_setup.py setuptools
-</pre></pre>
+</pre>
 </div>
 <p style="padding-left: 60px;">b.直接下载setuptools.exe</p>
 <p style="padding-left: 60px;"><a href="http://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11.win32-py2.7.exe" target="_blank">http://pypi.python.org/packages/2.7/s/setuptools/setuptools-0.6c11.win32-py2.7.exe</a></p>
@@ -46,7 +46,7 @@ D:\Python27&gt;python ez_setup.py setuptools
 <p style="padding-left: 30px;">找个目录，创建一个hello.py，我把pyramid官网上的sample运行一下，把一下代码拷贝到hello.py：</p>
 
 <div style="padding-left: 30px;">
-<pre><pre class="prettyprint">
+<pre class="prettyprint">
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.response import Response
@@ -61,7 +61,7 @@ if __name__ == '__main__':
    app = config.make_wsgi_app()
    server = make_server('0.0.0.0', 8080, app)
    server.serve_forever()
-</pre></pre>
+</pre>
 cmd下到hello.py目录下，执行python hello.py，然后在浏览器运行<span style="text-decoration: underline;">http://localhost:8080/hello/world</span>
 
 </div>
