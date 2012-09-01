@@ -1,6 +1,6 @@
 ---
 layout: post
-title: About me
+title: about me
 date: 2012-08-27 17:35:54 +08:00
 ---
 
