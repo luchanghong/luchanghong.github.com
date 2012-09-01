@@ -1,2 +1,8 @@
 markdown: rdiscount
 pygments: true
+
+# site path
+tags_path: /tags.html
+
+# post config
+date_format: "%Y-%m-%d"

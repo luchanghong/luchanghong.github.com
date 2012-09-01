@@ -6,14 +6,20 @@ layout: default
         <h1 class="enty-title">{{ page.title }}</h1>
         <div class="singleinfo">
             <span class="dateinfo">
-                撰写于 {{ page.date | date_to_string }} | <a href="{{ post.url }}#disqus_thread" title="《初试github》上的评论">没有评论</a>
+                撰写于 {% include post/date.html %} {{ time }} | 分类：{{ page.category }} | 标签：{% include post/tags.html %} 
             </span>
         </div>
         {{ content }}
     </div>
 
+    <div class="article_relationship">
+        <a class="previous_page" href="{{ page.previous.url }}" title="{{ page.previous.title }}">&laquo;{{ page.previous.title }}</a>
+        <a class="next_page" href="{{ page.next.url }}" title="{{ page.next.title }}">{{ page.next.title }}&raquo;</a>
+    </div>
+
+    <div class="clear"></div>
     <div id="related">
-      <h2>Related Posts</h2>
+      <h2>相关文章</h2>
       <ul class="posts">
         {% for post in site.related_posts limit:3 %}
           <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>

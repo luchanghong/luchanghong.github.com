@@ -28,7 +28,25 @@ a {
 a:hover{
 	color:#C30;
 }
+p code, li code {
+    display: inline-block;
+    white-space: no-wrap;
+    background: white;
+    font-size: .8em;
+    line-height: 1.5em;
+    color: #555;
+    border: 1px solid #DDD;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    border-radius: 0.4em;
+    padding: 0 .3em;
+    margin: -1px 0;
+    font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+}
 pre{
+    line-height: 25px;
     border: 1px solid #DDD;
     background-color: #EEF;
     padding: 0 .4em;
@@ -291,4 +309,17 @@ textarea:hover {
 }
 .post .hentry  .gallery .gallery-caption {
 	color: #888;
+}
+.article_relationship{
+    font-size: 16px;
+}
+.article_relationship .previous_page{
+    float: left;
+}
+.article_relationship .next_page{
+    float: right;
+}
+.posts li{
+    list-style-type: none;
+    line-height: 25px;
 }
