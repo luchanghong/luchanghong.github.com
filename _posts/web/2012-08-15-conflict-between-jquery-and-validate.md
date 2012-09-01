@@ -5,7 +5,8 @@ date: 2012-08-15 23:06:17 +08:00
 layout: post
 title: !binary |
   anF1ZXJ5IHZhbGlkYXRlIOS4jiBvbnN1Ym1pdOeahOWGsueqgeWwj+iusA==
-
+category: web_dev
+tags: [jquery, validade, form]
 ---
 最近写了点前端代码，验证form表单的时候用到了jquery validate。这个东西很好用，具体的使用方法就不必啰嗦了。
 

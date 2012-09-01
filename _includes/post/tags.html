@@ -1,0 +1,4 @@
+{% assign tags_arr = page.tags %}
+{% for tag in tags_arr %}
+    <a href="/tags.html#{{ tag }}">{{ tag }}</a>
+{% endfor  %}
