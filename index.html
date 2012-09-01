@@ -4,7 +4,7 @@ title: home
 ---
 
 <div id="main">
-    {% for post in site.posts limit:5 %}
+    {% for post in paginator.posts %}
         <div class="post">
             <h2 class="entry-title">
                 <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
@@ -19,7 +19,24 @@ title: home
             <div class="clear"></div>
         </div>
     {% endfor %}
+
+      <div class="pagination">
+        {% if paginator.next_page %}
+          <a class="prev" href="/page{{paginator.next_page}}">&larr; Older</a>
+        {% endif %}
+        <a href="/archives.html">Blog Archives</a>
+        {% if paginator.previous_page %}
+            {%if paginator.previous_page == 1 %}
+                <a class="next" href="/">Newer &rarr;</a>
+            {% else %}
+                <a class="next" href="/page{{paginator.previous_page}}">Newer &rarr;</a>
+            {% endif %}
+        {% endif %}
+      </div>
+
+
 </div>
+
 
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

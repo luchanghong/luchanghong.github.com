@@ -323,3 +323,18 @@ textarea:hover {
     list-style-type: none;
     line-height: 25px;
 }
+.pagination {
+    text-align: center;
+    font-size: .95em;
+    position: relative;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+}
+.pagination a.next {
+    position: absolute;
+    right: 0;
+}
+.pagination a.prev {
+    position: absolute;
+    left: 0;
+}

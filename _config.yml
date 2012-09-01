@@ -12,3 +12,5 @@ tags_path: /tags.html
 
 # post config
 date_format: "%Y-%m-%d"
+paginate: 3
+pagination_dir: blog/
