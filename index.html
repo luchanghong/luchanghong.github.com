@@ -10,12 +10,14 @@ title: home
                 <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
             </h2>
             <p class="info">
-                <span class="dateinfo">{{ post.date | date_to_string }}</span>
-                <span class="catinfo">分类：<a href="">{{ post.category }}</a></span>
+                <span class="dateinfo">{% include post/date.html %} {{ time }}</span>
+                <span class="catinfo">分类:<a href="">{{ post.category }}</a></span>
                 <span class="cmtinfo"><a href="{{ post.url }}#disqus_thread" title="《{{ post.title }}》上的评论">0</a></span>
             </p>
             <div class="clear"></div>
-            <div class="indexentry">{{ post.content }}</div>
+            <div class="indexentry">
+                <div class="post_description">{{ post.description }}</div>
+            </div>
             <div class="clear"></div>
         </div>
     {% endfor %}

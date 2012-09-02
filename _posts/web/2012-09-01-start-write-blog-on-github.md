@@ -3,6 +3,7 @@ layout: post
 title: 开始在github上写博客了
 category: web
 tags: [github]
+description: github 为我们提供了 pages 服务，而且能绑定我们自己的域名。github 的服务器很稳定，速度也不错，还省去了租用 WEB 服务器的钱，你值得拥有。本文分享了从 WordPress 转战到 github 的过程。
 ---
 
 折腾一两天，终于把博客从 wordpress 转到 guthub 上来了，之前买的空间还有几个月就到期了，现在也不用考虑续费了，感谢 github 啊，每年省点 money 。

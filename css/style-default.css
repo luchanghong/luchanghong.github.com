@@ -28,7 +28,7 @@ a {
 a:hover{
 	color:#C30;
 }
-p code, li code {
+p code, li code, .post_description{
     display: inline-block;
     white-space: no-wrap;
     background: white;
@@ -44,6 +44,10 @@ p code, li code {
     padding: 0 .3em;
     margin: -1px 0;
     font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
+}
+.post_description{
+    margin-bottom: 10px;
+    font-size: 14px;
 }
 pre{
     line-height: 25px;
