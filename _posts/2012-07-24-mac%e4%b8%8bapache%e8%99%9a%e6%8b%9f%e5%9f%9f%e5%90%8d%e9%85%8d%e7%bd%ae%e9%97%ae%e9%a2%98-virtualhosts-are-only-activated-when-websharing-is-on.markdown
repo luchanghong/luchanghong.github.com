@@ -7,7 +7,9 @@ title: !binary |
   bWFj5LiLYXBhY2hl6Jma5ouf5Z+f5ZCN6YWN572u6Zeu6aKY4oCU4oCUdmly
   dHVhbGhvc3RzIGFyZSBvbmx5IGFjdGl2YXRlZCB3aGVuIFdFQlNIQVJJTkcg
   aXMgb24=
-
+category: linux_OSX
+tags: [apache, mac]
+description: 买 MacBook 了很高兴，最近也是捣鼓着。在 Apache 配置本地虚拟域名的时候出现了一些问题，具体表现是：不打开本地 WEB 共享就不能启用虚拟域名，最后通读了 mac 上 Apache 的配置文件才明白是怎么回事。
 ---
 在我的mac本上配置apache虚拟域名的时候，出现了如题目所说的问题。
 
