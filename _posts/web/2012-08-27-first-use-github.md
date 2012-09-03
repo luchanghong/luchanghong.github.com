@@ -5,7 +5,8 @@ layout: post
 title: !binary |
   5Yid6K+VZ2l0aHVi
 category: web
-tags: [git, github]
+tags: [github]
+description: 第一次使用 github ，了解一下 git 和 github 的关系。
 ---
 说实话，做这么久程序猿却没有真刀实枪的在github上混过真是有点小难堪，不过还好我早已经注册了账号。
 

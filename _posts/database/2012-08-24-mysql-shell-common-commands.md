@@ -6,7 +6,8 @@ layout: post
 title: !binary |
   bXlzcWwgc2hlbGzluLjnlKjkuIDkupvlkb3ku6Q=
 category: database
-tags: [mysql, shell, command]
+tags: [mysql, shell]
+description: Mysql Shell 在服务器端是很好用的 Mysql 管理工具，掌握一些常用的 shell command 会大大提高我们的工作效率。这里记录一些我在日常网站开发与维护中使用到的命令，会不断更新。
 ---
 总结一下简单常用、实用的mysql shell命令，长时间不用难免会忘记，以备不时只需。
 

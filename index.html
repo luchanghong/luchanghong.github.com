@@ -4,19 +4,20 @@ title: home
 ---
 
 <div id="main">
-    {% for post in paginator.posts %}
+    {% for page in paginator.posts %}
         <div class="post">
             <h2 class="entry-title">
-                <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                <a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a>
             </h2>
             <p class="info">
                 <span class="dateinfo">{% include post/date.html %} {{ time }}</span>
-                <span class="catinfo">分类:<a href="">{{ post.category }}</a></span>
-                <span class="cmtinfo"><a href="{{ post.url }}#disqus_thread" title="《{{ post.title }}》上的评论">0</a></span>
+                <span class="catinfo">分类: {{ page.category }}</span>
+                <span class="catinfo">标签:{% include post/tags.html %}</a></sapn>
+                <span class="cmtinfo"><a href="{{ page.url }}#disqus_thread" title="《{{ page.title }}》上的评论">0</a></span>
             </p>
             <div class="clear"></div>
             <div class="indexentry">
-                <div class="post_description">{{ post.description }}</div>
+                <div class="post_description">{{ page.description }}</div>
             </div>
             <div class="clear"></div>
         </div>

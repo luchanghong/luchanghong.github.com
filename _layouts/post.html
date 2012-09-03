@@ -9,6 +9,9 @@ layout: default
                 撰写于 {% include post/date.html %} {{ time }} | 分类：{{ page.category }} | 标签：{% include post/tags.html %} 
             </span>
         </div>
+        {% if page.description %}
+            <div class="post_description" style="margin-top:15px; font-weight:bolder">概要：{{ page.description }}</div>
+        {% endif %}
         {{ content }}
     </div>
 

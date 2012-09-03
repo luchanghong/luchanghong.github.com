@@ -1,0 +1,17 @@
+---
+layout: default 
+title: Tags
+footer: false
+---
+
+<div id="main">
+    {% for tag in site.tags %}
+        <a name="{{ tag[0] }}">
+        </a><h2 id="{{ tag[0] }}-ref">{{ tag[0] }}<span>({{ tag[1].size }})</span></h2>
+        {% for post in tag[1] %}
+            <article>
+            {% include archive_post.html %}
+            </article>
+        {% endfor %}
+    {% endfor %}
+</div>
