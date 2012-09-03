@@ -7,7 +7,7 @@ title: !binary |
   W+i9rF1hd2vlrp7njrDmsYLlkozjgIHlubPlnYfjgIHmnIDlpKflgLzlkozm
   nIDlsI/lgLznmoTorqHnrpfmk43kvZw=
 category: linux_OSX
-tags: [linux, OSX, awk]
+tags: [linux, mac, awk]
 description: 在 shell 里面执行一些命令，如分析 log ，有时候会把符合的 log 输出行做一些简单的运算， akw 在此时就发挥出了效果。
 ---
 1、求和
