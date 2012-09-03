@@ -6,8 +6,10 @@ footer: false
 
 <div id="main">
     {% for tag in site.tags %}
-        <a name="{{ tag[0] }}">
-        </a><h2 id="{{ tag[0] }}-ref">{{ tag[0] }}<span>({{ tag[1].size }})</span></h2>
+        <a name="{{ tag[0] }}"></a>
+        <a href="#{{ tag[0] }}" class="sort_name">
+            <h2 id="{{ tag[0] }}-ref">{{ tag[0] }}<span> ({{ tag[1].size }}) </span></h2>
+        </a>
         {% for post in tag[1] %}
             <article>
             {% include archive_post.html %}

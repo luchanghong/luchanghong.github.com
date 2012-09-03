@@ -779,3 +779,7 @@ textarea {
 .main time{
     float: left;
 }
+#main .sort_name{
+    color: black;
+    text-decoration: underline;
+}

@@ -1,0 +1,20 @@
+---
+layout: default
+title: Blog Catagory
+footer: false
+---
+
+<div id="main">
+    {% for post in site.posts reverse %}
+    {% capture this_category %}{{ post.category }}{% endcapture %}
+    {% if this_category == '' %} {% assign this_category = 'other' %} {% endif %}
+    {% unless category == this_category %}
+      {% assign category = this_category %}
+      <a name="{{ category }}"></a>
+      <a href="#{{ category }}" class="sort_name"><h2>{{ category }}</h2></a>
+    {% endunless %}
+    <article>
+        {% include category_post.html %}
+    </article>
+    {% endfor %}
+</div>
