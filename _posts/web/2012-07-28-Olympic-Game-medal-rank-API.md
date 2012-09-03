@@ -7,6 +7,7 @@ title: !binary |
   5aWl6L+Q5Lya5aWW54mM5o6S6KGM5qacQVBJ
 category: web
 tags: [api]
+description: 奥运会开始了，咱也来凑凑热闹，看一下新浪提供的奥运金牌榜的 API 。
 ---
 奥运会开始了，关注一下，新浪官网上的奖牌排行榜看了一下，找到一个JS，在JS里面找到了一个API：
 

@@ -5,7 +5,9 @@ date: 2012-07-27 13:33:46 +08:00
 layout: post
 title: !binary |
   5o6i56m25pWw54us566X5rOV77yI5LiJ77yJ
-
+category: python
+tags: [数独]
+description: 前面已经得到了一个二维数组，只不过里面的小数组有些会存在特殊情况，下面就来过滤掉这种情况得到最终的数据结构。
 ---
 OK，暴雨过后仍是阴霾，最后一步就竣工了。
 
