@@ -11,7 +11,7 @@ title: home
             </h2>
             <p class="info">
                 <span class="dateinfo">{% include post/date.html %} {{ time }}</span>
-                <span class="catinfo">分类: {{ page.category }}</span>
+                <span class="catinfo">分类:<a href="/category.html#{{ page.category }}">{{ page.category }}</a></span>
                 <span class="catinfo">标签:{% include post/tags.html %}</a></sapn>
                 <span class="cmtinfo"><a href="{{ page.url }}#disqus_thread" title="《{{ page.title }}》上的评论">0</a></span>
             </p>

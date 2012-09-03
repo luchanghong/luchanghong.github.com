@@ -5,7 +5,9 @@ date: 2012-07-30 14:06:07 +08:00
 layout: post
 title: !binary |
   c3Zu55SoY2hhbmdlbGlzdOaPkOS6pA==
-
+category: dev_tool
+tags: [svn, changelist]
+description: 在 svn 项目库里要提交一个已经完成的模块，而此时当前有一个正在开发的模块，显然前者要 commit ，而后者不需要，为了防止提交文件和路径出错，我们可以先做一个 changelist ，把待提交的文件添加到 changelist 里面，这样我们只提交 changelist 即可。
 ---
 以前用习惯了windows下面的SVN，换到mac下要用命令了，虽然也有类似的GUI软件，但是总不能一直都要看图操作吧，更何况命令也不难，而且学会了以后有一种优越感，你懂的。
 

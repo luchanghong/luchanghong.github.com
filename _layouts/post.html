@@ -6,7 +6,7 @@ layout: default
         <h1 class="enty-title">{{ page.title }}</h1>
         <div class="singleinfo">
             <span class="dateinfo">
-                撰写于 {% include post/date.html %} {{ time }} | 分类：{{ page.category }} | 标签：{% include post/tags.html %} 
+                撰写于 {% include post/date.html %} {{ time }} | 分类：<a href="/category.html#{{ page.category }}">{{ page.category }}</a> | 标签：{% include post/tags.html %} 
             </span>
         </div>
         {% if page.description %}

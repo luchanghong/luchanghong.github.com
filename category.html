@@ -1,20 +1,19 @@
 ---
 layout: default
-title: Blog Catagory
+title: Blog Category
 footer: false
 ---
 
 <div id="main">
-    {% for post in site.posts reverse %}
-    {% capture this_category %}{{ post.category }}{% endcapture %}
-    {% if this_category == '' %} {% assign this_category = 'other' %} {% endif %}
-    {% unless category == this_category %}
-      {% assign category = this_category %}
-      <a name="{{ category }}"></a>
-      <a href="#{{ category }}" class="sort_name"><h2>{{ category }}</h2></a>
-    {% endunless %}
-    <article>
-        {% include category_post.html %}
-    </article>
+    {% for category in site.categories reverse %}
+        <a name="{{ category[0] }}"></a>
+        <a href="#{{ category[0] }}" class="sort_name">
+            <h2 id="{{ category[0] }}-ref">{{ category[0] }}<span> ({{ category[1].size }}) </span></h2>
+        </a>
+        {% for post in category[1] %}
+            <article>
+            {% include archive_post.html %}
+            </article>
+        {% endfor %}
     {% endfor %}
 </div>

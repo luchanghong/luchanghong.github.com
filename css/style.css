@@ -350,6 +350,7 @@ ol li{
 }
 /*entry info*/
 #content .post  .info {
+    margin-top: 0;
     font-size:90%;
 	overflow:hidden;
 }
@@ -374,7 +375,7 @@ padding: 3px 7px 3px 3px;
 #content .cmtinfo{
 	position:absolute;
 	right:2%;
-	margin-top:-45px;
+	margin-top:-55px;
 	font-size:14px;
 	border-right-width: 1px;
 	border-right-style:solid;

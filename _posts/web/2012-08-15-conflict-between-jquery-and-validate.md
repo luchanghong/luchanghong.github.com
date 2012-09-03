@@ -5,8 +5,9 @@ date: 2012-08-15 23:06:17 +08:00
 layout: post
 title: !binary |
   anF1ZXJ5IHZhbGlkYXRlIOS4jiBvbnN1Ym1pdOeahOWGsueqgeWwj+iusA==
-category: web_dev
+category: UI
 tags: [jquery]
+description: 在用 jQuery Validate 做表单校验感觉比较方便，但是有时候要用 AJAX 和数据库交互，由于 AJAX 的异步性导致 Validate 与 onsubmit 冲突，最终还是舍弃了 onsubmit 改用另外的方法做 AJAX 校验。
 ---
 最近写了点前端代码，验证form表单的时候用到了jquery validate。这个东西很好用，具体的使用方法就不必啰嗦了。
 

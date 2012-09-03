@@ -9,6 +9,7 @@ author: luchanghong
 
 # site path
 tags_path: /tags.html
+category_path: /category.html
 
 # post config
 date_format: "%Y-%m-%d"

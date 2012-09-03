@@ -5,7 +5,9 @@ date: 2012-08-13 15:13:10 +08:00
 layout: post
 title: !binary |
   bW9uZ2/kuIDoiKzliIbmnpDmlrnms5U=
-
+category: database
+tags: [mongo]
+description: 某一天突然觉得 mongo 数据库变得很慢，那么改如何分析呢？ mongo 不仅自身提供了几个查看状态的工具（ mongotop、 mongostat ），我们还可以登陆到 mongo shell 里面一探究竟，通过这些操作应该能确定 mongo 的问题所在，然后在对症下药。
 ---
 mongo很慢，突然！果断分析一下。
 
