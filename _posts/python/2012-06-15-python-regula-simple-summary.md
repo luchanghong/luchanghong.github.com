@@ -5,7 +5,9 @@ date: 2012-06-15 00:03:08 +08:00
 layout: post
 title: !binary |
   5q2j5YiZ566A6K6w5b2S57qz
-
+category: python
+tags: [python]
+description: 网上的正则表达式的用法讲的很详细，但是不易读，我简单归纳了一下常用的一些字符和表达式。
 ---
 一、单个字符匹配
 <ul>

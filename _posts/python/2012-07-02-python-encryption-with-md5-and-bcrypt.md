@@ -5,7 +5,9 @@ date: 2012-07-02 11:06:36 +08:00
 layout: post
 title: !binary |
   UHl0aG9u55qEYmNyeXB05Yqg5a+G5ZKMbWQ15Yqg5a+G
-
+category: python
+tags: [python, md5, bcrypt]
+description: 做 WEB 开发的怎能不和用户打交道？注册-存储流程我们都很熟悉了。分享一下我用过的两种加密方法：md5 、bcrypt 。
 ---
 数据存储和传输总是担心不安全，于是乎有了各种加密算法，什么对称、非对称之类……用的最多的当然还是md5，虽然不可逆，但是暴力破解让你的明文现原形。我用Python除了上一篇文章说的<a title="python下RSA加密解密以及跨平台问题" href="http://luchanghong.com/rosemary/?p=333">RSA</a>加密之外，也用到了bcrypt和md5。
 

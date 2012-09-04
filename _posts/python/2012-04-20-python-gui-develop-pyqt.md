@@ -4,6 +4,9 @@ wordpress_url: http://luchanghong.com/rosemary/?p=134
 date: 2012-04-20 12:14:51 +08:00
 layout: post
 title: python GUI develop--pyQT
+category: python
+tags: [python, pyQT]
+description: 最近打算学习一下 pyQT ，对比之前看到的 wxPython ，觉得 pyQT 应该更好，今天来了解一下 pyQT 然后安装开发的库配置一下环境。
 ---
 最近想学Python的GUI开发，在网上找找，在wxPython和pyQT之间徘徊。
 

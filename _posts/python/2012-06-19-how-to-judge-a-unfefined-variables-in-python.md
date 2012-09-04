@@ -5,7 +5,9 @@ date: 2012-06-19 12:37:09 +08:00
 layout: post
 title: !binary |
   UEhQL1B5dGhvbuS4reWIpOaWreWPmOmHj+aYr+WQpuWumuS5iQ==
-
+category: python
+tags: [python]
+description: 在 python 中使用一个不存在的变量肯定会报错，所以我们要在引用一个可能不存在或者未定义的变量的时候要做一下判断。
 ---
 在PHP中判断变量是否定义（存在）很简单:
 

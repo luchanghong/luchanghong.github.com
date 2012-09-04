@@ -4,6 +4,9 @@ wordpress_url: http://luchanghong.com/rosemary/?p=375
 date: 2012-07-11 15:06:58 +08:00
 layout: post
 title: "python\xE4\xB8\xAD\xE7\x9A\x84urlencode\xE4\xB8\x8Eurldecode"
+category: python
+tags: [python, urlencode, urldecode]
+description: python 通过 HTTP 交互处理数据的时候，url 里面的中文以及特殊字符要做处理的，来学习一下 urlencode 与 urldecode 之间相互转换的方法。
 ---
 当url地址含有中文，或者参数有中文的时候，这个算是很正常了，但是把这样的url作为参数传递的时候（最常见的callback），需要把一些中文甚至'/'做一下编码转换。
 

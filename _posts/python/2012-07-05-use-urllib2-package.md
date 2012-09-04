@@ -5,9 +5,11 @@ date: 2012-07-05 17:22:52 +08:00
 layout: post
 title: !binary |
   dXJsbGliMuS9v+eUqOS4gOS6jOS4iQ==
-
+category: python
+tags: [python, urllib2]
+description: 最近项目合作做些 API 之类的，用到 urllib2 这个 package ，简单来学习一下。
 ---
-关于urllib2这个库就不用多说了，相比用到的人至少了解一番，这也是必须的。
+关于urllib2这个库就不用多说了，想必用到的人至少了解一番，这也是必须的。
 
 <strong>使用目的：</strong>
 

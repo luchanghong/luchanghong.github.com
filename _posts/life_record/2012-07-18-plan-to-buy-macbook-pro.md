@@ -5,7 +5,9 @@ date: 2012-07-18 17:42:57 +08:00
 layout: post
 title: !binary |
   5omT566X5LmwTWFjQm9va1Bybw==
-
+category: life_record 
+tags: [mac]
+description: 打算买 MacBook ，之前也没有用过，所以在 VMWare 上装一个体验一下先。
 ---
 打算下个月买个MBP，之前只是见过MacBook，根本没玩过，今天费好大力气装了个虚拟机，跑起来比较卡，算是先体验一下了。有一点比较纠结：不知道买哪一款MBP比较合适。
 

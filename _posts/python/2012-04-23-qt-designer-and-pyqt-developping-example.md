@@ -4,6 +4,9 @@ wordpress_url: http://luchanghong.com/rosemary/?p=140
 date: 2012-04-23 15:13:00 +08:00
 layout: post
 title: QT designer and pyQT developping example
+category: python
+tags: [python, pyQT]
+description: QTdesigner 是个很不错的开发工具，但是怎样把它生成的基本代码转换成 python 并加以使用呢？今天就来分享一下我的学习成果。
 ---
 QT designer怎样把设计好的窗口程序转成Python代码呢？这是上周遇到的问题，解决之后总结分享一下。
 

@@ -5,7 +5,9 @@ date: 2012-06-12 18:00:51 +08:00
 layout: post
 title: !binary |
   55SocHlyYW1pZOWIm+W7uuS4gOS4quWujOaVtOeahFdFQiBQcm9qZWN0
-
+category: python
+tags: [python, pyramid]
+description: 最近公司开展新项目，依然用的是 pyramid ，只是数据库从 mongoDB 改为 mySQL ，这个 project 差不多是我自己来完成的，总结了一下创建项目的基本步骤，算是比较完整的，分享一下。
 ---
 之前公司用pyramid做开发，那时候刚开始学习，有很多不懂，都是别人定义好的，我只是拿来用，所以一些原理不是太清楚。最近公司开展新项目，依然用的是pyramid，只是数据库从mongoDB改为mySQL，这个project差不多是我自己来完成的，总结了一下步骤。
 

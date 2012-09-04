@@ -5,7 +5,9 @@ date: 2012-07-06 18:05:40 +08:00
 layout: post
 title: !binary |
   cHl0aG9u5LitdW5pY29kZeOAgXV0ZjjjgIFnYmvnrYnnvJbnoIHpl67popg=
-
+category: python
+tags: [python, encoding]
+description: 编码转换无疑是程序开发过程中常遇到而且很让人头疼的问题，一旦和数据库交互那就更麻烦了，今天来总结一下 python 中编码转换的方法。
 ---
 前一段时间就想写一篇总结Python字符串的文章，但是时间较紧，而且我当时遇到的问题也不是很难，就暂搁下了，今天又被这编码折磨一番，泪奔啊……
 

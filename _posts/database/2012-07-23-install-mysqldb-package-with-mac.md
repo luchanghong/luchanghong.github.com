@@ -5,7 +5,9 @@ date: 2012-07-23 13:52:29 +08:00
 layout: post
 title: !binary |
   TWFj5LiL5a6J6KOFTXlTUUxkYg==
-
+category: database
+tags: [mac, MySQLdb, mysql]
+description: MySQLdb 的安装要通过编译才行，而且前提是系统安装了 mysql ，在安装过程中还要进行一下配置。
 ---
 换了笔记本是挺爽，但是好多东西都得重装。MySQLdb这个包在WIN下面就不是很好装，不过有编译好的exe安装文件，那么来学习在Mac下怎么安装的。
 
@@ -23,7 +25,7 @@ title: !binary |
 
 解压下载的tar包，修改site.cfg配置文件：
 
-[code]#mysql_config = /usr/local/bin/mysql_config[/code]
+<pre class="prettyprint">#mysql_config = /usr/local/bin/mysql_config</pre>
 
 把注释符号#去掉，后面的路径就是mysql_config的路径，在我的mac上是/usr/local/mysql/bin/mysql_config
 

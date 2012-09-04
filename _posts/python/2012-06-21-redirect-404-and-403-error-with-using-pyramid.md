@@ -5,7 +5,9 @@ date: 2012-06-21 09:06:03 +08:00
 layout: post
 title: !binary |
   5ZyocHlyYW1pZOS4remHjeWumuS5iTQwM+OAgTQwNOmUmeivrw==
-
+category: python
+tags: [python, pyramid]
+description: 为了让网站和用户的交互更加友好，要定义一些 403 、404 错误页面，那么 pyramid 是怎样处理这些错误的呢？研究一下吧。
 ---
 pyramid默认有403、404等出错处理机制，在pyramid.httpexceptions中可以看到。如果我们想让WEB对用户更加友好，那么就重定义一下这些错误，举例403 forbidden、404 not found。
 

@@ -5,7 +5,9 @@ date: 2012-06-29 16:42:25 +08:00
 layout: post
 title: !binary |
   cHl0aG9u5LiLUlNB5Yqg5a+G6Kej5a+G5Lul5Y+K6Leo5bmz5Y+w6Zeu6aKY
-
+category: python
+tags: [python, rsa]
+description: 数据传输需要进行加密，为了保证安全采用 RSA 加密方式，来学习一下 python 下 RSA 加密与解密。
 ---
 项目合作需要，和其他网站通信，消息内容采用RSA加密方式传递。之前没有接触过RSA，于是两个问题出现了：
 
