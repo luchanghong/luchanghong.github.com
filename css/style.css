@@ -784,3 +784,8 @@ textarea {
     color: black;
     text-decoration: underline;
 }
+#main article h3 a{
+	width: 500px;
+	overflow: hidden;
+	height: 20px;
+}
