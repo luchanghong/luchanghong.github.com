@@ -6,7 +6,9 @@ layout: post
 title: !binary |
   cHl0aG9uYnJld+KAlOKAlOmaj+W/g+aJgOassueahOmAieaLqXB5dGhvbueJ
   iOacrDIuKi8zLio=
-
+category: python
+tags: [python, pythonbrew]
+description: 不同的项目可能用不同版本的 python 开发，而且装的 package 也不一样，为了便于管理，随时切换我们的 python 环境，推荐使用 pythonbrew 。
 ---
 mac本上装的是python2.7.1，而项目开发用的是2.6版本的，虽然都是2.*，但是还是有些差别的，那么可不可以在系统里安装多个版本的python，用哪个版本就切换到哪个版本呢？pythonbrew帮我解决了这个问题。
 

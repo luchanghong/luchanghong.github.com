@@ -4,6 +4,9 @@ wordpress_url: http://luchanghong.com/rosemary/?p=454
 date: 2012-07-24 17:39:07 +08:00
 layout: post
 title: "error: freetype/config/ftheader.h: No such file or directory "
+category: python
+tags: [python, captchaimage]
+description: 安装 captchaimage 这个包的时候编译通不过，查看原因原来是编译时候查找 freetype 库的路径不对。
 ---
 安装captchaimage这个package的时候，总是编译不成功，修改指定编译的路径之后又报了下面的错误：
 <pre class="prettyprint">
