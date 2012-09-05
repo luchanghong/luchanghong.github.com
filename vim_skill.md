@@ -2,25 +2,22 @@
 date: 2012-08-27 17:35:54 +08:00
 title: vim小技巧集锦
 layout: post
+category: dev_tool
+tags: [vim]
+description: 自从买了 macBook ，就开始练习使用 vim ，慢慢的感受到它的魅力。
 ---
 vim使用技巧集锦
 
 1.不备份文件
 
-?
-1
 set nobackup
 2.设置Tab缩进
-
-?
-1
-2
-3
-4
+<pre class="prettyprint">
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab / expandtab
+</pre>
 其中tabstop表示一个 tab 显示出来是多少个空格的长度，默认 8。
 
 softtabstop表示在编辑模式的时候按退格键的时候退回缩进的长度，当使用expandtab时特别有用。
@@ -66,8 +63,10 @@ p：粘贴
 替换：s/a/b 把a替换成b，替换当前行，%s/a/b则替换所有
 
 ———————————————————————————————————————————————————–
+
 一图胜千言：
 
+<img src="/upload/2012/07/4cd5d2bbgc5a8496defd9690.jpeg">
 
 
 业精于勤而荒于嬉，行成于思而毁于随！熟方能生巧~~

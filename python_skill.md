@@ -2,6 +2,9 @@
 date: 2012-08-27 17:35:54 +08:00
 title: python小技巧集锦
 layout: post
+category: python
+tags: [python]
+description: 在工作和学习中总结到一些精炼的代码，看这些代码很受启发，记录下来和大家分享。
 ---
 Python小技巧收集——简单实用：你会越来越爱Python
 

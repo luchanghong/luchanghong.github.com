@@ -789,3 +789,11 @@ textarea {
 	overflow: hidden;
 	height: 20px;
 }
+#notic{
+    margin: 10px 0;
+    line-height: 20px;
+}
+#notic a{
+    color: blue;
+    text-decoration: underline;
+}

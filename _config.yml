@@ -2,6 +2,7 @@ markdown: rdiscount
 pygments: true
 
 # site global
+url: http://luchanghong.com
 title: 向猿猴进阶，python/php程序员的博客。
 subtitle: 生活因编程而充实，时光因开发而快乐，做一个有追求的程序员！
 author: luchanghong
