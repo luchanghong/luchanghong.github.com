@@ -5,7 +5,9 @@ date: 2012-05-07 17:46:14 +08:00
 layout: post
 title: !binary |
   55SocHlRVOW8gOWPkeeahOaVsOWtl+iusOW/hua4uOaIj++8iOS4gO+8iQ==
-
+category: python
+tags: [python, pyQT]
+description: 打算用 pyQT 做一个数字记忆的小游戏，缘起好久之前看到一个朋友用 Android 做的一个类似的游戏。
 ---
 之前看过一个朋友做的android手机游戏，考验记忆力的，很好玩，打算用pyQT复制一下，顺便练习练习。游戏玩法：棋盘格子一样的桌面，有几个连续整数随机出现在格子里，记住数字出现的位置，然后按照从小到大的顺序依次把数字找出来，很简单吧。
 

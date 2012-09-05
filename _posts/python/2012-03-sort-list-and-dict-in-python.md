@@ -5,7 +5,9 @@ date: 2012-03-31 14:16:58 +08:00
 layout: post
 title: !binary |
   cHl0aG9u5a+5bGlzdOeahOaOkuW6j+aWueazlQ==
-
+category: python
+tags: [python, sort]
+description: python 中列表是有序的，有时候需要根据值的大小排序；甚至一个字典也需要排序转换成列表。
 ---
 python中对一个list排序，一般有两种方法：list.sort()和sorted(list)，区别很明显，前者改变list本身，后者生成一个新的list。
 

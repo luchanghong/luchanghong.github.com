@@ -6,7 +6,9 @@ layout: post
 title: !binary |
   cHlRVOWIm+W7uuS4gOS4qm1haW5XaW5kb3flubbmt7vliqDkuIroj5zljZXm
   oI9tZW51QmFy
-
+category: python
+tags: [python, pyQT]
+description: 继续回来学习 pyQT —— 创建一个 mainWindow 以及添加上 menuBar 。
 ---
 五一给自己放了一个星期的假，去了一趟天堂——苏州&amp;杭州。回来继续学习pyQT，之前觉得学习方向有点错误，应该先搞熟了pyQT，然后再借助QTdesigner快速开发。但这也不是绝对的，目前我的学习方法是先写一个pyQT应用，遇到不会的就去查一下手册，或者从QTdesigner上面做类似的操作，然后看一下源码，再类比到Python中来。
 

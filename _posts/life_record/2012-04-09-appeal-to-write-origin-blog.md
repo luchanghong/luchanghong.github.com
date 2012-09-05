@@ -6,7 +6,9 @@ layout: post
 title: !binary |
   Q29tZSBvbiHliqrlipvvvIHigJTigJTlkbzlkIHljp/liJvmioDmnK/ljZrl
   rqI=
-
+category: life_record
+tags: [感想]
+description: 做程序员除了开发过程中能得到满足以外，我还能分享自己学习到的东西，和大家一起交流探讨，感到很高兴。但是有好多博客都是转载别人的文章，而且不加验证，大多是出于商业目的，疯狂的抓数据，真是没办法，呼吁大家搞原创。
 ---
 忙归忙，但有些事、有些人不要因为忙碌而忽视了，对于背后的那个人默默的感谢，并心存一丝愧疚。
 

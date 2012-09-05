@@ -5,7 +5,9 @@ date: 2012-04-28 11:59:57 +08:00
 layout: post
 title: !binary |
   5YGa5LiA5Liq5pyJ6L+95rGC55qE56iL5bqP5ZGY
-
+category: life_record
+tags: [感想]
+description: 程序员这个职业总不能干一辈子，是靠吃青春饭的，有限的职业生涯里做一个有追求的程序员。
 ---
 随着项目的完工，对Python的学习和运用也更进一步，也就开始了新的学习目标——pyQT。在网上收集资料的时候，发现一个博客“程序既人生”，写的很不错，不仅仅是技术，还有对程序的认识。
 

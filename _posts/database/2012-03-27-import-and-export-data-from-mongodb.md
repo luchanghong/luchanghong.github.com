@@ -5,7 +5,9 @@ date: 2012-03-27 14:23:22 +08:00
 layout: post
 title: !binary |
   bW9uZ29kYuWvvOWFpeWvvOWHuuaVsOaNrg==
-
+category: databse
+tags: [mongodb]
+description: 学习一下简单的 mongodb 数据导入导出方法，如果数据很庞大的话就寻求其他办法了。
 ---
 使用mongodb，要把数据导出备份，用到mongodb自带的导入和导出工具。WIN7上操作如下：
 <ol>

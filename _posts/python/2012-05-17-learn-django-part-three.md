@@ -5,7 +5,9 @@ date: 2012-05-17 18:51:12 +08:00
 layout: post
 title: !binary |
   RGphbmdv5byA5Y+R5a2m5Lmg77yI5LiJ77yJ
-
+category: python
+tags: [python, django]
+description: 先来了解一下 django 的后台。后台管理其实就是一个 app ，我们只管安装配置，照着文档走一遍就大致了解了。
 ---
 开始从后台说起，然后再转到前台。
 

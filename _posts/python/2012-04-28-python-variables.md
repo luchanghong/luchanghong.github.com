@@ -6,7 +6,9 @@ layout: post
 title: !binary |
   cHl0aG9u5Lit5Li657G76K6+572u5LiA5Liq5Y+v5Y+Y5Y+Y6YeP55qE5bGe
   5oCn
-
+category: python
+tags: [python, variables]
+description: 
 ---
 学过PHP的都知道PHP可变变量有时候会被用到。所谓可变变量，简单理解就是变量名是也是个变量，例如：
 

@@ -5,7 +5,9 @@ date: 2012-05-17 10:14:54 +08:00
 layout: post
 title: !binary |
   56OB55uY5YiG5Yy64oCc5oOK6a2C6K6w4oCd
-
+category: life_record
+tags: [分区]
+description: 把笔记本硬盘重新分区，结果出现惊人的一幕……
 ---
 这个华硕本是11年3.8号买的，用了一年多了，这本cup是core i7四核的，到了夏天散热口呼呼的……纠结的是硬盘才300G，所以分区C盘只分了30G。用到现在累积了好多资料，无论是工作还是学习的。
 

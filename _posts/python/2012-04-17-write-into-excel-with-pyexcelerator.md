@@ -5,7 +5,9 @@ date: 2012-04-17 15:22:15 +08:00
 layout: post
 title: !binary |
   cHl0aG9u5a+5RVhDRUzooajmoLzmk43kvZzigJRweUV4Y2VsZXJhdG9y
-
+category: python
+tags: [python, excel]
+description: Python 读写 EXCEL 常用类库 xlrd 和 xlwt ，pyExcelerator 和 xlwt 一样的，下面来看一下写表格的操作方法。
 ---
 由于公司要对数据库里面数据做统计，在WEB上实现又没有太大的必要，所以就直接写个Python脚本搞起。统计出来的数据保存到excel表格里，上网google一下，尝试pyExcelerator这个类。
 

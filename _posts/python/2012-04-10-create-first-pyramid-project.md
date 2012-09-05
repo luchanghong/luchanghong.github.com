@@ -6,7 +6,9 @@ layout: post
 title: !binary |
   Q3JlYXRlIHlvdXIgZmlyc3QgcHlyYW1pZCBwcm9qZWN04oCU5Yib5bu65LiA
   5LiqcHlyYW1pZOmhueebrg==
-
+category: python
+tags: [python, pyramid]
+description: 简单的过一下创建一个 pyramid project 的步骤。发现使用这个框架的人很少，不过它却是我用 python 做 WEB 开发用到的第一个框架。
 ---
 前面一篇文章说到了pyramid创建一个简单的application，可以是一个单一的文件。用pyramid framework做WEB开发的时候，我们通常创建一个project，也就是一个简单的框架。
 

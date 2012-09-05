@@ -5,7 +5,9 @@ date: 2012-04-04 23:41:37 +08:00
 layout: post
 title: !binary |
   cGhw6YCS5b2S5Ye95pWw5Li+5L6L
-
+category: php
+tags: [php, 递归]
+description: 递归有时候觉得深不可测，其实很简单，就是循环调用，终止条件一般在函数内部。
 ---
 突然想起来前些日子有人问我一个问题，我说写一个递归函数就可以解决当时的问题，但是他不知道怎么写，觉得递归循环很难的样子。
 

@@ -4,6 +4,9 @@ wordpress_url: http://luchanghong.com/rosemary/?p=21
 date: 2012-03-21 22:40:12 +08:00
 layout: post
 title: "jquery\xE9\x85\x8D\xE7\xBD\xAEckeditor"
+category: UI
+tags: [ckeditor, jquery]
+description: 富文本编辑器在 WEB 网站中四很常见的，比如 FCKeditor 、 CKEditor。来看一下 jQuery 快速配置使用 CKEditor 。
 ---
 做WEB开发的过程中，特别是后台的开发，搭建一个新闻发布CMS是经常要做的，当然会用到富文本编辑器。
 

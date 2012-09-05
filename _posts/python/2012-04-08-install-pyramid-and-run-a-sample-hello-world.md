@@ -5,7 +5,9 @@ date: 2012-04-08 13:47:02 +08:00
 layout: post
 title: !binary |
   5a6J6KOFcHlyYW1pZOW5tui/kOihjOS4gOS4qmhlbGxvIHdvcmxk
-
+category: python
+tags: [python, pyramid]
+description: 一起来学习和了解一下 pyramid framework ，安装 pyramid 然后跑起 hello world。
 ---
 公司的项目正式上线了，关于python的学习和pyramid框架的学习和应用也相对熟悉一些了，那么就趁热打铁把这段开发经历总结一下，以飨pyramid学习的朋友。
 

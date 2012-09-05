@@ -5,9 +5,11 @@ date: 2012-05-09 19:32:52 +08:00
 layout: post
 title: !binary |
   55SocHlRVOW8gOWPkeeahOaVsOWtl+iusOW/hua4uOaIj++8iOS4ie+8iQ==
-
+category: python
+tags: [python, pyQT]
+description: 简单的包装了一下，有兴趣的可以下载试玩，欢迎吐槽、拍砖。
 ---
-昨天把逻辑改了改，窗口界面也完善了一下，但是还是比较简陋，就这样吧，发布一下。试玩点击下载：<a href="http://www.luchanghong.com/rosemary/wp-content/uploads/2012/05/memory.exe">http://www.luchanghong.com/rosemary/wp-content/uploads/2012/05/memory.exe</a>
+昨天把逻辑改了改，窗口界面也完善了一下，但是还是比较简陋，就这样吧，发布一下。试玩点击下载：<a href="http://www.luchanghong.com/rosemary/wp-content/uploads/2012/05/memory.exe">/uploads/2012/05/memory.exe</a>
 
 如果不能玩，就下载个vs2008装上~~~
 

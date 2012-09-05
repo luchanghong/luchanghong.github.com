@@ -5,7 +5,9 @@ date: 2012-05-10 20:25:59 +08:00
 layout: post
 title: !binary |
   cHlyYW1pZOS4reWvvOWHumV4Y2Vs6KGo5qC8
-
+category: python
+tags: [python, excel]
+description: 本文主要分享的是如何在虚拟文件存储的过程中利用 StringIO 来导出一份 EXCEL 表格。
 ---
 Python对excel的操作，有篇文章提到过，<a title="python对EXCEL表格操作—pyExcelerator" href="http://luchanghong.com/rosemary/?p=130">猛击这里</a>。在web里如何导出一份excel表格呢？我用的是pyramid框架。
 

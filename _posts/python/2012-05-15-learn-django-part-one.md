@@ -5,7 +5,9 @@ date: 2012-05-15 19:32:32 +08:00
 layout: post
 title: !binary |
   RGphbmdv5byA5Y+R5a2m5Lmg77yI5LiA77yJ
-
+category: python
+tags: [python, django]
+description: 从我了解到的 pythoner 以及相关技术交流讨论组里面来看，国内用 python 做 WEB 开发用的框架中 django 算是比较火的了，所以抽空来学习一下 django 。
 ---
 python的WEB框架，之前公司项目用到的是pyramid，在Q群里几乎没人用过，用Django的挺多的，于是抽空学一下Django。
 

@@ -5,7 +5,9 @@ date: 2012-05-18 17:41:43 +08:00
 layout: post
 title: !binary |
   RGphbmdv5byA5Y+R5a2m5Lmg77yI5LqU77yJ
-
+category: python
+tags: [python, django]
+description: URLconf 的写法有好几种，我们一一对比一下，到底哪种更有利于项目的管理，另外看一下 404 、 500 等错误的 redirect 方法。
 ---
 这篇文章主要是探讨一下URLconf到底怎样写以及出错页面（404、500）。
 

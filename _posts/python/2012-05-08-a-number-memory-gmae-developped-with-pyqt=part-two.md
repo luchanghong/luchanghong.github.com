@@ -5,7 +5,9 @@ date: 2012-05-08 10:23:38 +08:00
 layout: post
 title: !binary |
   55SocHlRVOW8gOWPkeeahOaVsOWtl+iusOW/hua4uOaIj++8iOS6jO+8iQ==
-
+category: python
+tags: [python, pyQT]
+description: 探讨一下开发过程中遇到的几个难题，由于第一次做这样的东西，思想和方法还是比较紧的。
 ---
 想做的话就没什么难的，昨晚把几个难题攻破了，可以玩了，今早又趁热打铁把关卡也设置了。
 

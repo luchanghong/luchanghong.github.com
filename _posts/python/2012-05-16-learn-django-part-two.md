@@ -5,7 +5,9 @@ date: 2012-05-16 18:26:49 +08:00
 layout: post
 title: !binary |
   RGphbmdv5byA5Y+R5a2m5Lmg77yI5LqM77yJ
-
+category: python
+tags: [python, django]
+description: 学习一下 django 中 project 和 app 的关系，以及如何在一个 project 中创建 app 。
 ---
 昨天的学习算是创建了一个project，继续学习如何创建app以及数据关系模型对象。说道project和app，Django是这样解释的：
 

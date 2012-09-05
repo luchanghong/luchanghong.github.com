@@ -5,7 +5,9 @@ date: 2012-05-15 23:21:36 +08:00
 layout: post
 title: !binary |
   5a+75om+77yM55CG5oOz77yf
-
+category: life_recording
+tags: [感想]
+description: 人在忙碌的时候应该找个机会停下来，好好反思一下。人生是如此的辉煌，人生是如此的精彩，不带你这样玩的！
 ---
 一、现状
 
