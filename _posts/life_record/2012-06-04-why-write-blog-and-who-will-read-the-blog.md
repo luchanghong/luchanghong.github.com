@@ -5,7 +5,9 @@ date: 2012-06-04 10:59:28 +08:00
 layout: post
 title: !binary |
   5Li65LuA5LmI5YaZ5Y2a5a6i77yf5YaZ57uZ6LCB55yL77yf
-
+category: life_record
+tags: [感想]
+description: 为什么写博客？写给谁看？这是个值得思考的问题。
 ---
 每次登录博客，都想看一下流量统计，实在有点受不了自己，到底为什么写博客？写给谁看？
 

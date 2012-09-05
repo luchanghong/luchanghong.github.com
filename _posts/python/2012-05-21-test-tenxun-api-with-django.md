@@ -5,7 +5,9 @@ date: 2012-05-21 15:23:16 +08:00
 layout: post
 title: !binary |
   RGphbmdv5bqU55So4oCU4oCU6IW+6K6v5byA5pS+5bmz5Y+w
-
+category: python
+tags: [python, django]
+description: 学以致用，用 django 来跑一下腾讯开放平台的 API 。
 ---
 上周学习了Django，学以致用，就拿腾讯开放平台举例吧。说到这个腾讯开放平台，其实类似的平台很多，新浪、百度等都有，相对来说腾讯用户量算是最大的了，对于一些开发者来说，通过这些开放平台可以挣点小钱花，这里的应用最火的当然是游戏类的，但都是flash格式的，Python和PHP等都是望尘莫及啊。废话不多说，做个测试吧。
 

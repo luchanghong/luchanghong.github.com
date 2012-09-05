@@ -5,7 +5,9 @@ date: 2012-05-30 17:05:10 +08:00
 layout: post
 title: !binary |
   cGFyYW1pa2/nmoTlronoo4XkuI7kvb/nlKg=
-
+category: python
+tags: [python, paramiko]
+description: 如果你要监控服务器，用 paramiko 是一个人很不错的选择，它可以建立 SSH 连接，像在终端一样执行各自命令反馈服务器的状态。
 ---
 前段时间学习写服务器监控脚本，用paramiko。
 

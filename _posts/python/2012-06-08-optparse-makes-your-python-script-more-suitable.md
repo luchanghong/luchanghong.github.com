@@ -5,7 +5,9 @@ date: 2012-06-08 17:29:51 +08:00
 layout: post
 title: !binary |
   b3B0cGFyc2XorqnkvaDnmoTohJrmnKzmm7TngbXmtLs=
-
+category: python
+tags: [python, OptionParser]
+description: 如果想要提高程序的兼容性，那么关键的数值一定不能写死了，你能用别人可不一定能用，所以要添加一些参数，那么针对一个 python 脚本如何在执行的时候改变参数呢？
 ---
 写一个系统监控的脚本，把log文件的路径写死了，因为写的时候就是不可变的，所以被批一顿~~~有些东西该用还是得用，不能偷懒！
 
