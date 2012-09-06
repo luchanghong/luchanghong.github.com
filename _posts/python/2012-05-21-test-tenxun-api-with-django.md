@@ -60,7 +60,7 @@ def index(request):
 &lt;title&gt;qq open app&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  {{ hello }}&lt;br&gt;
+  { { hello }}&lt;br&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </pre>
@@ -113,9 +113,9 @@ def index(request):
 <pre class="prettyprint">
 
 &lt;body&gt;
-  {{ hello }}&lt;br&gt;
-  {{ data }}&lt;br&gt;
-  &lt;img src="{{ data.figureurl }}" alt=""&gt;
+  { { hello }}&lt;br&gt;
+  { { data }}&lt;br&gt;
+  &lt;img src="{ { data.figureurl }}" alt=""&gt;
 &lt;/body&gt;
 
 </pre>
