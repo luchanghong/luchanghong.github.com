@@ -48,6 +48,8 @@ description: 昨天已经部署了一个简单的 Nginx + uWSGI python 应用。
 
 由于我是在当前 virtualenv 环境下执行的，就用指定 env 的路径，否则要加一个 `-H /usr/python_env/path` 参数，
 启动成功之后，可以 `ps -ef | grep uwsgi` 看一下是不是有4个 uWSGI 进程，不加 `--workers` 参数默认启动一个。
+如果你不想看到 uwsgi 的及时 log ，可以加这样一个参数 `--daemonize /Users/lch/dev/www/log/uwsgi/app_push.log` 把 log 存放在一个文件中，这样启动完 uWSGI 以后就不会霸占终端了。
+
 注意：`production.ini/develop.ini` 必须是绝对全路径，否则提示：
 
     ValueError: Cannot resolve relative uri 'config:luchanghong.ini'; no relative_to keyword argument given
