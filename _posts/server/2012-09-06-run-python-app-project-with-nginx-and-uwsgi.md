@@ -14,7 +14,7 @@ description: 在网上看到 python 应用的一些部署方式，如今最高�
 
     sudo ln -s /usr/local/sbin/nginx /usr/bin/nginx
 
-在我 mac 电脑上装完 nginx 之后，它自己就启动了，打开 `localhost:9000` ，就会看到 `Welcome to nginx!`。
+在我 mac 电脑上装完 nginx 之后，它自己就启动了，打开 `localhost:8080` ，就会看到 `Welcome to nginx!`。
 
 ## 安装 uwsgi
 
