@@ -50,6 +50,7 @@ p code, li code, .post_description{
     font-size: 14px;
 }
 pre{
+    word-wrap:break-word;
     line-height: 25px;
     border: 1px solid #DDD;
     background-color: #EEF;
