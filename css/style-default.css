@@ -343,3 +343,9 @@ textarea:hover {
     position: absolute;
     left: 0;
 }
+.jiathis_style table{
+    border: none
+}
+.jiadiv_01 table{
+    border: none
+}
