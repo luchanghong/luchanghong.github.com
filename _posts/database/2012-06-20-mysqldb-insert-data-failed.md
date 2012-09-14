@@ -6,7 +6,7 @@ layout: post
 title: !binary |
   TXlTUUxkYuaPkuWFpeaVsOaNruWksei0pe+8n2luc2VydCBkYXRhIGZhaWxl
   ZCB1c2luZyBNeVNRTGRi77yf
-category: mysql
+category: database
 tags: [mysql, MySQLdb]
 description: 当 MySQLdb 遇上 innodb 类型的数据库，在做 insert 的时候，必须 commit 才能插入到数据表里面去。
 ---
