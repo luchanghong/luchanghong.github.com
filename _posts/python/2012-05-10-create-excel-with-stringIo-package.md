@@ -30,7 +30,7 @@ def export_excel():
     ws = w.add_sheet('test')
     ws.write(0, 0, 'name')
     ws.write(1, 0, 'luchanghong')
-    ws.save(out_put)
+    w.save(out_put)
 
     return Response(body = out_put.getvalue(), content_type = 'application/x-xls;', content_disposition = 'attachment; filename = test.xls;')
 </pre>
