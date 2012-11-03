@@ -27,6 +27,8 @@ description: 做回老本行了，第一次使用 codeIgniter 框架。
 
 - 匹配URL路由
     
+在`/application/config/router.php`中可以定义URL规则，如果不定义，默认按照`/controller_name/function_name`这种模式来访问，可以去官网查看文档说明。
+
 <pre class="prettyprint">
 # My test URI
 $route['hello/index'] = 'hello/index';
@@ -106,5 +108,8 @@ class Hello_model extends CI_Model {
 $this->output->cache(1); 
 </pre>
 
+## 进阶
+
+熟能生巧，如果想用好CI还是系统全面的做个项目，不过开发过程中MVC这种模式是显然易见的，但是一些细节问题还要多多研究。
 
 [codeigniter 中文官网]: codeigniter.org.cn "codeigniter.org.cn"
