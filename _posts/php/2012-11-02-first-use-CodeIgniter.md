@@ -112,4 +112,4 @@ $this->output->cache(1);
 
 熟能生巧，如果想用好CI还是系统全面的做个项目，不过开发过程中MVC这种模式是显然易见的，但是一些细节问题还要多多研究。
 
-[codeigniter 中文官网]: codeigniter.org.cn "codeigniter.org.cn"
+[codeigniter 中文官网]: http://codeigniter.org.cn "codeigniter.org.cn"
