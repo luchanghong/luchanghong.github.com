@@ -3,13 +3,12 @@ wordpress_id: 302
 wordpress_url: http://luchanghong.com/rosemary/?p=302
 date: 2012-06-15 15:22:58 +08:00
 layout: post
-title: !binary |
-  cHlyYW1pZOS9v+eUqG1va2/mqKHmnb/nmoTluLjnlKjor63ms5U=
+title: pyramid使用mako模板的常用语法
 category: python
 tags: [python, pyramid]
 description: 在 pyramid 中长使用的模板引擎是 makotemplates ，学习一下 mako 的常用语法。
 ---
-pyramid常用moko模板，在简单配置moko模板之后就可以使用了。常用的当然是HTMl模板，配制方法请看<a title="用pyramid创建一个完整的WEB Project" href="http://luchanghong.com/rosemary/?p=284">这篇文章</a>。下面是几个常用的模板语法的例子：
+pyramid常用mako模板，在简单配置moko模板之后就可以使用了。常用的当然是HTMl模板，配制方法请看<a title="用pyramid创建一个完整的WEB Project" href="http://luchanghong.com/rosemary/?p=284">这篇文章</a>。下面是几个常用的模板语法的例子：
 
 一、输出变量或表达式
 
