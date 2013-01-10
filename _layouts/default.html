@@ -5,6 +5,15 @@
    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
    <meta name="baidu-tc-verification" content="354843b3f9069166524da96781de3881" />
    <title>{{ page.title }}--{{ site.title }}</title>
+   <!--必填-->
+   <meta property="og:type" content="article" />
+   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+   <meta property="og:title" content="{{ page.title }}" />
+   <meta property="og:description" content="{{ page.description }}" />
+   <!--选填-->
+   <meta property="og:image" content="" />
+   <meta name="weibo: article:create_at" content="{{ page.date }}" />
+   <meta name="weibo: article:update_at" content="{{ page.date }}" />
 
    <!-- Homepage CSS -->
    <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection" />
