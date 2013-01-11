@@ -12,4 +12,3 @@ description: 从刚开始接触Linux服务器到购买MacBook Pro，我都始终
 ## 使用
 
 使用时打开`Preferences`乱七八糟一通修改，找到属于你自己的style即可。
-
