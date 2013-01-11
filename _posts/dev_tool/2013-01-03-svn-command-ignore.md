@@ -2,7 +2,7 @@
 layout: post
 category: dev_tool
 title: SVN忽略文件或文件夹
-category: [svn]
+tags: [svn]
 description: 2013年第一篇博客，关于SVN忽略一些文件或者文件夹操作的。
 ---
 

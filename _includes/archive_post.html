@@ -1,3 +1,3 @@
 <h3><a href="{{ root_url }}{{ post.url }}" style="float:left;padding-right:15px;" title="{{ post.title }}">{{post.title}}</a></h3>
-<time datetime="{{ post.date | date_to_xmlschema }}" pubdate>{{ post.date | date: "<span class='year'>%Y年</span><span class='month'>%m月</span> <span class='day'>%d日</span>"}}</time>
+<time datetime="{{ post.date }}" pubdate>{{ post.date | date: "<span class='year'>%Y年</span><span class='month'>%m月</span> <span class='day'>%d日</span>"}}</time>
 <div class="clear"></div>
