@@ -47,4 +47,4 @@ category: web
 
 这一步貌似很多余！排查完错误之后，能在本地运行`jekyll --server`跑起来就OK了，然后再把本地的repository push到github上去即可。
 
-对你又用的话赶紧在下面赞一下吧，O(∩_∩)O哈哈~
+对你有用的话赶紧在下面赞一下吧，O(∩_∩)O哈哈~
