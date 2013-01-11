@@ -1,6 +1,6 @@
 ---
 layout: post
-title: github page build failure
+title: github page build failure 的解决办法
 description: 昨天更新一篇文章到github上，顺便把新浪微博的赞功能引用到博客中去，但是push本地的repository之后却收到`Page build failure`的邮件，还以为是加入新浪“赞”引起的，纠结了半天原来另有隐情！
 tags: [github]
 category: web
@@ -46,3 +46,5 @@ category: web
 ## 最后一步
 
 这一步貌似很多余！排查完错误之后，能在本地运行`jekyll --server`跑起来就OK了，然后再把本地的repository push到github上去即可。
+
+对你又用的话赶紧在下面赞一下吧，O(∩_∩)O哈哈~
