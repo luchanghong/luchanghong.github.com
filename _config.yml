@@ -14,5 +14,5 @@ category_path: /category.html
 
 # post config
 date_format: "%Y-%m-%d"
-paginate: 8
+paginate: 12
 pagination_dir: blog/
