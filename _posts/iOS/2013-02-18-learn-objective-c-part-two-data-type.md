@@ -95,3 +95,6 @@ int main(int argc, const char * argv[])
     2013-02-18 17:41:08.865 DataType[17717:303] 100
     2013-02-18 17:41:08.865 DataType[17717:303] Hello, World!
 
+## String Format Specifiers
+
+类似`%@`格式化请参考苹果官方文档：[String Format Specifiers](https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/Strings/Articles/formatSpecifiers.html)
