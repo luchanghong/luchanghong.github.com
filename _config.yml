@@ -3,7 +3,8 @@ pygments: true
 
 # site global
 url: http://luchanghong.com
-title: 向猿猴进阶，python/php程序员的博客。
+title: Code Monkey·程序猿，python/php/iOS程序员博客。
+description: WEB网站开发，iOS应用开发，PHP程序员、Python程序员、Object-C程序员，大大的Code Monkey——程序猿。
 subtitle: 因何而生？因何而战？程序员的道路走着……
 author: luchanghong
 
