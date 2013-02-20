@@ -3,14 +3,14 @@ layout: post
 category: iOS
 tags: [objective-c, iOS]
 title: NSArray——Objective-C学习（4）
-description: 稍微复杂的数据类型中数组和字典算是最常用的了，本节学习NSArray的用法。
+description: 在Objective-C稍微复杂的数据类型中，数组和字典算是最常用的了，本节学习NSArray的用法。
 ---
 
 ## 声明
 
  * 硬件：MacBook Pro 13.3寸 2012版
  * 系统：Mac OS X Mountain Lion 10.8.2
- * 软件：Xcode 4.6（昨天刚升级的）
+ * 软件：Xcode 4.6
 
 ## 练习
 
@@ -125,7 +125,7 @@ NSLog(@"Hello, World!");
 
 ## 新版特性
 
-性特性定义数组：
+定义数组：
 
     NSArray *array = @[@"a", @"b"];
 
