@@ -43,7 +43,7 @@ CREATE TABLE `admin_action` (
 
 LOCK TABLES `admin_action` WRITE;
 /*!40000 ALTER TABLE `admin_action` DISABLE KEYS */;
-INSERT INTO `admin_action` VALUES (1,0,'lab.png','操作集合','javascript:;','','yes',0),(2,1,'0','修改操作','/admin/action/edit','ACTION_EDIT','no',2),(3,1,'0','添加操作','/admin/action/add','ACTION_ADD','yes',3),(11,0,'role.png','角色管理','javascript:;','','yes',5),(12,11,'0','添加角色','/admin/role/add','ROLE_ADD','yes',2),(13,1,'0','操作列表','/admin/action/index','ACTION_LIST','yes',1),(14,11,'0','角色列表','/admin/role/index','ROLE_LIST','yes',1),(15,11,'0','编辑角色','/admin/role/edit','ROLE_EDIT','no',3),(16,0,'inbox.png','控制面板','/admin/index','ADMIN_INDEX','yes',-10),(17,16,'0','控制面板','','','no',1),(36,1,'0','删除操作','/admin/action/delete','ACTION_DELETE','no',5),(39,11,'0','删除角色','/admin/role/delete','ROLE_DELETE','no',4);
+INSERT INTO `admin_action` VALUES (1,0,'lab.png','操作集合','javascript:;','','yes',0),(2,1,'0','修改操作','/admin/action/edit','ACTION_EDIT','no',2),(3,1,'0','添加操作','/admin/action/add','ACTION_ADD','yes',3),(11,0,'role.png','角色管理','javascript:;','','yes',5),(12,11,'0','添加角色','/admin/role/add','ROLE_ADD','yes',2),(13,1,'0','操作列表','/admin/action/index','ACTION_LIST','yes',1),(14,11,'0','角色列表','/admin/role/index','ROLE_LIST','yes',1),(15,11,'0','编辑角色','/admin/role/edit','ROLE_EDIT','no',3),(16,0,'inbox.png','控制面板','/admin/index','','yes',-10),(17,16,'0','控制面板','','ADMIN_INDEX','no',1),(36,1,'0','删除操作','/admin/action/delete','ACTION_DELETE','no',5),(39,11,'0','删除角色','/admin/role/delete','ROLE_DELETE','no',4);
 /*!40000 ALTER TABLE `admin_action` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,4 +131,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2013-03-08 11:48:55
+-- Dump completed on 2013-03-08 12:06:42
