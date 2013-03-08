@@ -28,5 +28,5 @@ Role-Based Access Control，指的是基于角色的访问控制。想要了解�
 
 需要改进的地方还有很多，有见解的还请不吝赐教。
 
-[DEMO源码下载](http://wwww.luchanghong.com/upload/attachement/20130308/RBAC_DEMO.tar.gz)
-[DEMO数据库下载](http://wwww.luchanghong.com/upload/attachement/20130308/RBAC_DB.sql)
+[DEMO源码下载](http://www.luchanghong.com/upload/attachement/20130308/RBAC_DEMO.tar.gz)
+[DEMO数据库下载](http://www.luchanghong.com/upload/attachement/20130308/RBAC_DB.sql)
