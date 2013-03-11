@@ -74,6 +74,6 @@ Person *person = [[Person alloc] init];
 
     2013-02-26 17:36:07.354 CreateClass[2435:303] Hey, i am a male. My name is luchanghong and i am 24 years old.
 
-## peoject参考
+## DEMO参考
 
 下载：[CreateClass.tar.gz](http://www.luchanghong.com/upload/attachement/20130226/CreateClass.tar.gz)
