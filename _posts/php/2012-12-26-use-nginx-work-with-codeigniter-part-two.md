@@ -8,7 +8,7 @@ description: 两种Nginx部署CI项目的方法，一个是rewrite，另一个�
 
 # URL rewrite 方法
 
-<pre class="prettyprint">
+```nginx
 server {
     listen 8080;
     server_name www.xxx.com;
@@ -43,13 +43,13 @@ server {
         include fastcgi_params;
     }
 }
-</pre>
+```
 
 说明一下上面的配置，因为我在`application/controllers/`里面新建一个文件夹`admin`专门存放后台相关的controller，所以比普通的路径要多一层（对应的是&d=admin）这个参数。在这就可以看到rewrite方法的不足了，当有类似admin这种情况发生的时候就要添加对应的rewrite规则了。
 
 ## PATH_INFO 方法
 
-<pre class="prettyprint">
+```nginx
 server {
     listen 8080;
     server_name www.xxx.com;
@@ -85,15 +85,17 @@ server {
         include fastcgi_params;
     }
 }
-</pre>
+```
 
 说明：
 
 * 如果项目里面URL类似`http://www.xxx.com/index.php/user/profile`这种就不用下面的rewrite：
-<pre class="prettyprint">
-    if (!-e $request_filename) {
-        rewrite ^(.*)$ /index.php/$1 last;
-    }
-</pre>
+
+```nginx
+if (!-e $request_filename) {
+    rewrite ^(.*)$ /index.php/$1 last;
+}
+```
+
 * 注意本机fastcgi启动的是9001端口，要和自身匹配
 * 网上有人说`include fastcgi_params;`要放在设置`fastcgi_param`的前面，经测试前后都没问题

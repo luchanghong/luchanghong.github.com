@@ -40,8 +40,10 @@ tag: [php,codeigniter]
     方法二：/user/list?，结果是：/user/list?&per_page=10
 
 分页的SQL就是：
-    
-    $this->db->limit($pagesize, $this->input->get('per_page'));
+
+```php
+$this->db->limit($pagesize, $this->input->get('per_page'));
+```
 
 为了保持URL一致性还是使用第二种方法，后面也可以随便加个没用的参数让结果变成`/user/list?x=xxx&per_page=10`。
 
