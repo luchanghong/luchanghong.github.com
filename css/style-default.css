@@ -51,11 +51,9 @@ p code, li code, .post_description{
 }
 pre{
     word-wrap:break-word;
-    line-height: 20px;
     border: 1px solid #DDD;
     background-color: #EEF;
-    padding: 0 .4em;
-    font-family: "inconsolata-1","inconsolata-2","Monaco","Courier New",monospace;
+    font-family: "Monaco","inconsolata-1","inconsolata-2","Monaco","Courier New",monospace;
 }
 blockquote {
 	border-color: #E1E1E1;
