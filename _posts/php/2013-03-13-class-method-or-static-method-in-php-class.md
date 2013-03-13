@@ -9,13 +9,15 @@ description: 一般在WEB应用里，我们很难用到类的一些高级（或�
 
 定义静态方法很简单，在声明关键词`function`之前加上`static`，例如：
 
-    class A
+```php
+class A
+{
+    static function fun()
     {
-        static function fun()
-        {
-            // do somathing
-        }
+        // do somathing
     }
+}
+```
 
 ## 静态方法使用
 
