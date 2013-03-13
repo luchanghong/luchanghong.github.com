@@ -1,20 +1,20 @@
 ---
 layout: post
-title: 使用Redcarpet和Hightlight.js
+title: 使用Redcarpet和Highlight.js
 tags: [a,b]
-description: 今天把prettyprint替换掉，采用了Hightlight.js来给代码上色。因为在使用prettyprint的时候比较麻烦，体现不出MarkDown的优势，为了迎合Hightlight.js使用更加简介的代码块编辑风格，但是原有的MarkDown解释器能力有限，于是采用Redcarpet作为新的解释器。
+description: 今天把prettyprint替换掉，采用了Highlight.js来给代码上色。因为在使用prettyprint的时候比较麻烦，体现不出MarkDown的优势，为了迎合Hightlight.js使用更加简介的代码块编辑风格，但是原有的MarkDown解释器能力有限，于是采用Redcarpet作为新的解释器。
 ---
 
-## 使用Hightlight.js
+## 使用Highlight.js
 
-- 下载Hightlight
+- 下载Highlight
 
-[Hightlight][1]是一款专门为MarkDown打造的，支持54种编程语言的代码高亮和26种代码风格。进入[下载页面][2]选择你使用的语言，然后点击`download`按钮下载，完成之后解压，把`highlight.pack.js`和`style`目录里你喜欢的代码风格样式文件拷贝到项目中去。
+[Highlight][1]是一款专门为MarkDown打造的，支持54种编程语言的代码高亮和26种代码风格。进入[下载页面][2]选择你使用的语言，然后点击`download`按钮下载，完成之后解压，把`highlight.pack.js`和`style`目录里你喜欢的代码风格样式文件拷贝到项目中去。
 
-[1]: http://softwaremaniacs.org/soft/highlight/en/ "Hightlight"
-[2]: http://softwaremaniacs.org/soft/highlight/en/download/ "Hightlight download"
+[1]: http://softwaremaniacs.org/soft/highlight/en/ "Highlight"
+[2]: http://softwaremaniacs.org/soft/highlight/en/download/ "Highlight download"
 
-- 使用Hightlight
+- 使用Highlight
 
 通常在`layout`页面引用一次即可，例如：
 
@@ -30,7 +30,7 @@ description: 今天把prettyprint替换掉，采用了Hightlight.js来给代码�
 
 指定代码的语言，形如：
 
-<pre class="no-hightlight">
+<pre class="no-highlight">
 ```php
     $a = 'a';
     echo $a;
