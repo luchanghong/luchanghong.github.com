@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 使用Redcarpet和Highlight.js
-tags: [a,b]
+tags: [markdown,highlight]
 description: 今天把prettyprint替换掉，采用了Highlight.js来给代码上色。因为在使用prettyprint的时候比较麻烦，体现不出MarkDown的优势，为了迎合Hightlight.js使用更加简介的代码块编辑风格，但是原有的MarkDown解释器能力有限，于是采用Redcarpet作为新的解释器。
 ---
 
