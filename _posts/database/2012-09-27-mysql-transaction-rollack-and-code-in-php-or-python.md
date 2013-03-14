@@ -48,7 +48,8 @@ description: 前一段时间看到过关于事务管理方面的东西，今天�
     Query OK, 1 row affected (0.00 sec) 
 
 PHP测试代码：
-<pre class="prettyprint">
+
+```php
 $conn = mysql_connect('127.0.0.1', 'root', 'root');
 mysql_select_db('shop_test');
 mysql_query('SET NAMES UTF8');
@@ -67,8 +68,8 @@ if (mysql_errno()){
     echo "OK";
     mysql_query("COMMIT");
 }
-</pre>
-    
+```
+
 执行一次后查看数据库：
 
     mysql> SELECT * FROM `user_account`;
@@ -89,7 +90,7 @@ if (mysql_errno()){
 
 那么，我添加一个条件，就是每次更新完 `user_account` 表后检查用户的 money 是否为负值，如果为负值那么就要撤销之前的操作，执行事务回滚。
 
-<pre class="prettyprint">
+```php
 $conn = mysql_connect('127.0.0.1', 'root', 'root');
 mysql_select_db('shop_test');
 mysql_query('SET NAMES UTF8');
@@ -121,10 +122,11 @@ function check_remain_money($user){
     $result = mysql_fetch_assoc( mysql_query($sql) );
     return !empty($result) ? $result['money'] : 0;
 }
-</pre>
+```
 
 接着，在shell下多次执行这php文件（WIN下就手动执行几次吧），例如：
-<pre class="prettyprint">
+
+```bash
 lch@LCH:~/Desktop $ for x in `seq 6`; do php transaction.php ; done
 60 OK 
 40 OK 
@@ -132,9 +134,10 @@ lch@LCH:~/Desktop $ for x in `seq 6`; do php transaction.php ; done
 0 OK 
 -20 No enough money 
 -20 No enough money
-</pre>
+```
 
 再看数据库数据：
+
     mysql> SELECT * FROM `user_account`;
     +-------------+-------+
     | user        | money |
@@ -154,12 +157,12 @@ lch@LCH:~/Desktop $ for x in `seq 6`; do php transaction.php ; done
     |  5 | luchanghong |    10 |     2 |
     +----+-------------+-------+-------+
     5 rows in set (0.00 sec)
-    
 
 ## python下的实现
 
 这里我用的是 [MySQLdb][] 这个包，例子如下：
-<pre class="prettyprint">
+
+```python
 #!/usr/bin/env python
 #-*- coding: utf8 -*-
 
@@ -191,12 +194,15 @@ def check_remain_money(user):
 
 if __name__ == '__main__':
     main()
-</pre>
+```
 
 再把用户的 money 改为 50 ：
+
     mysql> UPDATE `user_account` SET `money` = '50' WHERE `user` = 'luchanghong';
+
 想测试PHP那样测试：
-<pre class="prettyprint">
+
+```bash
 (env_push)lch@LCH:~/Desktop $ for x in `seq 3`; do python transaction.py; done
 30
 OK
@@ -204,8 +210,10 @@ OK
 OK
 -10
 No enough money
-</pre>
+```
+
 看数据库结果：
+
     mysql> SELECT * FROM `user_account`;
     +-------------+-------+
     | user        | money |
