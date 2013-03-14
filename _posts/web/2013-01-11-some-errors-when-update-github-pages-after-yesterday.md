@@ -12,34 +12,44 @@ category: web
 
 之前我的jekyll版本是`0.11.2`，现在是`0.12.0`，可以通过一下命令查看版本：
 
-    lch@localhost:~ $ jekyll -v
-    Jekyll 0.12.0
+```bash
+lch@localhost:~ $ jekyll -v
+Jekyll 0.12.0
+```
 
 更新的话很简单，为了保险起见，我先卸载然后再安装：
 
-    sudo gem uninstall jekyll
-    sudo gem install jekyll
+```bash
+sudo gem uninstall jekyll
+sudo gem install jekyll
+```
 
 ## 排查错误
 
 安装新版本的jekyll之后就在本地排查错误吧：
 
-    jekyll --safe
+```bash
+jekyll --safe
+```
 
 会提示你的错误，我遇到的错误有两个：
 
- * 第一个是手误，把分类`tags: [svn]`写成了`category: [svn]`：
+1.  第一个是手误，把分类`tags: [svn]`写成了`category: [svn]`：
 
+    ```ini
     Configuration from /Users/lch/dev/luchanghong.github.com/_config.yml
     Building site: /Users/lch/dev/luchanghong.github.com -> /Users/lch/dev/luchanghong.github.com/_site
     Liquid Exception: private method `gsub' called for ["svn"]:Array in post
     /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:289:in `escape'
+    ```
 
- * 第二个是之前引用的格式化日期的函数现在不能用了，具体原因我也不太清楚，只好把它干掉：
+2.  第二个是之前引用的格式化日期的函数现在不能用了，具体原因我也不太清楚，只好把它干掉：
 
+    ```ini
     Building site: /Users/lch/dev/luchanghong.github.com -> /Users/lch/dev/luchanghong.github.com/_site
     Liquid Exception: undefined method `xmlschema' for "Thu Jan 13 00:00:00 +0800 2011":String in post
     /Library/Ruby/Gems/1.8/gems/jekyll-0.12.0/bin/../lib/jekyll/filters.rb:57:in `date_to_xmlschema'
+    ```
 
 **注意：** jekyll的错误提示让人很纠结，因为不去报告具体位置，而且ruby这个我也没学过，只能靠自己的感觉了……
 

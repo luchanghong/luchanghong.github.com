@@ -20,7 +20,7 @@ description: 学习Objective-C中的class中属性和方法的定义和使用。
 
 ## .h头文件
 
-<pre class="prettyprint">
+```objectivec
 @interface Person : NSObject
 {
     int age;
@@ -33,11 +33,11 @@ description: 学习Objective-C中的class中属性和方法的定义和使用。
 -(void) setAge: (int) myAge setSex: (NSString *) mySex;
 -(void) setName: (NSString *) MyName;
 @end
-</pre>
+```
 
 ## .m文件
 
-<pre class="prettyprint">
+```objectivec
 @implementation Person
 
 -(void) printPersnalInfor
@@ -58,21 +58,23 @@ description: 学习Objective-C中的class中属性和方法的定义和使用。
 }
 
 @end
-</pre>
+```
 
 ## main.m中调用
 
-<pre class="prettyprint">
- // use person class
+```objectivec
+// use person class
 Person *person = [[Person alloc] init];
 [person setAge:24 setSex: @"male"];
 [person setName: @"luchanghong"];
 [person printPersnalInfor];
-</pre>
+```
 
 输出：
 
-    2013-02-26 17:36:07.354 CreateClass[2435:303] Hey, i am a male. My name is luchanghong and i am 24 years old.
+```bash
+2013-02-26 17:36:07.354 CreateClass[2435:303] Hey, i am a male. My name is luchanghong and i am 24 years old.
+```
 
 ## DEMO参考
 

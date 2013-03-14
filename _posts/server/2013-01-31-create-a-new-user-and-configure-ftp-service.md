@@ -12,35 +12,41 @@ description: Linux下创建用户是很easy的事情了，只不过不经常去�
 
 1.创建用户，并指定分组和主目录
 
-    useradd -d /home/lch -g root lch
+```bash
+useradd -d /home/lch -g root lch
+```
 
  还可以增加其他参数，比如指定用户使用shell等，具体的google一下
 
 2.设定密码 
 
-    passwd lch
+```bash
+passwd lch
+```
 
 3.查看、改变、添加用户分组
 
-    [root@localhost ~]# groups lch
-    lch : root www
-    # -G 改变分组
-    [root@localhost ~]# usermod -G root lch
-    [root@localhost ~]# groups lch
-    lch : root
-    # -g 新增分组
-    [root@localhost ~]# usermod -g www lch
-    [root@localhost ~]# groups lch
-    lch : www root
+```bash
+[root@localhost ~]# groups lch
+lch : root www
+# -G 改变分组
+[root@localhost ~]# usermod -G root lch
+[root@localhost ~]# groups lch
+lch : root
+# -g 新增分组
+[root@localhost ~]# usermod -g www lch
+[root@localhost ~]# groups lch
+lch : www root
+```
 
 4.删除用户
 
-    # 加上 -r 参数，删除更彻底
-    userdel -r lch
+```bash
+# 加上 -r 参数，删除更彻底
+userdel -r lch
+```
 
 ## 更改ftp配置文件
-
-   add lch
 
 修改配置文件`/etc/vsftpd/vsftpd.conf`并设定或删掉注释：
 
@@ -60,6 +66,8 @@ description: Linux下创建用户是很easy的事情了，只不过不经常去�
 
 ## 启动FTP服务
 
-    service vsftpd start
+```bash
+service vsftpd start
+```
 
 还有两个参数：stop、restart

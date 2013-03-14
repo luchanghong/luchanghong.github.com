@@ -14,7 +14,7 @@ description: 字符串是常用的数据类型，也是其他的复杂类型数�
 
 ## 练习
 
-<pre class="prettyprint">
+```objectivec
 // declear a ns-string
 NSString *str_1 = @"I am a ns-string";
 NSString *str_2 = @"I am a ns-string";
@@ -100,36 +100,38 @@ s2 = s1;
 NSLog(@"s1 position: %p, s2 position: %p", s1, s2);
 s1 = [NSString stringWithFormat: @"b"];
 NSLog(@"s1 = %@ position: %p, s2 = %@ position: %p", s1, s1, s2, s2);
-</pre>
+```
 
 对比输出结果：
 
-    2013-02-19 18:09:51.882 UseNSString[5556:303] hello world.
-    2013-02-19 18:09:51.884 UseNSString[5556:303] result_1 is 1, result_2 is 1, result_3 is 1
-    2013-02-19 18:09:51.885 UseNSString[5556:303] the first position of str_4 is 0x7fff75b2ec70
-    2013-02-19 18:09:51.885 UseNSString[5556:303] now the position of str_4 is 0x100002108
-    2013-02-19 18:09:51.885 UseNSString[5556:303] the position of the variable str_1 is 0x100002108
-    2013-02-19 18:09:51.886 UseNSString[5556:303] the position of the variable str_2 is 0x100002108
-    2013-02-19 18:09:51.886 UseNSString[5556:303] the position of the variable str_3 is 0x100002108
-    2013-02-19 18:09:51.886 UseNSString[5556:303] ---------------------------
-    2013-02-19 18:09:51.887 UseNSString[5556:303] when chage str_1, the position is 0x100002228
-    2013-02-19 18:09:51.887 UseNSString[5556:303] str_2:I am a ns-string, position:0x100002108
-    2013-02-19 18:09:51.888 UseNSString[5556:303] 1, -1, 0
-    2013-02-19 18:09:51.888 UseNSString[5556:303] China
-    2013-02-19 18:09:51.889 UseNSString[5556:303] America
-    2013-02-19 18:09:51.889 UseNSString[5556:303] Japan
-    2013-02-19 18:09:51.889 UseNSString[5556:303] Canada
-    2013-02-19 18:09:51.890 UseNSString[5556:303] str_5:the sum of 10 and 20 is 30, the position is 0x1006017e0
-    2013-02-19 18:09:51.890 UseNSString[5556:303] str_6:the sum of 10 and 20 is 30, the position is 0x1006017e0
-    2013-02-19 18:09:51.890 UseNSString[5556:303] The string 'I am a boy, and you?' has prefix 'I'.
-    2013-02-19 18:09:51.891 UseNSString[5556:303] The string 'I am a boy, and you?' has suffix 'you?'.
-    2013-02-19 18:09:51.891 UseNSString[5556:303] The position of 'I' in string 'I am a boy, and you?' is 0
-    2013-02-19 18:09:51.892 UseNSString[5556:303] The position of 'a boy' in string 'I am a boy, and you?' is 5
-    2013-02-19 18:09:51.892 UseNSString[5556:303] IIII am a boy, and you?
-    2013-02-19 18:09:51.893 UseNSString[5556:303] I|am|a|boy,|and|you?
-    2013-02-19 18:09:51.893 UseNSString[5556:303] s1 position: 0x7fff760ff3d0, s2 position: 0x10010a790
-    2013-02-19 18:09:51.894 UseNSString[5556:303] s1 position: 0x7fff760ff3d0, s2 position: 0x7fff760ff3d0
-    2013-02-19 18:09:51.894 UseNSString[5556:303] s1 = b position: 0x7fff761129f0, s2 = a position: 0x7fff760ff3d0
+```bash
+2013-02-19 18:09:51.882 UseNSString[5556:303] hello world.
+2013-02-19 18:09:51.884 UseNSString[5556:303] result_1 is 1, result_2 is 1, result_3 is 1
+2013-02-19 18:09:51.885 UseNSString[5556:303] the first position of str_4 is 0x7fff75b2ec70
+2013-02-19 18:09:51.885 UseNSString[5556:303] now the position of str_4 is 0x100002108
+2013-02-19 18:09:51.885 UseNSString[5556:303] the position of the variable str_1 is 0x100002108
+2013-02-19 18:09:51.886 UseNSString[5556:303] the position of the variable str_2 is 0x100002108
+2013-02-19 18:09:51.886 UseNSString[5556:303] the position of the variable str_3 is 0x100002108
+2013-02-19 18:09:51.886 UseNSString[5556:303] ---------------------------
+2013-02-19 18:09:51.887 UseNSString[5556:303] when chage str_1, the position is 0x100002228
+2013-02-19 18:09:51.887 UseNSString[5556:303] str_2:I am a ns-string, position:0x100002108
+2013-02-19 18:09:51.888 UseNSString[5556:303] 1, -1, 0
+2013-02-19 18:09:51.888 UseNSString[5556:303] China
+2013-02-19 18:09:51.889 UseNSString[5556:303] America
+2013-02-19 18:09:51.889 UseNSString[5556:303] Japan
+2013-02-19 18:09:51.889 UseNSString[5556:303] Canada
+2013-02-19 18:09:51.890 UseNSString[5556:303] str_5:the sum of 10 and 20 is 30, the position is 0x1006017e0
+2013-02-19 18:09:51.890 UseNSString[5556:303] str_6:the sum of 10 and 20 is 30, the position is 0x1006017e0
+2013-02-19 18:09:51.890 UseNSString[5556:303] The string 'I am a boy, and you?' has prefix 'I'.
+2013-02-19 18:09:51.891 UseNSString[5556:303] The string 'I am a boy, and you?' has suffix 'you?'.
+2013-02-19 18:09:51.891 UseNSString[5556:303] The position of 'I' in string 'I am a boy, and you?' is 0
+2013-02-19 18:09:51.892 UseNSString[5556:303] The position of 'a boy' in string 'I am a boy, and you?' is 5
+2013-02-19 18:09:51.892 UseNSString[5556:303] IIII am a boy, and you?
+2013-02-19 18:09:51.893 UseNSString[5556:303] I|am|a|boy,|and|you?
+2013-02-19 18:09:51.893 UseNSString[5556:303] s1 position: 0x7fff760ff3d0, s2 position: 0x10010a790
+2013-02-19 18:09:51.894 UseNSString[5556:303] s1 position: 0x7fff760ff3d0, s2 position: 0x7fff760ff3d0
+2013-02-19 18:09:51.894 UseNSString[5556:303] s1 = b position: 0x7fff761129f0, s2 = a position: 0x7fff760ff3d0
+```
 
 ## String Format Specifiers
 

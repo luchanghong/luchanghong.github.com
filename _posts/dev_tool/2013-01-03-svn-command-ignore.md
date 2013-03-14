@@ -12,36 +12,38 @@ description: 2013年第一篇博客，关于SVN忽略一些文件或者文件夹
 
 ## 使用`svn propset svn:ignore`
 
-    lch@localhost:kidulty_www $ svn st
-    M       application/config/database.php
-    M       application/config/config.php
-    ?       upload/contribute
-    ?       upload/avatar
-    ?       upload/201211
-    ?       upload/comment
-    ?       upload/recruit
-    lch@localhost:kidulty_www $ cd upload/
-    lch@localhost:upload $ svn propset svn:ignore "contribute
-    > avatar
-    > 201211
-    > comment
-    > recruit
-    > " .
-    property 'svn:ignore' set on '.'
-    lch@localhost:upload $ svn propget svn:ignore .
-    contribute
-    avatar
-    201211
-    comment
-    recruit
+```bash
+lch@localhost:kidulty_www $ svn st
+M       application/config/database.php
+M       application/config/config.php
+?       upload/contribute
+?       upload/avatar
+?       upload/201211
+?       upload/comment
+?       upload/recruit
+lch@localhost:kidulty_www $ cd upload/
+lch@localhost:upload $ svn propset svn:ignore "contribute
+> avatar
+> 201211
+> comment
+> recruit
+> " .
+property 'svn:ignore' set on '.'
+lch@localhost:upload $ svn propget svn:ignore .
+contribute
+avatar
+201211
+comment
+recruit
 
-    lch@localhost:upload $ svn ci -m "Ignore some uploaded directories"
-    Sending        upload
+lch@localhost:upload $ svn ci -m "Ignore some uploaded directories"
+Sending        upload
 
-    Committed revision 3492.
-    lch@localhost:kidulty_www $ svn st
-    M       application/config/database.php
-    M       application/config/config.php
+Committed revision 3492.
+lch@localhost:kidulty_www $ svn st
+M       application/config/database.php
+M       application/config/config.php
+```
 
 需要注意的是：
 
@@ -53,12 +55,16 @@ description: 2013年第一篇博客，关于SVN忽略一些文件或者文件夹
 ## 使用`svn propedit svn:ignore`
 
 针对上面的情况，操作如下：
-    
-    svn propedit svn:ignore upload/
+
+```bash
+svn propedit svn:ignore upload/
+```
 
 就会弹出编辑界面，之前设置一下SVN默认使用的编辑器：
 
-    export SVN_EDITOR=/usr/bin/vim
+```ini
+export SVN_EDITOR=/usr/bin/vim
+```
 
 为了方便就加入到`.bash_profile`里面去。
 

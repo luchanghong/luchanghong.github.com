@@ -12,23 +12,31 @@ tag: [php,codeigniter]
 
 开启方法很简单：在`application/config/config.php`中设置：
 
-    line 158: $config['enable_query_strings'] = FALSE;
+```php
+$config['enable_query_strings'] = FALSE;
+```
 
 在CI开发的项目中用的`PATH_INFO`模式，要在Nginx配置中重写URL，那么就要在CI的配置文件中开启字符串查询，对比URL形式的变化：
 
-    URL：www.xxx.com/user/profile
-    字符串查询模式：www.xxx.com/index.php?c=user&m=profile
+```ini
+URL：www.xxx.com/user/profile
+字符串查询模式：www.xxx.com/index.php?c=user&m=profile
+```
 
 把前台和后台的URL按照一定规则重写之后，测试都OK。但是在分页的时候出点问题，因为在开启字符串查询之后生成的分页URL地址有变化：
 
-    未开启：/user/list/10
-    开启字符串查询之后：/user/list&per_page=10
+```ini
+未开启：/user/list/10
+开启字符串查询之后：/user/list&per_page=10
+```
 
 之所以会出现下面错误的URL是我在生成分页的时候，`base_url`格式没有变化，那么从`/user/list`变成对应的`/index.php?c=user&m=list`之后就会变成下面情况：
 
-    第二页：www.xxx.com/index.php?c=user&m=list&per_page=10
-    第三页：www.xxx.com/index.php?c=user&m=list&per_page=20
-    第四页：www.xxx.com/index.php?c=user&m=list&per_page=30
+```ini
+第二页：www.xxx.com/index.php?c=user&m=list&per_page=10
+第三页：www.xxx.com/index.php?c=user&m=list&per_page=20
+第四页：www.xxx.com/index.php?c=user&m=list&per_page=30
+```
 
 而我设置的pagesize一直都是10，这样的话per_page应该一直是10的。去看一下Pagination这个类的代码，发现per_page只是`query_string_segment`的默认值，我误以为是`per_page`这个参数了。
 
@@ -36,8 +44,10 @@ tag: [php,codeigniter]
 
 总结一下分页这块如果要兼容rewrite的写法，那么就在生成分页的时候改变一下`base_url`参数：
 
-    方法一：/index.php?c=user&m=list，结果是：/index.php?c=user&m=list&per_page=10
-    方法二：/user/list?，结果是：/user/list?&per_page=10
+```ini
+方法一：/index.php?c=user&m=list，结果是：/index.php?c=user&m=list&per_page=10
+方法二：/user/list?，结果是：/user/list?&per_page=10
+```
 
 分页的SQL就是：
 
