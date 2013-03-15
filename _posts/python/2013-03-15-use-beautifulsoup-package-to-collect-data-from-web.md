@@ -121,5 +121,5 @@ if __name__ == '__main__':
 -   关于`MySQLdb`的安装参考[Mac下安装MySQLdb][MySQLdb]
 
 [DEMO]: /upload/attachement/20130315/BeautifulSoup_DEMO.tar.gz
-[MySQLdb]: /database/2012/07/23/install-mysqldb-package-with-mac.html
+[MySQLdb]: /database/2012/07/22/install-mysqldb-package-with-mac.html
 
