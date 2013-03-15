@@ -2,6 +2,7 @@
 layout: post
 title: PHP类中的静态方法
 tags: [php, class]
+category: php
 description: 一般在WEB应用里，我们很难用到类的一些高级（或者称独特）的用法，来一起学习一下静态方法的使用。
 ---
 
