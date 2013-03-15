@@ -14,7 +14,7 @@ description: 因为我本人对正则表达式是比较反感的，能不用的�
 
 [1]: http://www.crummy.com/software/BeautifulSoup/ "BeautifulSoup"
 
-## Install && Useage 
+## Install && Usage 
 
 可以用`pip`或者`easy_install`安装在当前的`python`环境里，例如：
 
