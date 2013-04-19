@@ -3,9 +3,7 @@ wordpress_id: 437
 wordpress_url: http://luchanghong.com/rosemary/?p=437
 date: 2012-07-23 11:22:01 +08:00
 layout: post
-title: !binary |
-  cHl0aG9uYnJld+KAlOKAlOmaj+W/g+aJgOassueahOmAieaLqXB5dGhvbueJ
-  iOacrDIuKi8zLio=
+title: switch your python env with using pythonbrew
 category: python
 tags: [python, pythonbrew]
 description: 不同的项目可能用不同版本的 python 开发，而且装的 package 也不一样，为了便于管理，随时切换我们的 python 环境，推荐使用 pythonbrew 。
