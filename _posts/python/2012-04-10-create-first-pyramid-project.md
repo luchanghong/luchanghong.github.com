@@ -3,9 +3,7 @@ wordpress_id: 118
 wordpress_url: http://luchanghong.com/rosemary/?p=118
 date: 2012-04-10 00:16:11 +08:00
 layout: post
-title: !binary |
-  Q3JlYXRlIHlvdXIgZmlyc3QgcHlyYW1pZCBwcm9qZWN04oCU5Yib5bu65LiA
-  5LiqcHlyYW1pZOmhueebrg==
+title: Create your first pyramid project—创建一个pyramid项目
 category: python
 tags: [python, pyramid]
 description: 简单的过一下创建一个 pyramid project 的步骤。发现使用这个框架的人很少，不过它却是我用 python 做 WEB 开发用到的第一个框架。
@@ -15,8 +13,7 @@ description: 简单的过一下创建一个 pyramid project 的步骤。发现�
 1.安装virtualenv
 <p style="text-indent: 2em;">这是一个虚拟环境，因为我们安装的package都装载python目录下的Lib/site-packages里，一个项目越大，安装的package也就越多，不同的项目用到的package也都装在这个目录下，这样就使python目录很复杂，所以用virtualenv分别为每一个项目创建各自的虚拟python环境，他们的路径也可以自己定义，这样就使得管理简单化。virtualenv可以用pip或者easy_install来安装。</p>
 
-<div style="text-indent: 2em;">
-<pre class="prettyprint">
+```python
 D:\Python27&gt;pip install -U virtualenv
 D:\Python27&gt;virtualenv -h
 
@@ -30,8 +27,8 @@ Installing pip...................done.
 
 F:\python&gt;pyramidenv\Scripts\activate.bat
 (pyramidenv) F:\python&gt;pip install pyramid
-</pre>
-</div>
+```
+
 <p style="text-indent: 2em;">上面用到的--no-site-packages这个命令可以在help里面看到用法和说明，执行pyramidenv\Scripts\activate.bat是为了激活这个虚拟环境，然后安装pyramid，这样pyramid就会倍安装在pyramidenv这个目录里F:\python\pyramidenv\Lib\site-packages。</p>
 2.安装paster
 <p style="padding-left: 30px;"><del>paster是我们用到的服务器，可以用pip install paster这个命令来安装。</del></p>
@@ -42,12 +39,11 @@ F:\python&gt;pyramidenv\Scripts\activate.bat
 <p style="text-indent: 2em;">python setup.py develop</p>
 <p style="text-indent: 2em;">表示我们以开发的模式来run这个项目，等待一会，成功之后，再执行以下命令：</p>
 
-<div style="text-indent: 2em;">
-<pre class="prettyprint">
+```python
 (pyramidenv) F:\python\firstProject&gt;pserve development.ini
 Starting server in PID 5604.
 serving on http://0.0.0.0:6543
-</pre>
-</div>
+```
+
 <p style="text-indent: 2em;">最为激动人心的时候到了，成功了，我们在浏览器输入<a href="http://localhost:6543/">http://localhost:6543/</a>，Welcome to firstProject!</p>
 &nbsp;

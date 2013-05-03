@@ -35,7 +35,8 @@ pyuic message.ui -o message.py
 三、使用message.py
 
 在message.py目录下新建一个message_form.py，把message.py当作封装好的包import进来，示例代码如下：
-<pre class="prettyprint">
+
+```python
 import sys
 import message
 from PyQt4 import QtGui
@@ -50,6 +51,12 @@ if __name__ == '__main__':
     msg_form = MessageForm()
     msg_form.show()
     app.exec_()
-</pre>
-<pre>然后，我们执行message_form.py这个文件就OK了：python message_form.py</pre>
-<pre><a href="/upload/2012/04/message_form.jpg"><img class="alignnone size-full wp-image-142" title="message_form" src="/upload/2012/04/message_form.jpg" alt="" width="402" height="281" /></a></pre>
+```
+
+然后，我们执行message_form.py这个文件就OK了：
+
+```python
+python message_form.py
+```
+
+<a href="/upload/2012/04/message_form.jpg"><img class="alignnone size-full wp-image-142" title="message_form" src="/upload/2012/04/message_form.jpg" alt="" width="402" height="281" /></a>

@@ -3,8 +3,7 @@ wordpress_id: 222
 wordpress_url: http://luchanghong.com/rosemary/?p=222
 date: 2012-05-17 18:51:12 +08:00
 layout: post
-title: !binary |
-  RGphbmdv5byA5Y+R5a2m5Lmg77yI5LiJ77yJ
+title: Django开发学习（三）
 category: python
 tags: [python, django]
 description: 先来了解一下 django 的后台。后台管理其实就是一个 app ，我们只管安装配置，照着文档走一遍就大致了解了。
@@ -14,7 +13,8 @@ description: 先来了解一下 django 的后台。后台管理其实就是一�
 一、开启Django后台
 
 首先，在配置文件中解开INSTALLED_APPS的配置：
-<pre class="prettyprint">
+
+```python
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -28,9 +28,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
-</pre>
+```
+
 然后，去mysite/urls.py解开admin URL的配置：
-<pre class="prettyprint">
+
+```python
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
@@ -49,10 +51,13 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
 )
-</pre>
+```
+
 最后，run command:
 
-<pre class="prettyprint">python manage.py syncdb</pre>
+```bash
+python manage.py syncdb
+```
 
 此时，进入后台<a href="http://localhost:8000/admin/">http://localhost:8000/admin/</a>
 
@@ -65,7 +70,8 @@ urlpatterns = patterns('',
 二、在后台添加polls应用管理
 
 还是以polls为例。在polls的目录下创建一个admin.py的文件，这样写：
-<pre class="prettyprint">
+
+```python
 #-*- coding: utf-8 -*-
 __author__ = 'luchanghong'
 from models import Poll,Choice
@@ -73,10 +79,13 @@ from django.contrib import admin
 
 admin.site.register(Poll)
 admin.site.register(Choice)
-</pre>
+```
+
 然后停止服务，再启动，run command:
 
-<pre class="prettyprint">python manage.py runserver</pre>
+```bash
+python manage.py runserver
+```
 
 注意：项目文件改变的时候Django会自动检测到并重启，而新增加文件则不会，所以要重启一下server。
 
@@ -89,7 +98,8 @@ admin.site.register(Choice)
 三、admin.py详细设置
 
 admin.py可以增加一些对数据对象的定义，比如：显示字段排序、搜索字段、字段分类等等，如下配置：
-<pre class="prettyprint">
+
+```python
 #-*- coding: utf-8 -*-
 __author__ = 'luchanghong'
 from models import Poll,Choice
@@ -113,7 +123,8 @@ class PollAdmin(admin.ModelAdmin):
 
 admin.site.register(Poll, PollAdmin)
 admin.site.register(Choice)
-</pre>
+```
+
 可以逐项的增加，看一下后台到底有什么变化，就会明白设置的作用了，其实看一下属性的英文意思就大致明白了。
 
 注意：有些属性是不能共存的，比如fields和fieldsets。

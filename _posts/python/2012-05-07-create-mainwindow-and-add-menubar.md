@@ -3,9 +3,7 @@ wordpress_id: 153
 wordpress_url: http://luchanghong.com/rosemary/?p=153
 date: 2012-05-07 16:33:27 +08:00
 layout: post
-title: !binary |
-  cHlRVOWIm+W7uuS4gOS4qm1haW5XaW5kb3flubbmt7vliqDkuIroj5zljZXm
-  oI9tZW51QmFy
+title: pyQT创建一个mainWindow并添加上菜单栏menuBar
 category: python
 tags: [python, pyQT]
 description: 继续回来学习 pyQT —— 创建一个 mainWindow 以及添加上 menuBar 。
@@ -15,8 +13,8 @@ description: 继续回来学习 pyQT —— 创建一个 mainWindow 以及添加
 一、pyQT创建一个mainWindow
 
 创建一个最简单的window，没有任何内容。
-<pre class="prettyprint">
 
+```python
 import sys
 from PyQt4 import QtCore,QtGui
 
@@ -29,20 +27,23 @@ if __name__ == '__main__':
     myWindow = MyWindow()
     myWindow.show()
     sys.exit(app.exec_())
+```
 
-</pre>
-<pre><a href="/upload/2012/05/mainwindow1.jpg"><img class="alignnone size-full wp-image-154" title="mainwindow1" src="/upload/2012/05/mainwindow1.jpg" alt="" width="220" height="136" /></a></pre>
-<pre>我们还可以给这个mainWindow设置一些属性，如宽高、标题等。</pre>
-<pre>二、设置menuBar</pre>
+<a href="/upload/2012/05/mainwindow1.jpg"><img class="alignnone size-full wp-image-154" title="mainwindow1" src="/upload/2012/05/mainwindow1.jpg" alt="" width="220" height="136" /></a>
+
+我们还可以给这个mainWindow设置一些属性，如宽高、标题等。
+
+二、设置menuBar
 <ol>
 	<li>定义一个menuBar</li>
 	<li>定义一个menu</li>
 	<li>定义一个子菜单action</li>
 	<li>把上面的关联起来</li>
 </ol>
-这里要弄清楚menuBar、menu、action的关系，action绑定在menu上面，menu绑定在menuBar上面，这样多个menu和多个action就可以组成一个menuBar了，最后把menuBar绑定到mainWindow上。
-<pre class="prettyprint">
 
+这里要弄清楚menuBar、menu、action的关系，action绑定在menu上面，menu绑定在menuBar上面，这样多个menu和多个action就可以组成一个menuBar了，最后把menuBar绑定到mainWindow上。
+
+```python
 import sys
 from PyQt4 import QtCore,QtGui
 
@@ -68,12 +69,14 @@ if __name__ == '__main__':
     myWindow = MyWindow()
     myWindow.show()
     sys.exit(app.exec_())
+```
 
-</pre>
-<pre><a href="/upload/2012/05/mainwindow2.jpg"><img class="alignnone size-full wp-image-156" title="mainwindow2" src="/upload/2012/05/mainwindow2.jpg" alt="" width="420" height="336" /></a></pre>
+<a href="/upload/2012/05/mainwindow2.jpg"><img class="alignnone size-full wp-image-156" title="mainwindow2" src="/upload/2012/05/mainwindow2.jpg" alt="" width="420" height="336" /></a>
+
 三、添加多个菜单
 类似上面的做发，继续添加menu，在menu上绑定action，就可以添加多个菜单了。
-<pre class="prettyprint">
+
+```python
 import sys
 from PyQt4 import QtCore,QtGui
 
@@ -109,6 +112,8 @@ if __name__ == '__main__':
     myWindow = MyWindow()
     myWindow.show()
     sys.exit(app.exec_())
-</pre>
-<pre><a href="/upload/2012/05/mainwindow3.jpg"><img class="alignnone size-full wp-image-155" title="mainwindow3" src="/upload/2012/05/mainwindow3.jpg" alt="" width="420" height="336" /></a></pre>
+```
+
+<a href="/upload/2012/05/mainwindow3.jpg"><img class="alignnone size-full wp-image-155" title="mainwindow3" src="/upload/2012/05/mainwindow3.jpg" alt="" width="420" height="336" /></a>
+
 比较简单的菜单栏就出来了，做的复杂点可以添加上快捷键、分割线、选中样式等等。菜单做好了也就等于应用程序的功能规划基本完成，下面就是每个子菜单action触发事件了，下篇文章再分享吧。

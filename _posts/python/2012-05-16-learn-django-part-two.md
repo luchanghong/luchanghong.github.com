@@ -3,8 +3,7 @@ wordpress_id: 210
 wordpress_url: http://luchanghong.com/rosemary/?p=210
 date: 2012-05-16 18:26:49 +08:00
 layout: post
-title: !binary |
-  RGphbmdv5byA5Y+R5a2m5Lmg77yI5LqM77yJ
+title: Django开发学习（二）
 category: python
 tags: [python, django]
 description: 学习一下 django 中 project 和 app 的关系，以及如何在一个 project 中创建 app 。
@@ -21,12 +20,13 @@ particular Web site. A project can contain multiple apps. An app can be in multi
 
 以下就以官网上的poll投票应用为例。在mysite目录下：
 
-<pre class="prettyprint">
+```bash
 python manage.py startapp polls
-</pre>
+```
 
 这样就创建了polls目录，包含：__init__.py、models.py、tests.py、views.py。接着编辑models.py，创建两个数据模型对象：poll和choice。
-<pre class="prettyprint">
+
+```python
 from django.db import models
 from datetime import timedelta
 from django.utils import timezone
@@ -40,13 +40,15 @@ class Choice(models.Model):
     poll = models.ForeignKey(Poll)
     choice = models.CharField(max_length = 200)
     votes = models.IntegerField()
-</pre>
+```
+
 很明显，question、pub_date等属性都是要设置的字段，CharField等表示字段的类型，而ForeignKey指的是关联字段，两个数据模型分别代表两张表。
 
 二、激活app并创建数据表
 
 下面就是要在当前的project中激活polls这个app，还记得Django自带的功能是怎么导入的吧？在配置文件中加入polls：
-<pre class="prettyprint">
+
+```python
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -60,21 +62,26 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
-</pre>
+```
+
 接下来就是把建立的数据模型对象转换成对应的数据表，run command：
 
-<pre class="prettyprint">python manage.py sql polls</pre>
+```bash
+python manage.py sql polls
+```
 
 <a href="/upload/2012/05/django-app.jpg"><img class="alignnone size-full wp-image-211" title="django-app" src="/upload/2012/05/django-app.jpg" alt="" width="681" height="339" /></a>
 
 上图的SQL语句应该很熟悉吧，不过还没真正的执行，只是显示出来，所以数据库还是没有变化的。在执行之前检查一下错误，然后在执行：
-<pre class="prettyprint">
+
+```bash
 python manage.py validate
 python manage.py syncdb
-</pre>
+```
+
 关于上面那个manage.py sql命令，感兴趣的可以看下面几个相关的：
 
-If you’re interested, also run the following commands:
+ >If you’re interested, also run the following commands:
 • python manage.py validate – Checks for any errors in the construction of your models.
 • python manage.py sqlcustom polls – Outputs any custom SQL statements (such as table modiﬁca-
 tions or constraints) that are deﬁned for the application.
@@ -92,11 +99,13 @@ sqlindexes commands.
 
 接着使用Django提供的API，并且完成一些数据模型对象的操作。run command:
 
-<pre class="prettyprint">python manage.py shell</pre>
+```bash
+python manage.py shell
+```
 
 进入一个shell，相当于python的shell，不同的是Django自动把app加入到python path中，也就是说可以直接把app当作一个model来导入使用。
 
-<pre class="prettyprint">
+```python
 &gt;&gt;&gt; from polls.models import Poll,Choice
 &gt;&gt;&gt; from django.utils import timezone
 &gt;&gt;&gt; p = Poll(question = "what's up?", pub_date = timezone.now())
@@ -110,12 +119,13 @@ sqlindexes commands.
 &gt;&gt;&gt; p.delete()
 &gt;&gt;&gt; Poll.objects.all()
 []
-</pre>
+```
 
 上面先生成一个Poll对象，然后保存到数据库，然后查找出来，再给删除了，相关的方法可以去手册里面看一下。
 
 可是每次数据操作都返回一个Poll对象的话，没有什么可区别的，一般在定义数据模型的时候做些改变，也可以自定义一些方法。
-<pre class="prettyprint">
+
+```python
 from django.db import models
 from datetime import timedelta
 from django.utils import timezone
@@ -138,17 +148,16 @@ class Choice(models.Model):
 
     def __unicode__(self):
         return self.choice
-</pre>
+```
+
 修改之后要退出（CTRL+Z）shell，然后再次进入：
 
-<pre class="prettyprint">
-
+```python
 &gt;&gt;&gt; from polls.models import Poll,Choice
 &gt;&gt;&gt; from django.utils import timezone
 &gt;&gt;&gt; p = Poll(question = "what's up?", pub_date = timezone.now())
 &gt;&gt;&gt; p
 &lt;Poll: what's up?&gt;
-
-</pre>
+```
 
 OK，今天就到这了，多多练习，Django手册在手什么都不怕了，不会的再去google一下，还有什么不能解决的呢？接下来要从后台搞起……

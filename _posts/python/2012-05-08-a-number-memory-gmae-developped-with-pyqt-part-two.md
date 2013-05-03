@@ -3,8 +3,7 @@ wordpress_id: 163
 wordpress_url: http://luchanghong.com/rosemary/?p=163
 date: 2012-05-08 10:23:38 +08:00
 layout: post
-title: !binary |
-  55SocHlRVOW8gOWPkeeahOaVsOWtl+iusOW/hua4uOaIj++8iOS6jO+8iQ==
+title: 用pyQT开发的数字记忆游戏（二）
 category: python
 tags: [python, pyQT]
 description: 探讨一下开发过程中遇到的几个难题，由于第一次做这样的东西，思想和方法还是比较紧的。
@@ -14,31 +13,36 @@ description: 探讨一下开发过程中遇到的几个难题，由于第一次�
 难题1：
 
 显示数字的时候我用的QLabel，在绑定信号槽的时候，查了一下手册，有mousePressEvent()这个signal，但是用的时候对整个Window窗口都有效，这样没法判断，所以google了一下，发现可以给QLabel重新定义一个signal，也就是可以扩展QLabel为我们所用，方法如下：
-<pre class="prettyprint">
+
+```python
 class ExtendedQLabel(QtGui.QLabel):
     def __init(self, parent):
         QtGui.QLabel.__init__(self, parent)
 
     def mouseReleaseEvent(self, ev):
         self.emit(QtCore.SIGNAL('clicked()'))
-</pre>
+```
+
 难题2：
 
 在使用的过程中发现，要知道当前点击的是哪一个QLabel，所以要传递一个参数，最好是当前的QObject对象——QLabel，又去google查。毕竟刚学习，只好遇到什么就解决什么了，还好可以找到答案，原来一直认为参数是回调函数传递的，其实是在signal传递的，于是修改了上面的ExtendedQLabel，如下：
-<pre class="prettyprint">
+
+```python
 class ExtendedQLabel(QtGui.QLabel):
     def __init(self, parent):
         QtGui.QLabel.__init__(self, parent)
 
     def mouseReleaseEvent(self, ev):
         self.emit(QtCore.SIGNAL('clicked(PyQt_PyObject)'), self)
-</pre>
+```
+
 难题3：
 
 其实这个不算是什么难题，只不过是游戏进行过程中的逻辑判断，比如第一次点击要是1，然后依次累加，游戏出错就结束，把相关的参数初始化以便重新开始游戏，完成一关后进入下一关卡也要进行相关操作。
 
 目前运行是可以玩的了，全部代码加起来也不过120行，说实话还是第一次做GUI程序，也没有任何经验，还好这个游戏简单，下面就分享一下代码，有冗余或者不对的地方请吐槽。
-<pre class="prettyprint">
+
+```python
 # -*-encoding: utf-8 -*-
 __author__ = 'Administrator'
 import sys
@@ -163,4 +167,4 @@ def startGame(num = 3):
 
 if __name__ == '__main__':
     startGame()
-</pre>
+```

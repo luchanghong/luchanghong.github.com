@@ -3,8 +3,7 @@ wordpress_id: 93
 wordpress_url: http://luchanghong.com/rosemary/?p=93
 date: 2012-04-08 13:47:02 +08:00
 layout: post
-title: !binary |
-  5a6J6KOFcHlyYW1pZOW5tui/kOihjOS4gOS4qmhlbGxvIHdvcmxk
+title: 安装pyramid并运行一个hello world
 category: python
 tags: [python, pyramid]
 description: 一起来学习和了解一下 pyramid framework ，安装 pyramid 然后跑起 hello world。
@@ -47,8 +46,7 @@ D:\Python27&gt;python ez_setup.py setuptools
 <p style="padding-left: 30px;">Hello world！多少程序的第一次都给了你啊~~~</p>
 <p style="padding-left: 30px;">找个目录，创建一个hello.py，我把pyramid官网上的sample运行一下，把一下代码拷贝到hello.py：</p>
 
-<div style="padding-left: 30px;">
-<pre class="prettyprint">
+```python
 from wsgiref.simple_server import make_server
 from pyramid.config import Configurator
 from pyramid.response import Response
@@ -63,7 +61,10 @@ if __name__ == '__main__':
    app = config.make_wsgi_app()
    server = make_server('0.0.0.0', 8080, app)
    server.serve_forever()
-</pre>
+```
+
+<div style="padding-left: 30px;">
+
 cmd下到hello.py目录下，执行python hello.py，然后在浏览器运行<span style="text-decoration: underline;">http://localhost:8080/hello/world</span>
 
 </div>

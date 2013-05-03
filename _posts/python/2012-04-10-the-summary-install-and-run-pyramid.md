@@ -3,7 +3,7 @@ wordpress_id: 125
 wordpress_url: http://luchanghong.com/rosemary/?p=125
 date: 2012-04-10 16:37:27 +08:00
 layout: post
-title: "the summary \xE2\x80\x94 install and run pyramid"
+title: the summary — install and run pyramid
 category: python
 tags: [python, pyramid]
 description: 总结一下 pyramid 的安装过程，有出入的地方希望得到大家的指正，一起学习交流。
