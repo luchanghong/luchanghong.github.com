@@ -3,8 +3,7 @@ wordpress_id: 399
 wordpress_url: http://luchanghong.com/rosemary/?p=399
 date: 2012-07-18 17:42:57 +08:00
 layout: post
-title: !binary |
-  5omT566X5LmwTWFjQm9va1Bybw==
+title: 打算买MacBookPro
 category: life_record 
 tags: [mac]
 description: 打算买 MacBook ，之前也没有用过，所以在 VMWare 上装一个体验一下先。

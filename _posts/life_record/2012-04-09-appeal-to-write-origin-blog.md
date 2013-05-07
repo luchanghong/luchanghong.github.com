@@ -3,9 +3,7 @@ wordpress_id: 113
 wordpress_url: http://luchanghong.com/rosemary/?p=113
 date: 2012-04-09 11:59:43 +08:00
 layout: post
-title: !binary |
-  Q29tZSBvbiHliqrlipvvvIHigJTigJTlkbzlkIHljp/liJvmioDmnK/ljZrl
-  rqI=
+title: Come on!努力！——呼吁原创技术博客
 category: life_record
 tags: [感想]
 description: 做程序员除了开发过程中能得到满足以外，我还能分享自己学习到的东西，和大家一起交流探讨，感到很高兴。但是有好多博客都是转载别人的文章，而且不加验证，大多是出于商业目的，疯狂的抓数据，真是没办法，呼吁大家搞原创。

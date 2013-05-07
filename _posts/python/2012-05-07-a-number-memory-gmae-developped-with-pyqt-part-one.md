@@ -3,8 +3,7 @@ wordpress_id: 159
 wordpress_url: http://luchanghong.com/rosemary/?p=159
 date: 2012-05-07 17:46:14 +08:00
 layout: post
-title: !binary |
-  55SocHlRVOW8gOWPkeeahOaVsOWtl+iusOW/hua4uOaIj++8iOS4gO+8iQ==
+title: 用pyQT开发的数字记忆游戏（一）
 category: python
 tags: [python, pyQT]
 description: 打算用 pyQT 做一个数字记忆的小游戏，缘起好久之前看到一个朋友用 Android 做的一个类似的游戏。

@@ -3,8 +3,7 @@ wordpress_id: 145
 wordpress_url: http://luchanghong.com/rosemary/?p=145
 date: 2012-04-28 11:59:57 +08:00
 layout: post
-title: !binary |
-  5YGa5LiA5Liq5pyJ6L+95rGC55qE56iL5bqP5ZGY
+title: 做一个有追求的程序员
 category: life_record
 tags: [感想]
 description: 程序员这个职业总不能干一辈子，是靠吃青春饭的，有限的职业生涯里做一个有追求的程序员。

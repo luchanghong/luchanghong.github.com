@@ -3,8 +3,7 @@ wordpress_id: 261
 wordpress_url: http://luchanghong.com/rosemary/?p=261
 date: 2012-05-23 17:04:20 +08:00
 layout: post
-title: !binary |
-  cHV0dHnlu7rnq4vpmqfpgZM=
+title: putty建立隧道
 category: dev_tool
 tags: [putty, 隧道]
 description: 如果你的目标主机不在公网，或者不对你所在的网段开放，那么如何去访问它呢？这就要借助隧道技术了，学习一下 putty 的用法。 

@@ -3,8 +3,7 @@ wordpress_id: 278
 wordpress_url: http://luchanghong.com/rosemary/?p=278
 date: 2012-06-04 10:59:28 +08:00
 layout: post
-title: !binary |
-  5Li65LuA5LmI5YaZ5Y2a5a6i77yf5YaZ57uZ6LCB55yL77yf
+title: 为什么写博客？写给谁看？
 category: life_record
 tags: [感想]
 description: 为什么写博客？写给谁看？这是个值得思考的问题。

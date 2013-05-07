@@ -3,9 +3,7 @@ wordpress_id: 462
 wordpress_url: http://luchanghong.com/rosemary/?p=462
 date: 2012-07-26 15:49:51 +08:00
 layout: post
-title: !binary |
-  5LuK5aSp5pS25Yiw5LqGU0tZ55qE6Ieq5Lyg4oCU4oCU44CK5b2T5p2O5pmT
-  5bOw5oiQ5Li6U0tZ44CL
+title: 今天收到了SKY的自传——《当李晓峰成为SKY》
 category: life_record
 tags: [sky]
 description: 想必爱玩 dota ，魔兽3的都应该知道 SKY 这个 ID ，SKY 伴随好多人度过大学生活。今天买了 SKY 的自传，真想一口气看完。SKY 并不仅仅代表成功，更多的是努力和勤奋。

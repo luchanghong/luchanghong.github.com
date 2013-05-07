@@ -3,8 +3,7 @@ wordpress_id: 219
 wordpress_url: http://luchanghong.com/rosemary/?p=219
 date: 2012-05-17 10:14:54 +08:00
 layout: post
-title: !binary |
-  56OB55uY5YiG5Yy64oCc5oOK6a2C6K6w4oCd
+title: 磁盘分区“惊魂记”
 category: life_record
 tags: [分区]
 description: 把笔记本硬盘重新分区，结果出现惊人的一幕……
