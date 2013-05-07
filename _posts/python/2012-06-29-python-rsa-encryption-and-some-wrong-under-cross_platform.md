@@ -3,8 +3,7 @@ wordpress_id: 333
 wordpress_url: http://luchanghong.com/rosemary/?p=333
 date: 2012-06-29 16:42:25 +08:00
 layout: post
-title: !binary |
-  cHl0aG9u5LiLUlNB5Yqg5a+G6Kej5a+G5Lul5Y+K6Leo5bmz5Y+w6Zeu6aKY
+title: python下RSA加密解密以及跨平台问题
 category: python
 tags: [python, rsa]
 description: 数据传输需要进行加密，为了保证安全采用 RSA 加密方式，来学习一下 python 下 RSA 加密与解密。
@@ -17,16 +16,21 @@ description: 数据传输需要进行加密，为了保证安全采用 RSA 加�
 
 RSA格式：PEM
 
-一、Python下RSA加密解密怎么做？
+## 一、Python下RSA加密解密怎么做？
 
 现在网上搜索关于RSA的信息，然后看一下Python下是怎么做的。找到两种方法：
 
 1、使用rsa库
 
-安装<pre class="prettyprint">pip install rsa</pre>
+安装 
+
+```bash
+pip install rsa
+```
 
 可以生成RSA公钥和密钥，也可以load一个.pem文件进来。
-<pre class="prettyprint">
+
+```python
 # -*- coding: utf-8 -*-
 __author__ = 'luchanghong'
 import rsa
@@ -62,12 +66,13 @@ print message
 # sign 用私钥签名认真、再用公钥验证签名
 signature = rsa.sign(message, privkey, 'SHA-1')
 rsa.verify('hello', signature, pubkey)
+```
 
-</pre>
 2、使用M2Crypto
 
 python关于RSA的库还是蛮多的，当然也可以直接用openSSL。M2Crypto安装的时候比较麻烦，虽然官网有exe的安装文件，但是2.6的有bug，建议使用0.19.1版本，最新的0.21.1有问题。
-<pre class="prettyprint">
+
+```python
 # -*- coding: utf-8 -*-
 __author__ = 'luchanghong'
 from M2Crypto import RSA,BIO
@@ -88,13 +93,12 @@ encrypted = pub_key.public_encrypt(message, RSA.pkcs1_padding)
 decrypted = priv_key.private_decrypt(encrypted, RSA.pkcs1_padding)
 
 print decrypted
-</pre>
+```
+
 用法差不多一致。load密钥的方式也有好几种。
 
-二、跨平台密钥不统一
+## 二、跨平台密钥不统一
 
 RSA加密验证搞定了，但是和java平台交互的时候出问题，java生成的密钥用Python根本load不了，更别说加密了，反之Java也load不了Python生成的密钥。
 
 上网查找原因，RSA认真流程肯定没有问题，关键是不同平台执行RSA的标准有些偏差。
-
-&nbsp;
