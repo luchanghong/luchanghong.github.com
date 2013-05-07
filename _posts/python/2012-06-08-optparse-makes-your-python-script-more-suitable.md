@@ -3,8 +3,7 @@ wordpress_id: 282
 wordpress_url: http://luchanghong.com/rosemary/?p=282
 date: 2012-06-08 17:29:51 +08:00
 layout: post
-title: !binary |
-  b3B0cGFyc2XorqnkvaDnmoTohJrmnKzmm7TngbXmtLs=
+title: optparse让你的脚本更灵活
 category: python
 tags: [python, OptionParser]
 description: 如果想要提高程序的兼容性，那么关键的数值一定不能写死了，你能用别人可不一定能用，所以要添加一些参数，那么针对一个 python 脚本如何在执行的时候改变参数呢？
@@ -14,14 +13,16 @@ description: 如果想要提高程序的兼容性，那么关键的数值一定�
 一般来说，脚本不像通常的编程，不管c/s还是b/s，大部分变量都是由用户操作产生，而脚本写好了就固定了，想改变某些变量的值怎么办？难道还去改代码吗？如果这样实用性也太差劲了。
 
 写一个python脚本，常用optparse来帮助我们传递参数。一个简单的例子：
-<pre class="prettyprint">
+
+```python
 from optparse import OptionParser
 parser = OptionParser()
 parser.add_option('-t', '--test', action = 'store', dest = 'test', default = 'TEST', help = 'It is a test')
 options, arg = parser.parse_args()
 print options.test
-</pre>
-<pre>说明：</pre>
+```
+
+**说明：**
 <ol>
 	<li>-t 和 --test算是简写，或者理解参数的标志</li>
 	<li>action表示参数类型，另外还有store_false，store_true等</li>
@@ -30,7 +31,8 @@ print options.test
 	<li>help是提示说明</li>
 </ol>
 注意：action为store_false或者store_true的时候，就表明这个变量是True或者False，所以没有默认值，一般是成对出现的：
-<pre class="prettyprint">
+
+```python
 __author__ = 'liuxiaopeng'
 from optparse import OptionParser
 parser = OptionParser()
@@ -38,7 +40,8 @@ parser.add_option('-t', action = 'store_true', dest = 'test', help = 'It is a te
 parser.add_option('-f', action = 'store_false', dest = 'test', help = 'It is a test')
 options, arg = parser.parse_args()
 print options.test
-</pre>
+```
+
 如果上面的代码保存到test.py，那么使用的时候直接python test.py -t 就行了，后面跟上参数也无效。调用脚本的时候用-h或者help就会打印出参数的说明和用法。
 
 值得说明：在代码里字符串我们都习惯加引号，但是执行脚本的时候，如果传递一个参数-t 是一个字符串，切记不要加引号，否则你得到的结果会多一对引号，即使str()强制转换也不行。

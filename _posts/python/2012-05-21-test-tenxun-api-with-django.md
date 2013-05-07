@@ -3,23 +3,24 @@ wordpress_id: 251
 wordpress_url: http://luchanghong.com/rosemary/?p=251
 date: 2012-05-21 15:23:16 +08:00
 layout: post
-title: !binary |
-  RGphbmdv5bqU55So4oCU4oCU6IW+6K6v5byA5pS+5bmz5Y+w
+title: Django应用——腾讯开放平台
 category: python
 tags: [python, django]
 description: 学以致用，用 django 来跑一下腾讯开放平台的 API 。
 ---
 上周学习了Django，学以致用，就拿腾讯开放平台举例吧。说到这个腾讯开放平台，其实类似的平台很多，新浪、百度等都有，相对来说腾讯用户量算是最大的了，对于一些开发者来说，通过这些开放平台可以挣点小钱花，这里的应用最火的当然是游戏类的，但都是flash格式的，Python和PHP等都是望尘莫及啊。废话不多说，做个测试吧。
 
-一、去腾讯开放平台创建一个应用
+## 一、去腾讯开放平台创建一个应用
 
 用QQ号登录TX开放平台 <a href="http://open.qq.com/">http://open.qq.com/</a>，然后创建一个应用，之后记录APPID和APP KEY（做过接口应用的应该都很熟悉这些流程）。然后去下载SKD <a href="http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/doc/Python_SDK_V3.0.0.zip" target="_blank">http://qzonestyle.gtimg.cn/qzone/vas/opensns/res/doc/Python_SDK_V3.0.0.zip</a> ，这是官方的OPENAPI V3.0.0 SDK。
 
-二、在Django项目下创建app
+## 二、在Django项目下创建app
 
 到我们的project下，run command:
 
-<pre class="prettyprint">python manage.py startapp qq_open</pre>
+```bash
+python manage.py startapp qq_open
+```
 
 便创建了qq_open目录，把下载的Python SDK解压出来，重命名为qqapi，然后copy到这个目录下面。
 
@@ -28,7 +29,8 @@ description: 学以致用，用 django 来跑一下腾讯开放平台的 API 。
 接着配置URLconf，具体做法上篇文章说过，<a title="Django开发学习（五）" href="http://luchanghong.com/rosemary/?p=244" target="_blank">猛击这里</a>，直接看下面步骤：
 <ol>
 	<li>在qq_open目录下创建urls.py
-<pre class="prettyprint">
+
+```python
 #-*- coding: utf-8 -*-
 __author__ = 'luchanghong'
 
@@ -37,42 +39,54 @@ from django.conf.urls import url,patterns
 urlpatterns = patterns('qq_open.views',
     url(r'^$', 'index'),
 )
-</pre>
+```
+
 </li>
 	<li>在mysite/urls.py增加一行：
-<pre class="prettyprint">url(r'^qq_open/', include('qq_open.urls'))</pre></li>
+
+```python
+url(r'^qq_open/', include('qq_open.urls'))
+```
+
+</li>
 	<li>写VIEW，打开qq_open/views.py：
-<pre class="prettyprint">
+
+```python
 # Create your views here.
 from django.shortcuts import render_to_response
 
 def index(request):
     ret = {'hello': 'I am qq_open test.'}
     return render_to_response('qq_open/index.html', ret)
-</pre>
+```
+
 </li>
 	<li>创建目录以及文件：templates/qq_open/index.html
-<pre class="prettyprint">
-&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd"&gt;
-&lt;html&gt;
-&lt;head&gt;
-&lt;title&gt;qq open app&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  { { hello }}&lt;br&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</pre>
+
+```python
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>qq open app</title>
+</head>
+<body>
+  { { hello }}<br>
+</body>
+</html>
+```
+
 </li>
 </ol>
 OK，run command:
 
-<pre class="prettyprint">python manage.py runserver</pre>
+```bash
+python manage.py runserver
+```
 
 然后，可以访问<a href="http://localhost:8000/qq_open/">http://localhost:8000/qq_open/</a>测试一下qq_open有没有运行成功。
 
-三、使用OPENAPI SDK
+## 三、使用OPENAPI SDK
 
 在每一个封装的类里面都有调用的例子，那就简单的调用用户的信息吧——get_user_info。
 
@@ -81,7 +95,8 @@ OK，run command:
 <a href="/upload/2012/05/qzone-config.jpg"><img class="alignnone size-full wp-image-252" title="qzone-config" src="/upload/2012/05/qzone-config.jpg" alt="" width="518" height="385" /></a>
 
 然后，把VIEW修改一下：
-<pre class="prettyprint">
+
+```python
 # Create your views here.
 from django.shortcuts import render_to_response
 from qqapi.openapi_v3 import OpenAPIV3
@@ -108,17 +123,18 @@ def index(request):
     })
     ret.update({'data': jdata})
     return render_to_response('qq_open/index.html', ret)
-</pre>
+```
+
 在HTML里面把用户头像显示出来：
-<pre class="prettyprint">
 
-&lt;body&gt;
-  { { hello }}&lt;br&gt;
-  { { data }}&lt;br&gt;
-  &lt;img src="{ { data.figureurl }}" alt=""&gt;
-&lt;/body&gt;
+```html
+<body>
+  { { hello }}<br>
+  { { data }}<br>
+  <img src="{ { data.figureurl }}" alt="">
+</body>
+```
 
-</pre>
 完成这些，上图中有个“预览应用”，点击预览跳转到QQ空间：
 
 <a href="/upload/2012/05/qzone.jpg"><img class="alignnone size-full wp-image-255" title="qzone" src="/upload/2012/05/qzone.jpg" alt="" width="774" height="425" /></a>
