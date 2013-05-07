@@ -3,9 +3,7 @@ wordpress_id: 323
 wordpress_url: http://luchanghong.com/rosemary/?p=323
 date: 2012-06-20 23:46:34 +08:00
 layout: post
-title: !binary |
-  TXlTUUxkYuaPkuWFpeaVsOaNruWksei0pe+8n2luc2VydCBkYXRhIGZhaWxl
-  ZCB1c2luZyBNeVNRTGRi77yf
+title: MySQLdb插入数据失败？insert data failed using MySQLdb？
 category: database
 tags: [mysql, MySQLdb]
 description: 当 MySQLdb 遇上 innodb 类型的数据库，在做 insert 的时候，必须 commit 才能插入到数据表里面去。
@@ -18,23 +16,25 @@ description: 当 MySQLdb 遇上 innodb 类型的数据库，在做 insert 的时
 
 1、在sql语句后加一个COMMIT命令
 
-<pre class="prettyprint">cursor.execute('insert into user (id, name) values (1, 'luchanghong);COMMIT;')</pre>
+```python
+cursor.execute('insert into user (id, name) values (1, 'luchanghong);COMMIT;')
+```
 
 2、给数据库连接conn预定一个commit
 
-<pre class="prettyprint">
+```python
 conn = MySQLdb.connect(host = 'localhost', user = 'root', passwd = 'root', db = 'test')
 conn.autocommit(1)
-</pre>
+```
 
 3、在释放数据库连接之前commit
 
-<pre class="prettyprint">
+```python
 conn = MySQLdb.connect()
 cursor.execute('insert into ...')
 cursor.close()
 conn.commit()
 conn.close()
-</pre>
+```
 
 PS：我用的是第三种方法，其他两个还没来得及验证，有兴趣的测试一下吧

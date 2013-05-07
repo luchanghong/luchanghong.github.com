@@ -3,8 +3,7 @@ wordpress_id: 82
 wordpress_url: http://luchanghong.com/rosemary/?p=82
 date: 2012-04-06 16:11:51 +08:00
 layout: post
-title: !binary |
-  bW9uZ29kYuaAp+iDveS8mOWMluKAlOKAlOW7uueri+e0ouW8lQ==
+title: mongodb性能优化——建立索引
 category: database
 tags: [mongodb]
 description: 小试一下 mongodb 调优 —— 建立索引。小数量是看不出来有什么区别，效率都一样，但是数量级高了之后就看出明显的差距了。

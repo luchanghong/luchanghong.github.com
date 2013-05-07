@@ -3,8 +3,7 @@ wordpress_id: 519
 wordpress_url: http://luchanghong.com/rosemary/?p=519
 date: 2012-08-24 11:32:45 +08:00
 layout: post
-title: !binary |
-  bXlzcWwgc2hlbGzluLjnlKjkuIDkupvlkb3ku6Q=
+title: mysql shell常用一些命令
 category: database
 tags: [mysql, shell]
 description: Mysql Shell 在服务器端是很好用的 Mysql 管理工具，掌握一些常用的 shell command 会大大提高我们的工作效率。这里记录一些我在日常网站开发与维护中使用到的命令，会不断更新。
