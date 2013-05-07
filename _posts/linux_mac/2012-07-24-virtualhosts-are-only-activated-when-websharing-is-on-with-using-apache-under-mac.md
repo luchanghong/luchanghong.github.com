@@ -3,10 +3,7 @@ wordpress_id: 450
 wordpress_url: http://luchanghong.com/rosemary/?p=450
 date: 2012-07-24 16:23:14 +08:00
 layout: post
-title: !binary |
-  bWFj5LiLYXBhY2hl6Jma5ouf5Z+f5ZCN6YWN572u6Zeu6aKY4oCU4oCUdmly
-  dHVhbGhvc3RzIGFyZSBvbmx5IGFjdGl2YXRlZCB3aGVuIFdFQlNIQVJJTkcg
-  aXMgb24=
+title: mac下apache虚拟域名配置问题——virtualhosts are only activated when WEBSHARING is on
 category: linux_OSX
 tags: [apache, mac]
 description: 买 MacBook 了很高兴，最近也是捣鼓着。在 Apache 配置本地虚拟域名的时候出现了一些问题，具体表现是：不打开本地 WEB 共享就不能启用虚拟域名，最后通读了 mac 上 Apache 的配置文件才明白是怎么回事。
@@ -15,53 +12,62 @@ description: 买 MacBook 了很高兴，最近也是捣鼓着。在 Apache 配�
 
 <strong>在网上可以找到很多mac笔记本apache配置虚拟域名的方法，总结有以下几个步骤：</strong>
 
-1、修改httpd.conf
+## 1、修改httpd.conf
 
-把下面一行的注释解开<pre class="prettyprint">#Include /private/etc/apache2/extra/httpd-vhosts.conf</pre>
+把下面一行的注释解开
+
+```ini
+#Include /private/etc/apache2/extra/httpd-vhosts.conf
+```
 
 vi搜索Virtual hosts就可快速定位到这一行的上一行。
 
-2、修改extra/httpd-vhosts.conf
+## 2、修改extra/httpd-vhosts.conf
 
 添加一个虚拟域名配置
 
-[code]
 
-&lt;VirtualHost *:80&gt;
+```ini
+<VirtualHost *:80>
 DocumentRoot "/Users/lch/Sites/phpmyadmin"
 ServerName phpmyadmin.com
-&lt;/VirtualHost&gt;
+</VirtualHost>
+```
 
-[/code]
-
-3、修改extra/httpd-usrdir.conf
+## 3、修改extra/httpd-usrdir.conf
 
 添加对应的文件权限
 
-[code]
-
-&lt;Directory "/Users/lch/Sites/phpmyadmin"&gt;
+```
+<Directory "/Users/lch/Sites/phpmyadmin">
 Options Indexes FollowSymLinks
 AllowOverride None
 Order allow,deny
 Allow from all
-&lt;/Directory&gt;
-
-[code]
+</Directory>
+```
 
 4、修改系统hosts文件 /etc/hosts
 
-添加一行[code]127.0.0.1        phpmyadmin.com[/code]
+添加一行
+
+```
+127.0.0.1        phpmyadmin.com
+```
 
 5、重启apache
 
 如果没有启动就直接start，要不然就restart
 
-<pre class="prettyprint">sudo apachectl restart</pre>
+```bash
+sudo apachectl restart
+```
 
 然后检查apche是否启动成功
 
-<pre class="prettyprint">ps -ef | grep httpd</pre>
+```bash
+ps -ef | grep httpd
+```
 
 <span style="color: #ff0000;">注意：以上操作都是在web共享关闭情况下进行的</span>
 
@@ -76,7 +82,3 @@ Allow from all
 只有WEBSHARING_ON才行，直接注释掉这两行，重启apache，终于OK了。
 
 现在想想有点不解的是，为什么那么多教程都没有提及这一点呢，难道我新买的mac，apache配置文件改了？
-
-&nbsp;
-
-&nbsp;

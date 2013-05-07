@@ -3,17 +3,18 @@ wordpress_id: 475
 wordpress_url: http://luchanghong.com/rosemary/?p=475
 date: 2012-07-28 21:30:10 +08:00
 layout: post
-title: !binary |
-  5aWl6L+Q5Lya5aWW54mM5o6S6KGM5qacQVBJ
+title: 奥运会奖牌排行榜API
 category: web
 tags: [api]
 description: 奥运会开始了，咱也来凑凑热闹，看一下新浪提供的奥运金牌榜的 API 。
 ---
-奥运会开始了，关注一下，新浪官网上的奖牌排行榜看了一下，找到一个JS，在JS里面找到了一个API：
+奥运会开始了，关注一下，新浪官网上的奖牌排行榜看了一下，找到一个JS，在JS里面找到了一个[API][1]：
 
-<a title="奥运会奖牌排行榜JS" href="http://match.2012.sina.com.cn/api/Gl/medalsOrganization?app_key=fb647ad03c03ab15e9cb9bed461cbe7d&amp;limit=4">http://match.2012.sina.com.cn/api/Gl/medalsOrganization?app_key=fb647ad03c03ab15e9cb9bed461cbe7d&amp;limit=4</a>
-把JSON字符串格式化一下（<a href="http://jsonformat.com/">http://jsonformat.com/</a>），输出结果：
-<pre class="prettyprint">
+把JSON字符串格式化一下（[jsonformat][2]），输出结果：
+[1]: http://match.2012.sina.com.cn/api/Gl/medalsOrganization?app_key=fb647ad03c03ab15e9cb9bed461cbe7d&amp;limit=4 "奥运会奖牌排行榜JS"
+[2]: http://jsonformat.com
+
+```json
 { "result" : { "data" : { "medalLines" : [ { "M_Bronze" : "0",
                 "M_Gold" : "0",
                 "M_Silver" : "0",
@@ -129,4 +130,5 @@ description: 奥运会开始了，咱也来凑凑热闹，看一下新浪提供�
       "status" : { "code" : 0,
           "msg" : 1
         }
-    } }</pre>
+    } }
+```

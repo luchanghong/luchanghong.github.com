@@ -22,12 +22,19 @@ PS：你也可以 clone 其他的 repository ，[这里][] 是一些使用 jekyl
 
 可以去百度百科了解一下 [jekyll][] ，然后搭建本地 ruby 环境。至于怎么做，网上有好多教程。我用的是 mac ，步骤如下：
 
-- <pre class="prettyprint">sudo gem update --system</pre>
-- <pre class="prettyprint">sudo gem install rdiscount</pre>
-- <pre class="prettyprint">easy_install Pygments</pre>
+```bash
+sudo gem update --system
+
+sudo gem install rdiscount
+
+easy_install pygments
+```
 
 这样就可以在本地调试了，在你的网站目录下执行
-<pre class="prettyprint">jekyll --pygments --server</pre>
+
+```bash
+jekyll --pygments --server
+```
 
 PS：最简单的放一个 _config.yml 文件和一个 index.html 就可以让网站 run 了，先了解一下一套完整的 jekyll 的[文件结构和配置][] 是必须的。
 
@@ -35,10 +42,11 @@ PS：最简单的放一个 _config.yml 文件和一个 index.html 就可以让�
 
 换了新的 blog ，最麻烦和头疼的就是旧数据的导入，最起码文章要全部要保留。jekyll 提供了导入方法，首先找到 jekyll 安装的路径，把migrators/wordpress.rb
 拷贝出来执行，下面是我本地的路径和执行方法：
-<pre class="prettyprint">
+
+```bash
 /Library/Ruby/Gems/1.8/gems/jekyll-0.11.2/lib/jekyll/migrators
 ruby -r wordpress.rb -e 'Jekyll::WordPress.process("wordpressDB", "root", "root")'
-</pre>
+```
 
 执行后，会生成一个 _post 文件夹，里面就是文章了，直接 copy 到自己的网站目录 `_post/` 即可。
 
@@ -48,18 +56,22 @@ PS：远程连接wordpress数据库可能很慢，容易中途出错而失败，
 
 关于配置 CNAME ，两种情况：
 
-- 用二级域名如：blog.luchanghong.com ，那么就去域名管理界面增加一个 CNAME <pre>blog.luchanghong.com -> luchanghong.github.com</pre>
+- 用二级域名如：blog.luchanghong.com ，那么就去域名管理界面增加一个 CNAME
+
+```ini
+blog.luchanghong.com -> luchanghong.github.com
+```
+
 此时网站根目录下的 CNAME 文件填写 `blog.luchanghong.com`
 
 - 用顶级域名如：luchanghong.com ，那么就把原来域名解析 A 记录指定的 IP 地址修改为 `204.232.175.78` ，为了使 `www.luchanghong.com` 也生效，
-增加一个 CNAME <pre>www.luchanghong.com -> luchanghong.com</pre>
+增加一个 CNAME
+
+```ini
+www.luchanghong.com -> luchanghong.com
+```
 
 PS：可以参考 github pages 的 CNAME [帮助文档][]
-
-
-
-
-
 
 
 [github]: http://www.github.com "github"

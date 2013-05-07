@@ -3,8 +3,7 @@ wordpress_id: 497
 wordpress_url: http://luchanghong.com/rosemary/?p=497
 date: 2012-08-15 23:06:17 +08:00
 layout: post
-title: !binary |
-  anF1ZXJ5IHZhbGlkYXRlIOS4jiBvbnN1Ym1pdOeahOWGsueqgeWwj+iusA==
+title: jquery validate 与 onsubmit的冲突小记
 category: UI
 tags: [jquery]
 description: 在用 jQuery Validate 做表单校验感觉比较方便，但是有时候要用 AJAX 和数据库交互，由于 AJAX 的异步性导致 Validate 与 onsubmit 冲突，最终还是舍弃了 onsubmit 改用另外的方法做 AJAX 校验。
@@ -18,24 +17,25 @@ description: 在用 jQuery Validate 做表单校验感觉比较方便，但是�
 明白这个原因之后，解决方法也就很简单针对了：
 
 在构造validate规则的时候加上submitHandler，如：
-<pre class="prettyprint">
 
-        $("#finaceAccount").validate({
-            rules:{name :{required :true,minlength:2},
-            },
-            messages: {
-                name: {required: "请输入姓名！",minlength: "请填写全名！"},
-            },
-            submitHandler: function (form){
-                return checkInfo(form);
-            }
-        });
+```javascript
+$("#finaceAccount").validate({
+    rules:{name :{required :true,minlength:2},
+    },
+    messages: {
+        name: {required: "请输入姓名！",minlength: "请填写全名！"},
+    },
+    submitHandler: function (form){
+        return checkInfo(form);
+    }
+});
 
-        function checkInfo(f){
-            ……
-            return false
-        }
-</pre>
+function checkInfo(f){
+    ……
+    return false
+}
+```
+
 这样就OK了，也就可以把onsubmit事件删除了。
 
 <span style="text-decoration: underline;"><span style="color: #ff0000; text-decoration: underline;">补充：checkInfo()函数里面有ajax验证，这样写也不行，我直接在submitHandler返回true但表单并未提交，研究半天也没找到什么解决办法，只好换其他验证方法了。至此这个冲突还没有解决……我也不是专业前端开发人员，也没太多时间去网上找答案，就暂时避开此方法了，以后有空再看吧，坑爹啊！</span></span>

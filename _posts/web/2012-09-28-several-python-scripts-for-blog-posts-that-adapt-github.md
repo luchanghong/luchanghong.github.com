@@ -14,7 +14,7 @@ description: 由于我之前自己用PHP写个博客，然后又用wordpress，�
 
 这是我之前自己写的博客系统，数据库也是自己定义的，转换的时候较为简单，下面代码仅供参考：
 
-<pre class="prettyprint">
+```python
 #!/usr/bin/env python
 #-*- encoding: utf8 -*-
 
@@ -41,11 +41,12 @@ date: %s
 ''' % (row[1], row[5], tags, row[4], art)
     f.write(content.encode('utf8'))
     f.close()
-</pre>
+```
 
 ## 文件编码转换
 如果 posts 的文件编码是 gbk 的，想转成 utf8 ，参考下面代码：
-<pre class="prettyprint">
+
+```python
 #!/usr/bin python
 # -*- coding: utf-8 -*-
 import os
@@ -103,13 +104,13 @@ if __name__ == '__main__':
         print out_dir+' is already exists!'
 
     print change_encoding(filepath, out_dir)
-</pre>
+```
 
 ## 404跳转
 
 因为之前一些post的路径和现在不一致，而搜索引擎还保留之前的结果，所以从搜索引擎来的连接可能是原来的，那么就出现了404页面，于是做一个措施：把每个404对应的URL做一个redirect。比如 `http://luchanghong.com/ignorant/html/70.html` -> `http://luchanghong.com/php/2011/07/11/70.html`，参考代码：
 
-<pre class="prettyprint">
+```python
 #!/usr/bin/env python
 #-*- coding: utf8 -*-
 
@@ -140,17 +141,17 @@ for post in os.listdir(post_dir):
         post_category = post_lines[3][9:].strip()
 
     content = ''' 
-    &lt;html&gt;
-        &lt;header&gt;
-            &lt;script type="text/javascript"&gt;
+    <html>
+        <header>
+            <script type="text/javascript">
                 function Go(){
                     window.location.href = 'http://luchanghong.com/%(category)s/%(year)s/%(month)s/%(day)s/%(id)d.html';
                 }
-            &lt;/script&gt;
-        &lt;/header&gt;
-        &lt;body onload="Go()"&gt;
-        &lt;/body&gt;
-    &lt;/html&gt;
+            </script>
+        </header>
+        <body onload="Go()">
+        </body>
+    </html>
     ''' %{
             'category': post_category,
             'year': post_year,
@@ -161,6 +162,6 @@ for post in os.listdir(post_dir):
     f = open(file_name, 'w')
     f.write(content)
     f.close()
-</pre>
+```
 
 觉得有用的拿去针对自己的情况修修补补吧~~莫见笑！
