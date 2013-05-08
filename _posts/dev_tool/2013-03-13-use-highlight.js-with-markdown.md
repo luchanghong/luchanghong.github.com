@@ -17,48 +17,48 @@ description: 今天把prettyprint替换掉，采用了Highlight.js来给代码�
 
 - 使用Highlight
 
-通常在`layout`页面引用一次即可，例如：
+    通常在`layout`页面引用一次即可，例如：
 
-```html
-<link rel="stylesheet" href="/css/tomorrow-night.css" type="text/css" media="screen, projection" />
-<script src="/js/highlight.pack.js" type="text/javascript"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-```
+    ```html
+    <link rel="stylesheet" href="/css/tomorrow-night.css" type="text/css" media="screen, projection" />
+    <script src="/js/highlight.pack.js" type="text/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    ```
 
-**注意引用的路径**
+    **注意引用的路径**
 
 - 代码块写法
 
-指定代码的语言，形如：
+    指定代码的语言，形如：
 
-<pre class="no-highlight">
-```php
-    $a = 'a';
-    echo $a;
-```
-</pre>
+    <pre class="no-highlight">
+    ```php
+        $a = 'a';
+        echo $a;
+    ```
+    </pre>
 
-但是之前使用的`rdiscount`这个解释器对上面代码解析错误，所以要使用下面的`redcarpet`。
+    但是之前使用的`rdiscount`这个解释器对上面代码解析错误，所以要使用下面的`redcarpet`。
 
 ## 使用Redcarpet
 
 - 安装redcarpet
 
-```bash
-lch@localhost:luchanghong.github.com $ sudo gem install redcarpet
-Password:
-Fetching: redcarpet-2.2.2.gem (100%)
-Building native extensions.  This could take a while...
-Successfully installed redcarpet-2.2.2
-1 gem installed
-Installing ri documentation for redcarpet-2.2.2...
-Installing RDoc documentation for redcarpet-2.2.2...
-```
+    ```bash
+    lch@localhost:luchanghong.github.com $ sudo gem install redcarpet
+    Password:
+    Fetching: redcarpet-2.2.2.gem (100%)
+    Building native extensions.  This could take a while...
+    Successfully installed redcarpet-2.2.2
+    1 gem installed
+    Installing ri documentation for redcarpet-2.2.2...
+    Installing RDoc documentation for redcarpet-2.2.2...
+    ```
 
 - 修改_config.yml
 
-```
-markdown: redcarpet
-redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
-```
+    ```
+    markdown: redcarpet
+    redcarpet:
+      extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+    ```
