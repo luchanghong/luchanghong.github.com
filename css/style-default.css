@@ -50,7 +50,7 @@ p code, li code, .post_description{
     font-size: 14px;
 }
 pre{
-    background-color: #EEF;
+    /*background-color: #EEF;*/
     font-family: "Monaco","inconsolata-1","inconsolata-2","Monaco","Courier New",monospace;
 }
 pre code{
