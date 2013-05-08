@@ -33,8 +33,8 @@ description: 今天把prettyprint替换掉，采用了Highlight.js来给代码�
 
     <pre class="no-highlight">
     ```php
-        $a = 'a';
-        echo $a;
+    $a = 'a';
+    echo $a;
     ```
     </pre>
 
@@ -57,7 +57,7 @@ description: 今天把prettyprint替换掉，采用了Highlight.js来给代码�
 
 - 修改_config.yml
 
-    ```
+    ```ini
     markdown: redcarpet
     redcarpet:
       extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
