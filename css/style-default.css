@@ -50,12 +50,18 @@ p code, li code, .post_description{
     font-size: 14px;
 }
 pre{
-    border: 1px solid #DDD;
     background-color: #EEF;
     font-family: "Monaco","inconsolata-1","inconsolata-2","Monaco","Courier New",monospace;
 }
 pre code{
+    border: 1px solid #DDD;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
     overflow: auto;
+    font-size: .8em;
+    line-height: 1.5em;
+    font-family: "Monaco","inconsolata-1","inconsolata-2","Monaco","Courier New",monospace;
 }
 blockquote {
 	border-color: #E1E1E1;
