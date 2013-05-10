@@ -18,6 +18,7 @@ description: 一起来学习和了解一下 pyramid framework ，安装 pyramid 
 <p style="padding-left: 30px;">在<a href="http://www.python.org">http://www.python.org</a>下载WIN 32bit 下的python2.7，然后安装。然后配置一下环境变量，如下图：</p>
 <p style="padding-left: 30px;"><a href="/upload/2012/04/setenv.jpg"><img class="alignnone  wp-image-97" title="setenv" src="/upload/2012/04/setenv.jpg" alt="" width="698" height="491" /></a></p>
 <p style="padding-left: 30px;">编辑的时候添加python的安装目录并以分号结尾，如：<span style="text-decoration: underline;">d:\python27;</span></p>
+
 ## 2.安装setuptools/pip
 <p style="padding-left: 30px;">setuptools和pip是一个很好用的python包，用来安装或更新python其他的package。</p>
 <p style="padding-left: 30px;">打开：<a href="http://pypi.python.org/pypi/setuptools">http://pypi.python.org/pypi/setuptools</a></p>
@@ -39,9 +40,11 @@ D:\Python27>python ez_setup.py setuptools
 <p style="padding-left: 60px;">easy_install -U pip</p>
 <p style="padding-left: 60px;">安装了pip之后，就可以使用pip了，这些命令都安装在python目录下的Script目录里。</p>
 <p style="padding-left: 30px;">easy_install和pip作用都差不多，使用的时候help一下就知道其用法了。</p>
+
 ## 3.安装pyramid
 <p style="padding-left: 30px;">pip install pyramid</p>
 <p style="padding-left: 30px;">这个是在线安装，等待完成后，在python/Lib/site-packages/下面就会发现pyramid以及相关的package了。</p>
+
 ## 4.运行一个Hell world
 <p style="padding-left: 30px;">Hello world！多少程序的第一次都给了你啊~~~</p>
 <p style="padding-left: 30px;">找个目录，创建一个hello.py，我把pyramid官网上的sample运行一下，把一下代码拷贝到hello.py：</p>
