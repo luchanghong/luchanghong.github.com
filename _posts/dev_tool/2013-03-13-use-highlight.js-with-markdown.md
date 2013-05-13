@@ -31,12 +31,10 @@ description: 今天把prettyprint替换掉，采用了Highlight.js来给代码�
 
     指定代码的语言，形如：
 
-    <pre class="no-highlight">
-    ```php
-    $a = 'a';
-    echo $a;
-    ```
-    </pre>
+        ```php
+        $a = 'a';
+        echo $a;
+        ```
 
     但是之前使用的`rdiscount`这个解释器对上面代码解析错误，所以要使用下面的`redcarpet`。
 
