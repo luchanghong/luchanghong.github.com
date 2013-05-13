@@ -152,7 +152,7 @@ class Account(Base):
 
     解决办法就是注释掉。
 
-- 如何根据新的数据model创建对应的数据表。研究一下代码，在`modles/__init__.py`里添加一行：
+- 如何根据新的数据model创建对应的数据表。研究一下代码，在`models/__init__.py`里添加一行：
 
     ```python
     from account import Account
