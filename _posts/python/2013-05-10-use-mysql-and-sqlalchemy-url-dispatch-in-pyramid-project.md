@@ -103,7 +103,7 @@ ImportError: No module named MySQLdb
 原因是初始化的项目里的例子（models.py）把`name`字段设置成`TEXT`类型，而且作为`INDEX`，在`SQLite`里是OK的，但是在`MySQL`里`TEXT`类型的字段不能做UNIQUE索引的，在这里做一些修改即可：
 
 ```python
-m sqlalchemy import (
+from sqlalchemy import (
     Column,
     Integer,
     Text,
