@@ -86,7 +86,7 @@ route的写法可以查看pyramid文档，就不在此啰嗦了，后面我把�
 
 ## 四、renderer一个html模板
 
-pyramid默认使用mako模板引擎，mako默认支持.pt后缀的模板文件，我们常用.html，所以要配置一下，很简单，在上面那个__init__.py的main()函数里加上：
+pyramid默认使用Chameleon模板引擎，支持.pt后缀的模板文件。我们常用.html，那么就选用另外一个模板引擎——Mako，使用时要配置一下，很简单，在上面那个__init__.py的main()函数里加上：
 
 ```python
 config.add_renderer('.html', 'pyramid.mako_templating.renderer_factory')
