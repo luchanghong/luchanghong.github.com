@@ -31,6 +31,8 @@ config.set_session_factory(my_session_factory)
 
 [pyramid_beaker文档][2]参见官网。首先要安装`pyramid_beaker`这个package，可以在setup.py中添加需要的包，然后执行下面
 
+[2]: http://docs.pylonsproject.org/projects/pyramid_beaker/en/latest
+
 ```python
 # 编辑setup.py
 requires = [
@@ -95,6 +97,7 @@ python setup.py develop
 ## SESSION存储调用
 
 写个测试页面，在views/account.py中code：
+
 ```python
 __author__ = 'luchanghong'
 #!/usr/bin/env python
