@@ -132,5 +132,8 @@ serving on http://0.0.0.0:6543
 
 ```python
 # 把csrf_token传到页面里做一个隐藏字段
-csrf_token = request.session.new_csrf_token()
+csrf_token1 = request.session.new_csrf_token()
+
+# 取得前一次生成的CSRF TOKEN
+csrf_token2 = request.session.get_csrf_token()
 ```
