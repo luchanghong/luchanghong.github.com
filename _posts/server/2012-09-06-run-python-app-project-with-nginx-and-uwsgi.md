@@ -8,11 +8,15 @@ description: 在网上看到 python 应用的一些部署方式，如今最高�
 
 ## 安装 Nginx
 
-    sudo brew install nginx
+```bash
+sudo brew install nginx
+```
 
 路径：`/usr/local/sbin/nginx`，为了方便启动，把 `/usr/local/sbin/` 加入到 PATH 中去，或者把 nginx 做一个 link:
 
-    sudo ln -s /usr/local/sbin/nginx /usr/bin/nginx
+```bash
+sudo ln -s /usr/local/sbin/nginx /usr/bin/nginx
+```
 
 在我 mac 电脑上装完 nginx 之后，它自己就启动了，打开 `localhost:8080` ，就会看到 `Welcome to nginx!`。
 
@@ -22,22 +26,26 @@ description: 在网上看到 python 应用的一些部署方式，如今最高�
 
 写一个简单的 app ，然后用 uwsgi 来启动。我的路径是 `/Users/lch/dev/www/python`，创建一个文件 `hello.py` ：
 
-<pre class="prettyprint">
+```python
 #!/usr/bin/env python
 #-*- coding: utf8 -*-
 
 def application(env, response):
     response('200 OK', [('Content-Type', 'text/html')])
     return "Hello World"
-</pre>
+```
 
-用 uwsgi 来启动：`uwsgi --socket :9000 --wsgi-file hello.py -t 30`
+用 uwsgi 来启动：
+
+```bash
+uwsgi --socket :9000 --wsgi-file hello.py -t 30
+```
 
 ## 配置nginx
 
 现在我配置一个新的 server ，让 nginx 做 8000 到 9000 端口的转发。在 nginx 配置文件加上一段：
 
-<pre class="prettyprint">
+```ini
 upstream hello-web-app{
     server localhost:9000;
 }
@@ -55,7 +63,7 @@ server{
         keepalive_timeout 0;
     }   
 }
-</pre>
+```
 
 然后重启 nginx ，访问 `localhost:8000` 就会显示 `Hello World`了，我们的配置成功了，也可以通过 log 来检测。
 
@@ -66,11 +74,12 @@ server{
 - nginx 的一些知识要有所准备
 
 我用的软件版本信息：
-<pre class="prettyprint">
+
+```bash
 (env_uwsgi)lchmatoMacBook-Pro:python lch$ nginx -v
 nginx version: nginx/1.2.3
 (env_uwsgi)lchmatoMacBook-Pro:python lch$ uwsgi --version
 1.2.5
-</pre>
+```
 
 [pythonbrew]: http://localhost:4000/python/2012/07/23/switch-your-python-env-with-using-pythonbrew.html "pythonbrew"
