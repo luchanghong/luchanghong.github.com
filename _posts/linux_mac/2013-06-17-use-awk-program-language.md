@@ -116,11 +116,42 @@ luchanghong_3 26
 Goodbye, awk
 ```
 
-## 说明
+## 说明&注意
 
-awk默认是以`空格`来分隔每一行的字符串，分隔出来的字符串从1、2、3……开始计数，对应输出就是$1、$2、$3，如果数据不是按照空格来分隔的，也可以自定义分隔符，例如：
+- awk默认是以`空格`来分隔每一行的字符串，分隔出来的字符串从1、2、3……开始计数，对应输出就是$1、$2、$3，如果数据不是按照空格来分隔的，也可以自定义分隔符，例如：
 
-```bash
-lch@localhost:Desktop $ echo "name:luchanghong" | awk -F ":" '{print $1,$2}'
-name luchanghong
+    ```bash
+    lch@localhost:Desktop $ echo "name:luchanghong" | awk -F ":" '{print $1,$2}'
+    name luchanghong
+    ```
+
+- awk内部变量。可以在awk的actions里面定义变量，但是用的时候要小心，不要加`$`符号，看下面简单的例子就明白了。
+
+    ```bash
+    # integer variables
+    lch@localhost:Desktop $ echo luchanghong 23 | awk '{x=1;print $0,x}'
+    luchanghong 23 1
+    lch@localhost:Desktop $ echo luchanghong 23 | awk '{x=1;print $0,$x}'
+    luchanghong 23 luchanghong
+    # string variables
+    lch@localhost:Desktop $ echo luchanghong 23 | awk '{x="a";print $0,x}'
+    luchanghong 23 a
+    # wrong
+    lch@localhost:Desktop $ echo luchanghong 23 | awk '{x="a";print $0,$x}'
+    luchanghong 23 awk: illegal field $(a), name "x"
+     input record number 1, file
+      source line number 1
+    ```
+
+- awk外部变量。我们可以自定义一些变量，作为参数专递给awk程序使用，例如：
+
+    ```bash
+    lch@localhost:Desktop $ echo 23 | awk '{print "The age of",name,"is",$1}' name=luchanghong
+    The age of luchanghong is 23
+    ```
+
+上面例子中为了方便就没有创建创建数据文件，而是直接以`echo 23`这样的形式输出；awk执行的程序也可以写在一个文件里调用，替换格式如下：
+
+```
+awk -f foo.awk var_1=value_1 dest_file
 ```
