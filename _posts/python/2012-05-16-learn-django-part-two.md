@@ -106,18 +106,18 @@ python manage.py shell
 进入一个shell，相当于python的shell，不同的是Django自动把app加入到python path中，也就是说可以直接把app当作一个model来导入使用。
 
 ```python
-&gt;&gt;&gt; from polls.models import Poll,Choice
-&gt;&gt;&gt; from django.utils import timezone
-&gt;&gt;&gt; p = Poll(question = "what's up?", pub_date = timezone.now())
-&gt;&gt;&gt; p
-&gt;&gt;&gt; p.save()
-&gt;&gt;&gt; Poll.objects.all()
-[&lt;Poll: Poll object&gt;]
-&gt;&gt;&gt; p = Poll.objects.filter(question="what's up?")
-&gt;&gt;&gt; p
-[&lt;Poll: Poll object&gt;]
-&gt;&gt;&gt; p.delete()
-&gt;&gt;&gt; Poll.objects.all()
+>>> from polls.models import Poll,Choice
+>>> from django.utils import timezone
+>>> p = Poll(question = "what's up?", pub_date = timezone.now())
+>>> p
+>>> p.save()
+>>> Poll.objects.all()
+[<Poll: Poll object>]
+>>> p = Poll.objects.filter(question="what's up?")
+>>> p
+[<Poll: Poll object>]
+>>> p.delete()
+>>> Poll.objects.all()
 []
 ```
 
@@ -139,7 +139,7 @@ class Poll(models.Model):
         return self.question
 
     def was_published_recently(self):
-        return self.pub_date &gt;= timezone.now() - timedelta(days = 1)
+        return self.pub_date >= timezone.now() - timedelta(days = 1)
 
 class Choice(models.Model):
     poll = models.ForeignKey(Poll)
@@ -153,11 +153,11 @@ class Choice(models.Model):
 修改之后要退出（CTRL+Z）shell，然后再次进入：
 
 ```python
-&gt;&gt;&gt; from polls.models import Poll,Choice
-&gt;&gt;&gt; from django.utils import timezone
-&gt;&gt;&gt; p = Poll(question = "what's up?", pub_date = timezone.now())
-&gt;&gt;&gt; p
-&lt;Poll: what's up?&gt;
+>>> from polls.models import Poll,Choice
+>>> from django.utils import timezone
+>>> p = Poll(question = "what's up?", pub_date = timezone.now())
+>>> p
+<Poll: what's up?>
 ```
 
 OK，今天就到这了，多多练习，Django手册在手什么都不怕了，不会的再去google一下，还有什么不能解决的呢？接下来要从后台搞起……

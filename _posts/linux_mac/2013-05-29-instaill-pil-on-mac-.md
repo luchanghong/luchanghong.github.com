@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Install PIL(Python Image Library) on Mac OS X
-catrgory: linux-mac
+catrgory: linux_OSX
 tags: [python, pil]
 description: 通常直接通过easy_install或者pip安装PIL后并不支持JPEG，在使用的过程中会出现“decoder jpeg not available”这样的警告，这时候需要手动编译安装PIL才能解决问题。
 ---
