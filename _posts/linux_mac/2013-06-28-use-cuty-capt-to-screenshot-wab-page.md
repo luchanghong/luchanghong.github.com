@@ -2,7 +2,7 @@
 layout: post
 title: CutyCapt——命令行下的网页截屏工具
 tags: [cutycapt]
-category: linux_mac
+category: linux_osx
 description: 最近被项目一个需求弄得头大，把不同数据生成的网页截取下来然后分享到微博。翻来覆去好久终于找到了这一款很实用的软件——CutyCapt。
 ---
 
