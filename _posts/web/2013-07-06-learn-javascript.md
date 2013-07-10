@@ -3,7 +3,7 @@ layout: post
 category: web
 title: Learn JavaScript
 tags: [javascript]
-description: JavaScript学习概述
+description: JavaScript学习概述。声明：例子都是在node.js的shell环境运行的，所以出现好多undefined行，阅读时请主动忽略。
 ---
 
 # 目录
@@ -65,10 +65,10 @@ description: JavaScript学习概述
 
 - [函数](#function)
 
-    - 函数概述
-    - arguments对象
-    - Function对象
-    - Closure闭包
+    - [函数概述](#functionConcept)
+    - [arguments对象](#arguments)
+    - [Function对象](#functionObject)
+    - [closure闭包](#closure)
 
 - [对象和类](#object&class)
 
@@ -806,4 +806,186 @@ break和continue都是在执行循环语句过程中跳出当次循环的控制�
 7
 8
 ```
+___
+
+# <a id="function"></a> 函数
+
+## <a id="functionConcept"></a> 函数概述
+
+- 函数结构
+
+    函数是指一组可以调用的代码，和其他编程语言类似，`JavaScript`的函数通常由关键字
+    `function`、函数名称、参数、一组代码组成，其结构如下：
+
+        function funcName(arg0, arg1, ... argN) {
+            statements
+        }
+
+- 函数调用
+
+    函数定义好之后，可以用函数名以及相应的参数调用。例如：
+
+    ```javascript
+    > function print_name(name) {
+    ... return 'Your name is ' + name;
+    ... }
+    undefined
+    > print_name('luchanghong')
+    'Your name is luchanghong'
+    ```
+
+- 函数返回值
+
+    如果在函数体内没有`return`语句，那么默认返回值是`undefined`。
+
+## <a id="arguments"></a> arguments对象
+
+在函数体内使用`arguments`对象可以获取输入的参数。按参数的顺序，用`arguments[0]`
+就可以得到输入的第一个参数。
+
+可以使用`arguments.length`模拟函数重载，例如：
+
+```javascript
+> function fun_arg() {
+... if (1 == arguments.length) {
+..... return arguments[0];
+..... } else if (2 == arguments.length) {
+..... return arguments[0]+arguments[1];
+..... } else {
+..... return 'Wrong arguments number';
+..... }
+... }
+undefined
+> fun_arg(10)
+10
+> fun_arg(10, 20)
+30
+> fun_arg()
+'Wrong arguments number'
+> fun_arg(10, 20, 30)
+'Wrong arguments number'
+```
+
+注意：`JavaScript`函数没有参数默认值的写法，否则报错。
+
+## <a id="functionObject"></a> Function对象
+
+- Function对象
+
+    在`JavaScript`中，函数也是一个对象，而且可以按照下面的格式定义：
+
+        var fun_obj = new Function(arg0, arg1, ... argN, function_body)
+
+    那么这种函数定义如何调用呢？看例子：
+
+    ```javascript
+    > var my_fun = new Function('name', 'age', "console.log('My name is ' + name + ', and I am ' + age + ' years old.')")
+    undefined
+    > my_fun('luchanghong', 25)
+    My name is luchanghong, and I am 25 years old.
+    ```
+
+    所以，通常定义的函数都可以看做是`Function`对象的实例，那么也就属于引用类型。
+
+- length属性
+
+    `Function`的`length`属性表示函数期望参数的个数，如上例：
+
+    ```javascript
+    > my_fun.length
+    2
+    ```
+
+    由于普通函数是`Function`对象的实例，那么也应该具有此属性：
+
+    ```javascript
+    > function fun_1(a, b, c) { return; }
+    undefined
+    > function fun_2(d, e) { return; }
+    undefined
+    > console.log(fun_1.length , fun_2.length)
+    3 2
+    ```
+
+- toString()方法
+
+    `Function`的`toString()`方法返回整个函数的构造源代码，例如：
+
+    ```javascript
+    > my_fun.toString()
+    'function anonymous(name,age) {\nconsole.log(\'My name is \' + name + \', and I am \' + age + \' years old.\')\n}'
+    > fun_1.toString()
+    'function fun_1(a, b, c) { return; }'
+    ```
+
+虽然使用`Function`也可以定义函数，但是最好不要使用这种方法，因为它比传统的定义
+函数要慢得多。
+
+## <a id="closure"></a> closure闭包
+
+闭包是一个很难理解的概念，简单地说就是函数（父函数）内部定义一个函数（子函数）
+，当外部调用子函数的时候就产生了闭包。这里就简单的介绍，如果要搞透彻恐怕要长篇
+大论了。
+
+由于`JavaScript`中的变量默认是全局变量，而在函数中则是局部变量（但声明的时候必
+须加关键字var，否则也是全局变量），这点要特别注意。
+
+所谓全局变量和（函数内）局部变量区别就是：在函数内部可以调用外部的全局变量，而
+函数内部的局部变量却不能在函数外部调用，看例子：
+
+```javascript
+// 请忽略掉undefined
+> var me = 'luchanghong'
+undefined
+> function fun_me() {
+..... var age = 25;
+..... gender = 'male';
+..... console.log(me)
+..... }
+undefined
+// 函数内部调用外部的全局变量
+> fun_me()
+luchanghong
+undefined
+// var声明是局部变量
+> console.log(age)
+ReferenceError: age is not defined
+// 没有var声明式全局变量
+> console.log(gender)
+male
+undefined
+```
+
+如果外部需要调用函数内部的变量，那么就要使用闭包了，例如：
+
+```javascript
+> function a() {
+... var n = 10;
+... function b() {
+..... return n;
+..... }
+... return b;
+... }
+undefined
+> var f = a()
+undefined
+> f()
+10
+```
+
+这似乎看不出闭包的作用，那继续看：
+
+```javascript
+// 接着上面的例子
+> f
+[Function: b]
+> f.toString()
+'function b() {\nreturn n;\n}'
+```
+
+在执行`f()`的时候，可以看着已经脱离了函数`a()`，但是却可以调用`a()`内部的变量。
+
+闭包另外一个特点就是在使用闭包之后，局部变量并不会释放，继续占用内存，所以使用
+的时候要小心，避免内存泄露。更多的信息可以上网查阅。
+
 
