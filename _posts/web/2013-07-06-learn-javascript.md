@@ -70,14 +70,14 @@ description: JavaScript学习概述。声明：例子都是在node.js的shell环
     - [Function对象](#functionObject)
     - [closure闭包](#closure)
 
-- [对象和类](#object&class)
+- [对象和类](#objectAndClass)
 
-    - 面向对象
-    - 对象类型
-    - 对象作用域this
-    - 创建对象
-    - 修改对象
-    - 使用对象
+    - [面向对象](#objectOriented)
+    - [对象类型](#objectTypes)
+    - [对象作用域](#objectScope)
+    - [创建对象](#createObject)
+    - [修改对象](#modifyObject)
+    - [使用对象](#useObject)
 
 ___
 
@@ -988,4 +988,416 @@ undefined
 闭包另外一个特点就是在使用闭包之后，局部变量并不会释放，继续占用内存，所以使用
 的时候要小心，避免内存泄露。更多的信息可以上网查阅。
 
+___
 
+# <a id="objectAndClass"></a> 对象和类
+
+## <a id="objectOriented"></a> 面向对象
+
+- 对象
+
+    `JavaScript`把对象定义为“属性的无序集合，每个属性可以存放一个原始值、对象或
+    者函数”。
+
+- 类
+
+    类是对象的原型，定义了对象的接口（interface）和内部关联。
+
+- 实例
+
+    类生成对象的过程叫实例化，生成的对象就是这个类的实例。类和实例可以理解是相同
+    的。
+
+    在`JavaScript`的标准`ECMAScript`中并没有正式定义类，而是把对象的定义和描述叫
+    做类。
+
+- 对象构成
+
+    在`ECMAScript`中，对象由特性（attribute）构成，特性分为两种：函数这叫做方法
+    ，其他成为属性。
+
+## <a id="objectTypes"></a> 对象类型
+
+- 本地对象
+
+    独立于宿主环境（如：浏览器）的对象就是本地对象（native object）：
+
+    - Object
+    - Function
+    - Array
+    - String
+    - Boolean
+    - Number
+    - Date
+    - RegExp
+    - Error
+    - EvalError
+    - RangeError
+    - ReferenceError
+    - SyntaxError
+    - TypeError
+    - URIError
+
+- 内置对象
+
+    `ECMAScript`中已经被初始化的对象叫做内置对象（built-in object），这些对象已
+    经被实例化，可以直接使用。这样的对象有两个：Global和Math。
+
+    ```javascript
+    > Math.PI
+    3.141592653589793
+    > Math.sin(Math.PI/2)
+    1
+    > Math.sin(Math.PI/6)
+    0.49999999999999994
+    > Math.abs(-5)
+    5
+    ```
+
+    Global对象定义一些全局的函数和属性，但实际上Global对象并不存在。前面说到函数
+    实际上是对象的一个方法，那么这些内置函数默认就是Global对象的方法了。
+
+- 宿主对象
+
+    和本地对象和内置对象相对的就是宿主对象了，它们都是由宿主环境提供。DOM和BOM对
+    象就是宿主对象。
+
+## <a id="objectScope"></a> 对象作用域
+
+- 作用域
+
+    作用域指的是变量的适用范围。在面向对象程序语言中，一个复杂的类一般都有公有、
+    私有和保护类的属性和方法。
+
+    - 私有：只有该对象内部才能访问
+    - 共有：实例化之后的对象和子类都能访问
+    - 保护：主要和私有对象区分，可以被子类继承访问
+
+    但是在`JavaScript`中，类的所有属性和方法都是公用的。为了开发方便，一般用下划
+    线区分：
+
+    ```javascript
+    person.__name = 'luchanghong';
+    ```
+
+- 关键字this
+
+   关键字this确实很关键。this总是指调用它所在方法的对象。
+
+   ```javascript
+   > var person = new Object();
+   undefined
+   > person.name = 'luchanghong';
+   'luchanghong'
+   > person.printName = function() { return this.name; }
+   [Function]
+   > person.printName()
+   'luchanghong'
+   ```
+
+   也许你看了上面的例子觉得this指person对象是顺理成章的事，那么再看：
+
+   ```javascript
+   > var book1 = new Object(), book2 = new Object();
+   undefined
+   > book1.author = 'luchanghong';
+   'luchanghong'
+   > book2.author = 'moyan';
+   'moyan'
+   > function printAuthor() { return this.author; }
+   undefined
+   > book1.sayAuthor = printAuthor
+   [Function: printAuthor]
+   > book2.sayAuthor = printAuthor
+   [Function: printAuthor]
+   > book1.sayAuthor()
+   'luchanghong'
+   > book2.sayAuthor()
+   'moyan'
+   ```
+
+## <a id="createObject"></a> 创建对象
+
+创建对象很简单，上面例子中`new Object()`就是创建了一个Object类的实例。下面看
+几种常见的创建对象的方式：
+
+- 原始方式
+
+    先定义对象，再定义属性和方法。
+
+    ```javascript
+    > var Person = new Object();
+    undefined
+    > Person.name = 'luchanghong';
+    'luchanghong'
+    > Person.getName = function() { return this.name; }
+    [Function]
+    > Person.getName();
+    'luchanghong'
+    ```
+
+    这种方式很直观，属性和方法都一目了然。但若再创建一个对象，只是属性的值或者方
+    法内容不一样，就必须把创建对象的过程再写一遍。
+
+    ```javascript
+    > var Person2 = new Object();
+    undefined
+    > Person2.name = 'lu';
+    'lu'
+    > Person2.getName = function() { return this.name; }
+    [Function]
+    > Person2.getName();
+    'lu'
+    ```
+
+    如何把上面两个对象的创建过程提取出来共用？
+
+- 工厂方式
+
+    工厂，顾名思义，有一个模型就能生产出成千上万的成品。看例子：
+
+    ```javascript
+    > function createPerson() {
+    ... var obj = new Object();
+    ... obj.name = 'luchanghong';
+    ... obj.getName = function() { return this.name; };
+    ... return obj;
+    ... }
+    undefined
+    > var p = createPerson();
+    undefined
+    > p.getName();
+    'luchanghong'
+    ```
+
+    看起来有了雏形。如果创建另外一个对象，还得重定义属性岂不很麻烦，那么改进：
+
+    ```javascript
+    > function createPerson(name) {
+    ... var obj = new Object();
+    ... obj.name = name;
+    ... obj.getName = function() { return this.name; };
+    ... return obj;
+    ... }
+    undefined
+    > var p = createPerson('lu');
+    undefined
+    > p.getName();
+    'lu'
+    ```
+
+    对象的属性一般都是原始类型，方法这个函数貌似可以提出来，要不然每个对象就重复
+    创建了功能相同的函数了，再改进：
+
+    ```javascript
+    > function printName() { return this.name; }
+    undefined
+    > function createPerson(name) {
+    ... var obj = new Object();
+    ... obj.name = name;
+    ... obj.getName = printName;
+    ... return obj;
+    ... }
+    undefined
+    > var p = createPerson('luchanghong');
+    undefined
+    > p.getName();
+    'luchanghong'
+    > var p2 = createPerson('lu');
+    undefined
+    > p2.getName();
+    'lu'
+    ```
+
+    功能上看起来没什么问题，但这和我们在其他语言中构造对象差别蛮大的，为了迎合
+    开发者使用习惯就产生了另一种方式——构造函数。
+
+- 构造函数方式
+
+    构造函数方式和工厂方式差不多，区别在于把函数本身作为构造的对象。看例子：
+
+    ```javascript
+    > function Person(name) {
+    ... this.name = name;
+    ... this.showName = function () { return this.name; };
+    ... }
+    undefined
+    > var p = new Person('lu');
+    undefined
+    > p
+    { name: 'lu', showName: [Function] }
+    > p.name
+    'lu'
+    > p.showName()
+    'lu'
+    ```
+
+    前面说到函数的时候就一直强调函数也是对象，利用这一点就可以构造出目标对象了。
+    有了亲切的`new`，立刻就想到对象了吧。
+
+    同样，在构造函数外部定义函数然后在内部引用，避免重复定义函数。
+
+- 原型方式
+
+    原型方式使用`prototype`来创建对象的。
+
+    ```javascript
+    > function Person() { };
+    undefined
+    > Person.prototype.name = 'lu';
+    'lu'
+    > Person.prototype.showName = function () { return this.name; };
+    [Function]
+    > var p = new Person();
+    undefined
+    > p.showName()
+    'lu'
+    ```
+
+    用`prototype`去定义对象的属性或者方法，在实例化的时候原型的这些属性和方法都
+    被赋予给将要创建的对象。这里的方法（函数）不会被重复创建，只是引用，从而避免
+    前面几种方式遇到的问题。
+
+    尽管这种方式看着还不错，但在用的时候会发现这些属性都是固定的，要想改变就必须
+    在实例化之后再重新赋值，而且当属性不是简单的原始类型或者函数的时候，多个实例
+    化对象会出现混乱，例如：
+
+    ```javascript
+    > function Person() { }
+    undefined
+    > Person.prototype.name = 'lu';
+    'lu'
+    > Person.prototype.friends = new Array('li', 'hua', 'fang');
+    [ 'li', 'hua', 'fang' ]
+    > var p1 = new Person();
+    undefined
+    > var p2 = new Person();
+    undefined
+    > p1.friends
+    [ 'li', 'hua', 'fang' ]
+    > p2.friends
+    [ 'li', 'hua', 'fang' ]
+    > p1.friends.push('123')
+    4
+    > p2.friends
+    [ 'li',
+      'hua',
+      'fang',
+      '123' ]
+    > p1.friends
+    [ 'li',
+      'hua',
+      'fang',
+      '123' ]
+    ```
+
+    这的确是个不小的问题，有什么解决办法呢？
+
+- 混合构造函数/原型方式
+
+    为了解决上面的问题，我们采用这种混合方式。用构造函数的方式定义非函数属性，
+    这样就解决了属性值固定的问题；用原型方式定义函数属性，这样解决函数重复定义
+    的问题。
+
+    ```javascript
+    > function Person(name) {
+    ... this.name = name;
+    ... this.friends = new Array('li', 'hua');
+    ... }
+    undefined
+    > Person.prototype.makeFriends = function (f) {
+    ... this.friends.push(f);
+    ... }
+    [Function]
+    > var p1 = new Person('lu');
+    undefined
+    > var p2 = new Person('luchanghong');
+    undefined
+    > p1.friends == p2.friends
+    false
+    > p1.friends
+    [ 'li', 'hua' ]
+    > p2.friends
+    [ 'li', 'hua' ]
+    > p1.makeFriends('911');
+    undefined
+    > p1.friends
+    [ 'li', 'hua', '911' ]
+    > p2.friends
+    [ 'li', 'hua' ]
+    ```
+
+- 动态原型方式
+
+    这种方式的目的是把函数属性拿到构造函数里面来，这样做主要彰显编码风格。例如：
+
+    ```javascript
+    > function Person(name) {
+    ... this.name = name;
+    ... this.friends = new Array('li', 'hua');
+    ... if (typeof Person._initialized == 'undefined') {
+    ..... Person.prototype.makeFriends = function (f) {
+    ....... this.friends.push(f);
+    ....... }
+    ..... Person._initialized = true;
+    ..... }
+    ... }
+    undefined
+    > var p = new Person('lu');
+    undefined
+    > p.makeFriends('111');
+    undefined
+    > p.friends
+    [ 'li', 'hua', '111' ]
+    ```
+
+    用`_initialized`来作为每次实例化对象是否创建函数方法的依据。
+
+以上这么多种方式，到底采用哪种呢？目前采用最多的还是混合构造函数/原型方式，另外，
+动态原型方式也是不错的选择。
+
+## <a id="modifyObject"></a> 修改对象
+
+- 修改属性
+    
+    对象的属性可以直接重新赋值，前面很多例子都有此操作。
+
+- 修改方法
+
+    使用`prototype`可以新增、重写方法。使用前面的`Person`对象举例：
+
+    ```javascript
+    > Person.prototype.sayName = function() { return 'I am ' + this.name; }
+    [Function]
+    // p 是已经实例化过的对象
+    > p.sayName()
+    'I am lu'
+    ```
+
+## <a id="useObject"></a> 使用对象
+
+- 声明和实例化
+
+    对象声明和普通变量一样使用`var`，实例化用关键字`new`。
+
+    ```javascript
+    > var obj = new Object();
+    undefined
+    > var obj2 = new Object;
+    undefined
+    ```
+
+    当构造函数没有参数的时候，就不用写括号，为了保持一致还是加上括号。
+
+- 引用
+
+    每一次实例化的对象，对象这个变量名存储的是实际对象的引用，而非物理对象自身。
+
+- 销毁
+
+    `ECMAScript`有自动销毁对象释放内存的功能叫做存储单元收集程序。手动销毁将对象
+    置为`null`即可。
+
+___
+
+断断续续的算是把`JavaScript`简单的回顾一遍，也涨了不少知识。
