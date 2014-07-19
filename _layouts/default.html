@@ -1,85 +1,19 @@
 <!DOCTYPE html>
-<html xmlns:wb="http://open.weibo.com/wb">
-<head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <meta name="baidu-tc-verification" content="354843b3f9069166524da96781de3881" />
-   <title>{{ page.title }}--{{ site.title }}</title>
-   <meta name="description" content="{{ site.description }}" />
-   <!--必填-->
-   <meta property="og:type" content="article" />
-   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
-   <meta property="og:title" content="{{ page.title }}" />
-   <meta property="og:description" content="{{ page.description }}" />
+<html>
 
-   <meta property="og:image" content="" />
-   <meta name="weibo: article:create_at" content="{{ page.date }}" />
-   <meta name="weibo: article:update_at" content="{{ page.date }}" />
+  {% include head.html %}
 
-   <!-- Homepage CSS -->
-   <link rel="stylesheet" href="/css/style.css" type="text/css" media="screen, projection" />
-   <link rel="stylesheet" href="/css/style-default.css" type="text/css" media="screen, projection" />
-   <!--<link rel="stylesheet" href="/js/prettify/prettify.css" type="text/css" media="screen, projection" />-->
-   <link rel="stylesheet" href="/css/tomorrow-night.css" type="text/css" media="screen, projection" />
-   <script src="/js/highlight.pack.js" type="text/javascript"></script>
-   <script>hljs.initHighlightingOnLoad();</script>
+    <body>
 
-</head>
-<body class="home blog">
+    {% include header.html %}
 
-<div id="header">
-    <h1 class="siteName">
-        <a href="/" title="WEB&amp;软件开发">Programmer/Coder</a>
-    </h1>
-    <p class="description">——{{ site.subtitle }}</p>
-                
-</div>
-<div class="clear"></div>
-
-<div class="site" id="content">
-    <div id="outbox">
-      <div class="title">
-          <div id="globalNavi">
-              <ul id="menu-a" class="menu">
-                  <li id="menu-item-419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419"><a href="/">Home</a></li>
-                  <li id="menu-item-419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419"><a href="/archives.html">Archives</a></li>
-                  <li id="menu-item-419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419"><a href="/category.html">Category</a></li>
-                  <li id="menu-item-419" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-419"><a href="/tags.html">Tags</a></li>
-                  <li id="menu-item-420" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-420"><a href="#">Skills</a>
-                  <ul class="sub-menu">
-                      <li id="menu-item-421" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421"><a href="/python_skill.html">python小技巧集锦</a></li>
-                      <li id="menu-item-422" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-422"><a href="/vim_skill.html">Vim使用技巧集锦</a></li>
-                  </ul>
-                  </li>
-                  <li id="menu-item-424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-424"><a href="/about.html">AboutMe</a></li>
-                  <li id="menu-item-424" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-424"><a href="/friendlink.html">友情链接</a></li>
-              </ul>
-          </div>
+    <div class="page-content">
+      <div class="wrap">
+      {{ content }}
       </div>
-      <div class="clear"></div>
+    </div>
 
-          {{ content }}
+    {% include footer.html %}
 
-    </div> 
-  <div class="footer">
-
-  </div>
-</div>
-
-<script type="text/javascript">
-    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0498ed65ae15f9f8d7e6d387bf673290' type='text/javascript'%3E%3C/script%3E"));
-</script>
-
-<!-- JiaThis Button BEGIN
-<script type="text/javascript" >
-var jiathis_config={
-    showClose:true,
-    hideMore:false
-}
-</script>
-<script type="text/javascript" src="http://v3.jiathis.com/code/jiathis_r.js?btn=r.gif&move=1" charset="utf-8"></script>
-JiaThis Button END -->
-
-</body>
-<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
+    </body>
 </html>

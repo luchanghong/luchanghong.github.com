@@ -1,58 +1,28 @@
 ---
 layout: default
 ---
-<div id="main">
-    <div class="post">
-        <h1 class="enty-title">{{ page.title }}</h1>
-        <div class="singleinfo">
-            <span class="dateinfo">
-                撰写于 {% include post/date.html %} {{ time }}  分类: <a href="/category.html#{{ page.category }}">{{ page.category }}</a>   标签:{% include post/tags.html %} 
-            </span>
-        </div>
-        {% if page.description %}
-            <div class="post_description" style="margin-top:15px; font-weight:bolder">概要：{{ page.description }}</div>
-        {% endif %}
-        {{ content }}
-    </div>
+<div class="post">
 
-    <div id="notic">
-        <STRONG>未经允许请勿用作商业用途，转载请遵守<a href="http://creativecommons.org/licenses/by-nc-sa/2.5/cn/legalcode" target="_blank">“署名-非商业性使用-相同方式共享”</a>协议。<br>
-        本文连接地址：<a href="{{ site.url }}{{ page.url }}">{{ site.url }}{{ page.url }}</a></STRONG>
-    </div>
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+  </header>
 
-    <div class="article_relationship">
-        <a class="previous_page" href="{{ page.previous.url }}" title="{{ page.previous.title }}">&laquo;&nbsp;{{ page.previous.title }}</a>
-        <a class="next_page" href="{{ page.next.url }}" title="{{ page.next.title }}">{{ page.next.title }}&nbsp;&raquo;</a>
-    </div>
+  <article class="post-content">
+  {{ content }}
+  </article>
 
-    <div class="clear"></div>
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+      var disqus_shortname = 'pythonandphp'; // required: replace example with your forum shortname
 
-    <!-- for sina like-->
-    <div style="margin-top:15px;">
-        <wb:like skin="silver"></wb:like>
-    </div>
-
-    <div id="related">
-      <h2>相关文章</h2>
-      <ul class="posts">
-        {% for post in site.related_posts limit:3 %}
-          <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endfor %}
-      </ul>
-    </div>
-
-    <!-- comments -->
-    <div id="disqus_thread"></div>
-    <script type="text/javascript">
-        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-        var disqus_shortname = 'pythonandphp'; // required: replace example with your forum shortname
-
-        /* * * DON'T EDIT BELOW THIS LINE * * */
-        (function() {
-            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-    </script>
-    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true; dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>

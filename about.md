@@ -1,6 +1,6 @@
 ---
 layout: post
-title: about me
+title: About
 date: 2012-08-27 17:35:54 +08:00
 category: life_record
 tags: [生活]

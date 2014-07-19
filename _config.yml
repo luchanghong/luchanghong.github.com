@@ -1,22 +1,29 @@
+# Site settings
+title: "程序员Lunixy的生活和工作"
+footer_title: "Lunixy's work and life"
+sub_title: "I am an enginner, and work in ChaoYang,Beijing."
+description: "Focus on web develop, and the main program languages are PHP and Python."
+baseurl: ""
+
+# about author
+anthor: lunixy
+twitter_username: luchanghong
+github_username: luchanghong
+email: "luchanghong1990@gmail.com"
+
+# Build settings
+permalink: pretty
+paginate: 12
+
+# markdown render and settings
+highlighter: pygments
 markdown: redcarpet
 redcarpet:
-  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
-# pygments: true
-highlighter: true
+    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
 
-# site global
-url: http://luchanghong.com
-title: Code Monkey·程序猿，python/php/iOS程序员博客。
-description: WEB网站开发，iOS应用开发，PHP程序员、Python程序员、Object-C程序员，大大的Code Monkey——程序猿。
-subtitle: 因何而生？因何而战？程序员的道路走着……
-author: luchanghong
-
-
-# site path
-tags_path: /tags.html
-category_path: /category.html
-
-# post config
-date_format: "%Y-%m-%d"
-paginate: 12
-pagination_dir: blog/
+# collections
+collections:
+  tech:
+    output: true
+  life:
+    output: true
