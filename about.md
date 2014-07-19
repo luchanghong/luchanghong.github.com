@@ -1,11 +1,52 @@
 ---
-layout: page
+layout: post
 title: About
-permalink: /about/
+date: 2012-08-27 17:35:54 +08:00
+category: life_record
+tags: [生活]
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+## 一、我这个人
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+人高马大，心灵脆弱；胸无大志，奋斗不息；贪睡贪玩，一本正经；既有远虑，亦有近忧。
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+喜怒哀乐，皆行于色；坦诚待人，礼尚往来；静坐常思己（大）过，闲谈也论人（小）非。
+
+一个人的时候很安静，喜欢凑热闹，有时候容易激动，激动到冲动，冲动到hold不住了……
+
+## 二、我的技术
+
+入行以来一直做WEB开发，后台相对相对较多。
+
+做过PHP和python，对应数据库mySQL和mongodb。
+
+想学的太多，有时候却很懒，甚是矛盾。有时候又想转行，却始终对编程感兴趣。
+
+## 三、我的心经
+
+1、现在做的大多数都是别人做过的，出了问题就去网上搜索，绝对有你要的答案。
+
+2、技术问题不要去百度，度娘没有google给力，有些问题不是没有答案，试着用EN关键词搜索，感叹一下英语过CET4了。
+
+3、最高兴的不是学会某一门编程语言，而是某种解决问题的方法，新方法。
+
+4、做程序要有思想，简约却不简单的几个字。
+
+5、关注几个技术博客，有思想的技术博客，无论和自己所学的编程技术相关与否，最起码都是相通的。
+
+## 四、我的工作档案
+
+[请翻阅我的简历][1]
+
+[1]: http://www.luchanghong.com/upload/resume.pdf
+
+## 五、期望
+
+随着工作经验的累积，作为一名程序员，专职的码农、coder，发现我的工作在整个产品流程中的价值不是那么重要了，coding好多人都能做，
+运营和维护才是关键，而盈利则是根本。
+
+算是有点失落吧，不过还好，兴趣和爱好依然存在。一个真正的码农，不仅能写代码，而且还要精通数据库，驾驭整个体系；做得出来，维护的好，紧急情况高效应对 =》 码农 + DBA + 运维。
+
+路还很长，很远……
+
+PS：未完待续，陆续更新……
