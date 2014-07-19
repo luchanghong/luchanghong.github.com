@@ -1,16 +1,29 @@
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+title: "程序员Lunixy的生活和工作"
+footer_title: "Lunixy's work and life"
+sub_title: "I am an enginner, and work in ChaoYang,Beijing."
+description: "Focus on web develop, and the main program languages are PHP and Python."
 baseurl: ""
-url: "http://yourdomain.com"
-twitter_username: jekyllrb
-github_username:  jekyll
+
+# about author
+anthor: lunixy
+twitter_username: luchanghong
+github_username: luchanghong
+email: "luchanghong1990@gmail.com"
 
 # Build settings
-markdown: kramdown
 permalink: pretty
+paginate: 12
 
-
+# markdown render and settings
+highlighter: pygments
+markdown: redcarpet
 redcarpet:
-  extensions: [no_fenced_code_blocks]
+    extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "tables", "with_toc_data"]
+
+# collections
+collections:
+  tech:
+    output: true
+  life:
+    output: true
