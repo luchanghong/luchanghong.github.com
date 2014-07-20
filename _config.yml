@@ -12,7 +12,7 @@ github_username: luchanghong
 email: "luchanghong1990@gmail.com"
 
 # Build settings
-permalink: pretty
+# permalink: pretty
 paginate: 12
 
 # markdown render and settings
